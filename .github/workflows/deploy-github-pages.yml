@@ -33,6 +33,11 @@ jobs:
           GITHUB_PAGES: "true"
           GITHUB_REPOSITORY: ${{ github.repository }}
 
+      # Garante que o artefacto é o output do Vite (evita página em branco se index de origem fosse servido por engano)
+      - run: |
+          test ! grep -q '%BASE_URL%' dist/index.html || (echo "::error::dist/index.html ainda contém %BASE_URL% — o build do Vite não transformou o HTML." && exit 1)
+          test ! grep -q 'src/main.tsx' dist/index.html || (echo "::error::dist/index.html ainda referencia /src/main.tsx — use apenas o resultado de npm run build no Pages." && exit 1)
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
