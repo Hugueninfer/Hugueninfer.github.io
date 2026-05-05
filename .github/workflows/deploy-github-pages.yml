@@ -35,8 +35,15 @@ jobs:
 
       # Garante que o artefacto é o output do Vite (evita página em branco se index de origem fosse servido por engano)
       - run: |
-          test ! grep -q '%BASE_URL%' dist/index.html || (echo "::error::dist/index.html ainda contém %BASE_URL% — o build do Vite não transformou o HTML." && exit 1)
-          test ! grep -q 'src/main.tsx' dist/index.html || (echo "::error::dist/index.html ainda referencia /src/main.tsx — use apenas o resultado de npm run build no Pages." && exit 1)
+          set -e
+          if grep -q '%BASE_URL%' dist/index.html; then
+            echo "::error::dist/index.html ainda contém %BASE_URL% — o build do Vite não transformou o HTML."
+            exit 1
+          fi
+          if grep -q 'src/main.tsx' dist/index.html; then
+            echo "::error::dist/index.html ainda referencia src/main.tsx — use apenas o resultado de npm run build no Pages."
+            exit 1
+          fi
 
       - uses: actions/upload-pages-artifact@v3
         with:
