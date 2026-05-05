@@ -62,6 +62,20 @@ npm run lint
 
 ---
 
+## Publicar no GitHub Pages
+
+O repositório inclui o workflow [`.github/workflows/deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml): a cada push em `main` ou `master` o Vite gera o `dist` e o GitHub publica o site.
+
+1. **Suba o código** para o GitHub (branch `main` ou `master`).
+2. No repositório: **Settings → Pages**.
+3. Em **Build and deployment → Source**, escolha **GitHub Actions** (não “Deploy from a branch”).
+4. Faça um push (ou **Actions → Deploy GitHub Pages → Run workflow**) e aguarde o job verde.
+5. O endereço aparece em **Settings → Pages** (e no resumo do workflow). Formato típico: `https://SEU-USUARIO.github.io/NOME-DO-REPO/`.
+
+O `vite.config.ts` define `base` automaticamente em CI (`GITHUB_PAGES=true`): repositórios com nome `usuario.github.io` usam base `/` (site na raiz do domínio); nos demais, a base vira `/nome-do-repo/` para os assets carregarem certo.
+
+---
+
 ## Licença
 
 Uso pessoal / portfolio — o código está aqui como referência do meu trabalho e da stack que utilizo no front deste site.

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { BrandLogo } from '@/components/ui/brand-logo';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,9 +49,7 @@ export function Navbar() {
     >
       <div className="flex items-center justify-between px-4 md:px-6 py-3 md:py-4 rounded-full bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 backdrop-blur-xl shadow-xl dark:shadow-2xl">
         <div className="flex items-center gap-2 pl-2 md:pl-0">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-neutral-800 to-neutral-400 dark:from-white dark:to-neutral-500 flex items-center justify-center">
-            <div className="w-3 h-3 rounded-full bg-white dark:bg-black" />
-          </div>
+          <BrandLogo className="size-8" />
           <span className="text-black dark:text-white font-bold tracking-wide text-lg">
             huguenin.dev
           </span>

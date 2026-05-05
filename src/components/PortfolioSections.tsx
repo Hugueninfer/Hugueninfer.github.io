@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, Award, Languages, ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import aboutPortrait from '@/assets/about-portrait.webp';
 
 export function AboutSection() {
   const { t } = useLanguage();
@@ -27,11 +28,16 @@ export function AboutSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-neutral-50 to-neutral-200 dark:from-neutral-800 dark:to-neutral-900 border border-black/10 dark:border-white/10 flex items-center justify-center"
+          className="relative aspect-[3/4] max-w-md mx-auto md:mx-0 md:justify-self-end w-full rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-neutral-100 dark:bg-neutral-900 shadow-lg"
         >
-          <div className="text-neutral-400 dark:text-neutral-600 font-mono text-xl">
-             &lt;huguenin.dev /&gt;
-          </div>
+          <img
+            src={aboutPortrait}
+            alt={t.about.portraitAlt}
+            className="absolute inset-0 h-full w-full object-cover object-top scale-[1.15] origin-top"
+            loading="lazy"
+            decoding="async"
+            sizes="(min-width: 768px) 50vw, 100vw"
+          />
         </motion.div>
       </div>
     </section>

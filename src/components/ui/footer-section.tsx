@@ -4,6 +4,7 @@ import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { LinkedinIcon, GithubIcon, Mail } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { BrandLogo } from '@/components/ui/brand-logo';
 
 export function Footer() {
 	const { t } = useLanguage();
@@ -18,9 +19,7 @@ export function Footer() {
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 					<AnimatedContainer className="space-y-6">
 						<div className="flex items-center gap-3">
-							<div className="w-10 h-10 rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-400 dark:from-white dark:to-neutral-500 flex items-center justify-center shadow-lg">
-								<div className="w-4 h-4 rounded-full bg-white dark:bg-black" />
-							</div>
+							<BrandLogo className="size-10" />
 							<span className="text-black dark:text-white font-bold text-2xl tracking-tight">huguenin.dev</span>
 						</div>
 						<p className="text-neutral-500 dark:text-neutral-400 text-base max-w-sm leading-relaxed font-light">

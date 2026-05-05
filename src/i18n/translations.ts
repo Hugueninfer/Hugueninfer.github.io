@@ -19,6 +19,7 @@ export const translations = {
     },
     about: {
       title: 'About Me',
+      portraitAlt: 'Photo of Pedro Huguenin',
       p1: 'Innovative Backend Developer with over 5 years of experience creating and optimizing robust and scalable solutions, with solid experience in fullstack projects.',
       p2: 'Specialized in developing efficient architectures and implementing high-quality code that drives performance and user experience. Consistently delivers excellence in software and possesses advanced skills in analysis and problem-solving.',
     },
@@ -181,6 +182,7 @@ export const translations = {
     },
     about: {
       title: 'Sobre Mim',
+      portraitAlt: 'Foto de Pedro Huguenin',
       p1: 'Desenvolvedor Backend inovador com mais de 5 anos de experiência na criação e otimização de soluções robustas e escaláveis, com sólida atuação em projetos fullstack.',
       p2: 'Especializado no desenvolvimento de arquiteturas eficientes e na implementação de código de alta qualidade que impulsiona a performance e a experiência do usuário. Consistentemente entrega software de excelência e possui habilidades avançadas em análise e resolução de problemas.',
     },
