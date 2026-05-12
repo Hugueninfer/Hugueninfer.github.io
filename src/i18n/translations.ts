@@ -62,6 +62,22 @@ export const translations = {
       title: 'Featured Projects',
       items: [
         {
+          title: 'Workflow API',
+          category: 'Backend / Laravel',
+          description:
+            'Laravel REST API for workflow management: multi-tenant workspaces, projects, tasks, boards, invoices, time tracking and RBAC. Sanctum session auth (SPA cookie + CSRF), Controller → Service → Repository architecture, standardized JSON responses and OpenAPI docs via L5-Swagger.',
+          tags: ['Laravel', 'PHP 8.3', 'Sanctum', 'REST', 'Multi-tenant', 'OpenAPI'],
+          url: 'https://github.com/Hugueninfer/workflow-api',
+        },
+        {
+          title: 'Workflow Web',
+          category: 'Frontend / React',
+          description:
+            'React 19 + Vite SPA for the Workflow product: boards, tasks and workspace UI. Consumes the Laravel API with Sanctum cookie auth and a CSRF-safe HTTP client, drag-and-drop with @hello-pangea/dnd, Excalidraw diagrams and DOMPurify sanitization.',
+          tags: ['React 19', 'Vite', 'Tailwind', 'Sanctum', 'React Router', 'SPA'],
+          url: 'https://github.com/Hugueninfer/workflow-web',
+        },
+        {
           title: 'Amazon Price Monitor',
           category: 'Backend / Python',
           description:
@@ -224,6 +240,22 @@ export const translations = {
       badge: 'Portfólio',
       title: 'Projetos em Destaque',
       items: [
+        {
+          title: 'Workflow API',
+          category: 'Backend / Laravel',
+          description:
+            'API REST em Laravel para gestão de workflow: workspaces multi-tenant, projetos, tarefas, quadros, faturas, controle de tempo e RBAC. Autenticação Sanctum (sessão SPA via cookie + CSRF), arquitetura Controller → Service → Repository, respostas JSON padronizadas e documentação OpenAPI via L5-Swagger.',
+          tags: ['Laravel', 'PHP 8.3', 'Sanctum', 'REST', 'Multi-tenant', 'OpenAPI'],
+          url: 'https://github.com/Hugueninfer/workflow-api',
+        },
+        {
+          title: 'Workflow Web',
+          category: 'Frontend / React',
+          description:
+            'SPA em React 19 + Vite para o produto Workflow: quadros, tarefas e interface da workspace. Consome a API Laravel com autenticação Sanctum por cookie e cliente HTTP seguro contra CSRF, drag-and-drop com @hello-pangea/dnd, diagramas Excalidraw e sanitização com DOMPurify.',
+          tags: ['React 19', 'Vite', 'Tailwind', 'Sanctum', 'React Router', 'SPA'],
+          url: 'https://github.com/Hugueninfer/workflow-web',
+        },
         {
           title: 'Amazon Price Monitor',
           category: 'Backend / Python',
