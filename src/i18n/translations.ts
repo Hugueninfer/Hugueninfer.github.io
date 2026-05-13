@@ -85,6 +85,22 @@ export const translations = {
           tags: ['Python', 'SQLite', 'Gmail', 'Telegram', 'Scraping'],
           url: 'https://github.com/Hugueninfer/amazon-price-monitor',
         },
+        {
+          title: 'Expense Tracker API',
+          category: 'Backend / Node.js',
+          description:
+            'RESTful API for personal expense management. Built with Node.js, Express, Prisma ORM, SQLite, and JWT authentication. Handles user registration, login, CRUD transactions, and dashboard metrics.',
+          tags: ['Node.js', 'Express', 'Prisma', 'SQLite', 'JWT', 'REST'],
+          url: 'https://github.com/Hugueninfer/expense-tracker-api',
+        },
+        {
+          title: 'Expense Tracker Web',
+          category: 'Frontend / React',
+          description:
+            'Modern React dashboard for managing personal finances. Features authentication, income/expense tracking, dark mode, responsive design, and a clean fintech-inspired UI built with Tailwind CSS.',
+          tags: ['React 19', 'Vite', 'Tailwind CSS', 'React Router', 'Axios'],
+          url: 'https://github.com/Hugueninfer/expense-tracker-web',
+        },
       ],
     },
     experience: {
@@ -263,6 +279,22 @@ export const translations = {
             'Rastreador de preços de produtos na Amazon com histórico em SQLite e alertas via Gmail e Telegram. Notifica quando o preço atinge ou fica abaixo do valor alvo, com lógica inteligente para evitar alertas duplicados.',
           tags: ['Python', 'SQLite', 'Gmail', 'Telegram', 'Scraping'],
           url: 'https://github.com/Hugueninfer/amazon-price-monitor',
+        },
+        {
+          title: 'Expense Tracker API',
+          category: 'Backend / Node.js',
+          description:
+            'API REST para gestão pessoal de despesas. Construída com Node.js, Express, Prisma ORM, SQLite e autenticação JWT. Cobre cadastro e login de usuários, CRUD de transações e métricas de dashboard.',
+          tags: ['Node.js', 'Express', 'Prisma', 'SQLite', 'JWT', 'REST'],
+          url: 'https://github.com/Hugueninfer/expense-tracker-api',
+        },
+        {
+          title: 'Expense Tracker Web',
+          category: 'Frontend / React',
+          description:
+            'Dashboard em React para finanças pessoais. Inclui autenticação, controle de receitas e despesas, modo escuro, layout responsivo e UI fintech com Tailwind CSS.',
+          tags: ['React 19', 'Vite', 'Tailwind CSS', 'React Router', 'Axios'],
+          url: 'https://github.com/Hugueninfer/expense-tracker-web',
         },
       ],
     },
