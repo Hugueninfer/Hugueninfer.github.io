@@ -37,7 +37,9 @@ export const photos = [
   {src:'/media/pedro/couple.jpeg',alt:'Pedro com sua esposa em um auditório',label:'Minha família'},
   {src:'/media/pedro/graduation.jpeg',alt:'Pedro na formatura, acompanhado de amigos',label:'Formação'},
   {src:'/media/pedro/maltese.jpeg',alt:'Cachorro maltês branco com laço rosa',label:'Companhia de todos os dias'},
-  {src:'/media/pedro/pool.jpeg',alt:'Piscina ao entardecer',label:'Fora do código'},
+  {src:'/media/personal/pedro-mar.jpeg',alt:'Pedro nas pedras à beira-mar',label:'Fora do código'},
+  {src:'/media/personal/acampamento.jpeg',alt:'Barracas de acampamento entre pinheiros',label:'Ao ar livre'},
+  {src:'/media/personal/computador.jpeg',alt:'Interior de um computador com placa GeForce RTX',label:'Tecnologia de perto'},
 ];
 export function buildPersonalContent() {
   const expertise = {

@@ -1,5 +1,10 @@
 // Reviewed presentation copy. Names, code, URLs and captured screenshots stay unchanged.
 export const translations = {
+ 'Pedro nas pedras à beira-mar':['Pedro on the rocks by the sea','Pedro auf den Felsen am Meer'],
+ 'Barracas de acampamento entre pinheiros':['Camping tents among pine trees','Campingzelte zwischen Kiefern'],
+ 'Interior de um computador com placa GeForce RTX':['Inside a computer with a GeForce RTX graphics card','Innenansicht eines Computers mit GeForce-RTX-Grafikkarte'],
+ 'Ao ar livre':['Outdoors','Draußen in der Natur'],
+ 'Tecnologia de perto':['Technology up close','Technik aus der Nähe'],
  'IA aplicada — especialização em andamento':['Applied AI — ongoing specialization','Angewandte KI — laufende Spezialisierung'],
  'Especialização em andamento':['Ongoing specialization','Laufende Spezialisierung'],
  'Contato —':['Contact —','Kontakt —'],
