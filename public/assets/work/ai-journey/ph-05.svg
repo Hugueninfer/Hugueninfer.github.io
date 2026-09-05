@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#F1F3F8"/>
+  <rect x="24" y="24" width="1552" height="952" rx="18" fill="none" stroke="#C7CEDC" stroke-width="3" stroke-dasharray="14 12"/>
+  <circle cx="800" cy="430" r="54" fill="none" stroke="#9AA6BC" stroke-width="6"/>
+  <path d="M770 445 l22 -26 l16 14 l22 -30" fill="none" stroke="#9AA6BC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="800" y="560" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="40" font-weight="600" fill="#5B6675">05 · CLAUDE.md / working context</text>
+  <text x="800" y="612" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="26" fill="#8B95A7">Placeholder — replace in Sanity Studio</text>
+</svg>

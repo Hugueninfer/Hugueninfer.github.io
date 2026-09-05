@@ -1,0 +1,39 @@
+/* General Sans */
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans-0.woff2') format('woff2'),
+       url('/fonts/general-sans-1.woff') format('woff'),
+       url('/fonts/general-sans-2.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans-3.woff2') format('woff2'),
+       url('/fonts/general-sans-4.woff') format('woff'),
+       url('/fonts/general-sans-5.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans-6.woff2') format('woff2'),
+       url('/fonts/general-sans-7.woff') format('woff'),
+       url('/fonts/general-sans-8.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans-9.woff2') format('woff2'),
+       url('/fonts/general-sans-10.woff') format('woff'),
+       url('/fonts/general-sans-11.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+

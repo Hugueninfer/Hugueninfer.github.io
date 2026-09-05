@@ -1,0 +1,392 @@
+{
+  "version": "16.29.0",
+  "source": "https://github.com/simple-icons/simple-icons",
+  "note": "Unmodified SVG geometry; displayed as monochrome CSS masks. Brand rights remain with their respective owners. Git logo by Jason Long (CC-BY-3.0); PHP logo by Colin Viebrock (CC-BY-SA-4.0). See individual source and license metadata.",
+  "icons": [
+    {
+      "id": "php",
+      "slug": "php"
+    },
+    {
+      "id": "laravel",
+      "slug": "laravel"
+    },
+    {
+      "id": "python",
+      "slug": "python"
+    },
+    {
+      "id": "fastapi",
+      "slug": "fastapi"
+    },
+    {
+      "id": "mysql",
+      "slug": "mysql"
+    },
+    {
+      "id": "postgresql",
+      "slug": "postgresql"
+    },
+    {
+      "id": "redis",
+      "slug": "redis"
+    },
+    {
+      "id": "sqlalchemy",
+      "slug": "sqlalchemy"
+    },
+    {
+      "id": "rabbitmq",
+      "slug": "rabbitmq"
+    },
+    {
+      "id": "javascript",
+      "slug": "javascript"
+    },
+    {
+      "id": "typescript",
+      "slug": "typescript"
+    },
+    {
+      "id": "react",
+      "slug": "react"
+    },
+    {
+      "id": "vuejs",
+      "slug": "vuedotjs"
+    },
+    {
+      "id": "vitejs",
+      "slug": "vite"
+    },
+    {
+      "id": "html5",
+      "slug": "html5"
+    },
+    {
+      "id": "bootstrap",
+      "slug": "bootstrap"
+    },
+    {
+      "id": "tailwindcss",
+      "slug": "tailwindcss"
+    },
+    {
+      "id": "pytest",
+      "slug": "pytest"
+    },
+    {
+      "id": "vitest",
+      "slug": "vitest"
+    },
+    {
+      "id": "git",
+      "slug": "git"
+    },
+    {
+      "id": "github",
+      "slug": "github"
+    },
+    {
+      "id": "githubactions",
+      "slug": "githubactions"
+    },
+    {
+      "id": "docker",
+      "slug": "docker"
+    },
+    {
+      "id": "linux",
+      "slug": "linux"
+    },
+    {
+      "id": "terraform",
+      "slug": "terraform"
+    },
+    {
+      "id": "pydantic",
+      "slug": "pydantic"
+    },
+    {
+      "id": "tanstack",
+      "slug": "tanstack"
+    },
+    {
+      "id": "reacthookform",
+      "slug": "reacthookform"
+    },
+    {
+      "id": "livewire",
+      "slug": "livewire"
+    },
+    {
+      "id": "testinglibrary",
+      "slug": "testinglibrary"
+    },
+    {
+      "id": "openapiinitiative",
+      "slug": "openapiinitiative"
+    },
+    {
+      "id": "render",
+      "slug": "render"
+    },
+    {
+      "id": "neon",
+      "slug": "neon"
+    },
+    {
+      "id": "modelcontextprotocol",
+      "slug": "modelcontextprotocol"
+    },
+    {
+      "id": "langchain",
+      "slug": "langchain"
+    },
+    {
+      "id": "langgraph",
+      "slug": "langgraph"
+    },
+    {
+      "id": "css",
+      "slug": "css"
+    }
+  ],
+  "brands": [
+    {
+      "title": "Bootstrap",
+      "hex": "7952B3",
+      "source": "https://getbootstrap.com/docs/5.3/about/brand",
+      "guidelines": "https://getbootstrap.com/docs/5.3/about/brand",
+      "license": {
+        "type": "MIT"
+      }
+    },
+    {
+      "title": "Docker",
+      "hex": "2496ED",
+      "source": "https://www.docker.com/company/newsroom/media-resources"
+    },
+    {
+      "title": "FastAPI",
+      "hex": "009688",
+      "source": "https://github.com/tiangolo/fastapi/blob/ffb4f77a11f83132b521ba0aac6c95792c19e797/docs/en/docs/img/icon-white.svg"
+    },
+    {
+      "title": "Git",
+      "hex": "F03C2E",
+      "source": "https://git-scm.com/community/logos",
+      "license": {
+        "type": "CC-BY-3.0"
+      }
+    },
+    {
+      "title": "GitHub",
+      "hex": "181717",
+      "source": "https://github.com/logos",
+      "guidelines": "https://github.com/logos"
+    },
+    {
+      "title": "GitHub Actions",
+      "hex": "2088FF",
+      "source": "https://github.com/features/actions"
+    },
+    {
+      "title": "HTML5",
+      "hex": "E34F26",
+      "source": "https://www.w3.org/html/logo/"
+    },
+    {
+      "title": "JavaScript",
+      "hex": "F7DF1E",
+      "source": "https://github.com/voodootikigod/logo.js/blob/1544bdeed6d618a6cfe4f0650d04ab8d9cfa76d9/js.svg",
+      "license": {
+        "type": "MIT"
+      }
+    },
+    {
+      "title": "Laravel",
+      "hex": "FF2D20",
+      "source": "https://github.com/laravel/art/tree/5a8325b064634b900f25dbb6f1cafd888b2d2211"
+    },
+    {
+      "title": "Linux",
+      "hex": "FCC624",
+      "source": "https://www.linuxfoundation.org/the-linux-mark/"
+    },
+    {
+      "title": "MySQL",
+      "hex": "4479A1",
+      "source": "https://www.mysql.com/about/legal/logos.html",
+      "guidelines": "https://www.mysql.com/about/legal/logos.html"
+    },
+    {
+      "title": "PHP",
+      "hex": "777BB4",
+      "source": "https://php.net/download-logos.php",
+      "license": {
+        "type": "CC-BY-SA-4.0"
+      }
+    },
+    {
+      "title": "PostgreSQL",
+      "hex": "4169E1",
+      "source": "https://wiki.postgresql.org/wiki/Logo",
+      "guidelines": "https://www.postgresql.org/about/policies/trademarks/"
+    },
+    {
+      "title": "Pytest",
+      "hex": "0A9EDC",
+      "source": "https://github.com/pytest-dev/design/blob/081f06cd2d6cd742e68f593560a2e8c1802feb7c/pytest_logo/pytest_logo.svg"
+    },
+    {
+      "title": "Python",
+      "hex": "3776AB",
+      "source": "https://www.python.org/community/logos/",
+      "guidelines": "https://www.python.org/community/logos/"
+    },
+    {
+      "title": "RabbitMQ",
+      "hex": "FF6600",
+      "source": "https://www.rabbitmq.com",
+      "guidelines": "https://www.rabbitmq.com/trademark-guidelines.html"
+    },
+    {
+      "title": "React",
+      "hex": "61DAFB",
+      "source": "https://github.com/facebook/create-react-app/blob/282c03f9525fdf8061ffa1ec50dce89296d916bd/test/fixtures/relative-paths/src/logo.svg",
+      "aliases": {
+        "dup": [
+          {
+            "title": "React Native",
+            "source": "https://reactnative.dev"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Redis",
+      "hex": "FF4438",
+      "source": "https://redis.io/brand-guidelines",
+      "guidelines": "https://redis.io/brand-guidelines"
+    },
+    {
+      "title": "SQLAlchemy",
+      "hex": "D71F00",
+      "source": "https://commons.wikimedia.org/wiki/File:SQLAlchemy.svg",
+      "license": {
+        "type": "MIT"
+      }
+    },
+    {
+      "title": "Tailwind CSS",
+      "hex": "06B6D4",
+      "source": "https://tailwindcss.com/brand",
+      "guidelines": "https://tailwindcss.com/brand"
+    },
+    {
+      "title": "Terraform",
+      "hex": "844FBA",
+      "source": "https://www.hashicorp.com/brand",
+      "guidelines": "https://www.hashicorp.com/brand"
+    },
+    {
+      "title": "TypeScript",
+      "hex": "3178C6",
+      "source": "https://www.typescriptlang.org/branding",
+      "guidelines": "https://www.typescriptlang.org/branding"
+    },
+    {
+      "title": "Vite",
+      "hex": "9135FF",
+      "source": "https://github.com/voidzero-dev/community-design-resources/blob/55902097229cf01cf2a4ceb376f992f5cf306756/brand-assets/vite/vite-icon-color-bracketless.svg"
+    },
+    {
+      "title": "Vitest",
+      "hex": "00FF74",
+      "source": "https://github.com/voidzero-dev/community-design-resources/blob/55902097229cf01cf2a4ceb376f992f5cf306756/brand-assets/vitest/vitest-icon-color-bracketless.svg"
+    },
+    {
+      "title": "Vue.js",
+      "hex": "4FC08D",
+      "source": "https://github.com/vuejs/art/blob/a1c78b74569b70a25300925b4eacfefcc143b8f6/logo.svg",
+      "guidelines": "https://github.com/vuejs/art/blob/a1c78b74569b70a25300925b4eacfefcc143b8f6/README.md",
+      "license": {
+        "type": "CC-BY-NC-SA-4.0"
+      }
+    },
+    {
+      "title": "CSS",
+      "hex": "663399",
+      "source": "https://github.com/CSS-Next/logo.css/blob/bacc20878227204b283c68a6b935f8279e06b0cd/css.svg",
+      "guidelines": "https://github.com/CSS-Next/logo.css"
+    },
+    {
+      "title": "LangChain",
+      "hex": "7FC8FF",
+      "source": "https://www.langchain.com/langchain"
+    },
+    {
+      "title": "LangGraph",
+      "hex": "7FC8FF",
+      "source": "https://www.langchain.com/langgraph"
+    },
+    {
+      "title": "Livewire",
+      "hex": "4E56A6",
+      "source": "https://laravel-livewire.com"
+    },
+    {
+      "title": "Model Context Protocol",
+      "hex": "000000",
+      "source": "https://github.com/modelcontextprotocol/docs/blob/573dc60c2e7aab2605b29d0bf27194aa7b02e4fb/logo/light.svg",
+      "aliases": {
+        "aka": [
+          "MCP"
+        ]
+      }
+    },
+    {
+      "title": "Neon",
+      "hex": "34D59A",
+      "source": "https://neon.com/brand",
+      "guidelines": "https://neon.com/brand"
+    },
+    {
+      "title": "OpenAPI Initiative",
+      "hex": "6BA539",
+      "source": "https://www.openapis.org/faq/style-guide",
+      "guidelines": "https://www.openapis.org/faq/style-guide"
+    },
+    {
+      "title": "Pydantic",
+      "hex": "E92063",
+      "source": "https://github.com/pydantic/pydantic/blob/94c748001a32992a587694b999fb1f3d2f1fc1fe/docs/logo-white.svg"
+    },
+    {
+      "title": "React Hook Form",
+      "hex": "EC5990",
+      "source": "https://github.com/react-hook-form/documentation/blob/d049ffe923336ce7a5bf58990c54c07f39ab2429/src/images/Logo.svg"
+    },
+    {
+      "title": "Render",
+      "hex": "000000",
+      "source": "https://render.com"
+    },
+    {
+      "title": "TanStack",
+      "hex": "ECE8D1",
+      "source": "https://tanstack.com/images/brand/tanstack-emblem-cream.svg",
+      "guidelines": "https://tanstack.com/brand-guide"
+    },
+    {
+      "title": "Testing Library",
+      "hex": "E33332",
+      "source": "https://testing-library.com"
+    }
+  ],
+  "fallbacks": [
+    "playwright",
+    "amazonwebservices"
+  ]
+}

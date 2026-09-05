@@ -1,0 +1,4 @@
+/* The reference stylesheet owns visual tokens, resets and responsive rules. */
+:root { color-scheme: light; background: #fffcf0; }
+:root[data-theme='dark'] { color-scheme: dark; background: #13120d; }
+#reference-root { min-height: 100svh; }

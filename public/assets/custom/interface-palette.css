@@ -1,0 +1,81 @@
+/* Interface-only tomato red; the room keeps its warm illustrated light. */
+.site-root .sv-inst-sec .sv-art .hot .f-top{fill:#d94032}
+.site-root .sv-inst-sec .sv-art .hot .f-right{fill:#ad3026}
+.site-root .sv-inst-sec .sv-art .hot .f-left{fill:#84241e}
+.site-root .sv-inst-sec .sv-art :is(.wire,.rail,.pad){stroke:var(--sv-amber-2)}
+.sv-curtain {
+  --transition-accent: #d94032;
+}
+.sv-curtain .sv-curtain-col {
+  background-color: #fffdf3;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(22, 20, 14, .04) 0 1px, transparent 1px 4px),
+    linear-gradient(180deg, #fffdf3, #f8e4de);
+}
+.sv-curtain.is-dark .sv-curtain-col {
+  background-color: #1d1513;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(241, 238, 230, .05) 0 1px, transparent 1px 4px),
+    linear-gradient(180deg, #1d1513, #2b1916);
+}
+.sv-curtain .sv-curtain-col::after {
+  background: var(--transition-accent);
+}
+.sv-curtain .sv-curtain-label .name .d,
+.sv-curtain .sv-curtain-label.is-boot .name .d {
+  color: var(--transition-accent);
+  -webkit-text-fill-color: var(--transition-accent);
+}
+.site-root {
+  --sv-amber: #d94032;
+  --sv-amber-2: #ad3026;
+  --sv-amber-lt: #f8e4de;
+  --sv-on-amber: #fffdf3;
+  --sv-accent-hover: #ad3026;
+  --sv-accent-soft: #f8e4de;
+  --sv-accent-soft-ink: #ad3026;
+}
+.site-root.is-dark {
+  --sv-amber: #d94032;
+  --sv-amber-2: #f39587;
+  --sv-amber-lt: #48251f;
+  --sv-on-amber: #fffdf3;
+  --sv-accent-soft: #48251f;
+  --sv-accent-soft-ink: #f7d5cd;
+}
+
+.site-root :is(.sv-street-view, .sv-desk-view, .sv-door-view) {
+  --sv-amber: #f3b44a;
+  --sv-amber-2: #c77e0a;
+  --sv-amber-lt: #f9cb80;
+}
+.site-root.is-dark :is(.sv-street-view, .sv-desk-view, .sv-door-view) {
+  --sv-amber-2: #dd922f;
+}
+
+.site-root :is(.sv-marked, .sv-wrap.sv-pad, .sv-case-body, .sv-inst-sec,
+  .sv-pin-mark, .sv-ab-hero, .sv-log-sec)[data-badge]::before {
+  background: var(--sv-accent-soft);
+  color: var(--sv-accent-soft-ink);
+}
+.site-root .sv-btn--amber,
+.site-root .sv-pager button.is-on,
+.site-root .sv-cn-options .opt.is-primary,
+.site-root .sv-cn-options .opt.is-primary :is(.k, .v),
+.site-root .sv-rnav button:hover:not([disabled]),
+.site-root .sv-run:hover:not([disabled]),
+.site-root .sv-report-sheet .close:hover,
+.site-root .sv-lightbox :is(.sv-lb-bar, .sv-lb-nav) button:hover,
+.site-root .sv-next .card:hover .sv-next-go,
+.site-root .sv-cn-prompt .keys button:hover {
+  color: var(--sv-on-amber);
+}
+.site-root .sv-btn--amber:hover,
+.site-root .sv-cn-options .opt.is-primary:hover {
+  background: var(--sv-accent-hover);
+  color: var(--sv-on-amber);
+}
+.site-root .sv-cn-bar {
+  background: var(--sv-accent-soft);
+  color: var(--sv-accent-soft-ink);
+}

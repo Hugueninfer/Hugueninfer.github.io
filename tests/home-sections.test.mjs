@@ -1,0 +1,20 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import vm from 'node:vm';
+import * as s from 'react/jsx-runtime';
+import {buildPersonalContent} from '../reference/custom/personal-content.mjs';
+test('Home mounts the terminal, animated focus and icon sections', async()=>{
+  const source=await readFile(new URL('../public/assets/SiteHome-T3GVTo95.js',import.meta.url),'utf8');
+  const code=source.slice(source.indexOf('function be()'),source.indexOf('export { be'));
+  const content=buildPersonalContent();
+  const context={s,personalPhotos:[],I:content.COPY,H:content.SITE,fs:content.FOCUS,us:[],gs:content.AI_TOOLS,ys:[],Ns:[], $s:[],vs:'',Ss:()=>[false,()=>{}],ks:()=>['',()=>{}],As:()=>{},Cs:()=>{},Ts:()=>'',D:x=>x};
+  for(const name of ['Rs','Zs','fe','xe','pe','Os','Hs','ce','Es','CareerOverview','ProjectCards','Skills','BackendScene']) context[name]=name;
+  const tree=vm.runInNewContext(code+';be()',context);
+  const types=tree.props.children.filter(Boolean).map(c=>c.type);
+  for(const type of ['fe','xe','Os']) assert.ok(types.includes(type),`missing animated section ${type}`);
+  assert.ok(content.AI_TOOLS.length>=3,'icon board must have enough real technologies');
+  assert.equal(content.COPY.home.expertiseTabs.length,4);
+  assert.ok(types.includes('BackendScene'),'Home must finish with the backend animation');
+  assert.ok(!types.includes('ce'),'personal photos belong in the About slider, not the Home outro');
+});

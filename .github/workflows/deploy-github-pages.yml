@@ -23,31 +23,29 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "24"
           cache: npm
 
-      - run: npm ci
+      # The Pages shell uses the checked-in browser bundles; no server/npm install needed.
+      - run: npm run build:pages
 
-      - run: npm run build
-        env:
-          GITHUB_PAGES: "true"
-          GITHUB_REPOSITORY: ${{ github.repository }}
+      - run: node --test tests/pages-export.test.mjs
 
       # Garante que o artefacto é o output do Vite (evita página em branco se index de origem fosse servido por engano)
       - run: |
           set -e
-          if grep -q '%BASE_URL%' dist/index.html; then
+          if grep -q '%BASE_URL%' out/index.html; then
             echo "::error::dist/index.html ainda contém %BASE_URL% — o build do Vite não transformou o HTML."
             exit 1
           fi
-          if grep -q 'src/main.tsx' dist/index.html; then
+          if grep -q 'src/main.tsx' out/index.html; then
             echo "::error::dist/index.html ainda referencia src/main.tsx — use apenas o resultado de npm run build no Pages."
             exit 1
           fi
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: out
 
   deploy:
     needs: build

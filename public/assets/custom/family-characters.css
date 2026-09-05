@@ -1,0 +1,117 @@
+/* family-characters:start */
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .coat { fill: #87966f; }
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .coat-n { fill: #9eab88; }
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .coat-f { fill: #71805b; }
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .coat-d { fill: #5f6e4d; }
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .shirt { fill: #f5f0e3; }
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .trews { fill: #bd8d58; }
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .leg.far .trews { fill: #a87543; }
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .shoe { fill: #343333; }
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .shoe-d { fill: #222120; }
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .sneak { fill: #e8e0d0; }
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .hair { fill: #deb85f; }
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .hair-d { fill: #b98b35; }
+:is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .brow { fill: #9a6f27; }
+
+.maltese, .blond-wife { transform-box: fill-box; transform-origin: center bottom; }
+.family-line, .dog-outline { stroke: var(--sv-ink); stroke-linecap: round; stroke-linejoin: round; }
+.family-line { fill: none; stroke-width: 1.25; }
+.dog-outline { stroke-width: 1.1; }
+.maltese-shadow, .wife-shadow { fill: var(--sv-ink); opacity: .13; }
+.dog-fur { fill: #f7f2e7; }
+.dog-fur-shadow { fill: #ded5c4; }
+.fur-volume, .dog-muzzle { fill: #fffaf0; }
+.fur-volume { opacity: .8; }
+.fur-fringe { fill: none; stroke: #d6c8b5; stroke-width: 2.3; stroke-linecap: round; }
+.dog-eye, .dog-nose { fill: #282725; }
+.dog-mouth { stroke-width: .9; }
+.maltese .dog-tail { transform-box: view-box; transform-origin: 25px -23px; }
+.maltese .dog-head, .maltese .dog-pose, .maltese .leg-near, .maltese .leg-far { transform-box: fill-box; transform-origin: center bottom; }
+.maltese .sit-legs { opacity: 0; }
+.maltese.is-profile { opacity: 1; transform: none; }
+.maltese.is-profile .dog-pose { transform: translateY(var(--dog-bob, 0px)); }
+.maltese.is-profile .run-legs .leg-near {
+  transform-box: view-box; transform-origin: -13px -12px;
+  transform: rotate(var(--dog-near-angle, 0deg));
+}
+.maltese.is-profile .run-legs .leg-far {
+  transform-box: view-box; transform-origin: 9px -13px;
+  transform: rotate(var(--dog-far-angle, 0deg));
+}
+.maltese.is-profile .dog-tail { transform: rotate(var(--dog-tail-angle, 0deg)); }
+.maltese.is-door { transform: translateY(-1px); }
+.sv-door-view .maltese-at-door .hop { animation: family-door-appear 4.2s ease-in-out infinite; }
+.maltese.is-door .run-legs { opacity: 0; }
+.maltese.is-door .sit-legs { opacity: 1; }
+.maltese.is-door .dog-tail { animation: maltese-tail .34s ease-in-out infinite alternate; }
+.sv-desk-view .walker.is-playing .arm-throw { animation: none; }
+/* This seated commuter has one articulated arm, not the old alternate wave
+   drawing. Keep it present in both scroll states and rest it beside the body. */
+.sv-desk-view .him .walker .arm { opacity: 1; }
+.sv-desk-view .him .walker .shoulder { transform: rotate(6deg); }
+.sv-desk-view .him .walker .elbow { transform: rotate(-12deg); }
+.sv-desk-view .him .walker :is(.shoulder, .elbow) {
+  transform-box: view-box; transform-origin: 0 0;
+}
+@keyframes family-door-appear {
+  0%, 62%, 100% { opacity: 0; }
+  78%, 92% { opacity: 1; }
+}
+
+.blond-wife { opacity: 1; transform: none; }
+/* Keep the shared rig, but not the commuter's backpack, cropped hair or palette. */
+.sv-desk-view .blond-wife .wife-anatomy :is(.bag, .bag-d, .hair, .hair-d) { display: none; }
+.sv-desk-view .blond-wife .wife-anatomy .coat { fill: #b87978; }
+.sv-desk-view .blond-wife .wife-anatomy .coat-n { fill: #c88e8a; }
+.sv-desk-view .blond-wife .wife-anatomy .coat-d,
+.sv-desk-view .blond-wife .wife-anatomy .wife-arm-rest .coat-n { fill: #985f61; }
+.sv-desk-view .blond-wife .wife-anatomy .trews { fill: #ded7c8; }
+.sv-desk-view .blond-wife .wife-anatomy .leg.far .trews { fill: #c8c0b1; }
+.sv-desk-view .blond-wife .wife-anatomy .shoe { fill: #714d36; }
+.sv-desk-view .blond-wife .wife-anatomy .shoe-d { fill: #5e402f; }
+.sv-desk-view .blond-wife .wife-anatomy .shirt,
+.sv-desk-view .blond-wife .wife-anatomy .sneak { fill: #f4ead7; }
+.sv-desk-view .blond-wife .wife-anatomy .arm { opacity: 1; }
+/* Outrank the original dark-theme commuter palette for this variant only. */
+.site-root.is-dark .sv-desk-view .blond-wife .wife-anatomy .coat { fill: #b87978; }
+.site-root.is-dark .sv-desk-view .blond-wife .wife-anatomy .coat-n { fill: #c88e8a; }
+.site-root.is-dark .sv-desk-view .blond-wife .wife-anatomy .coat-d,
+.site-root.is-dark .sv-desk-view .blond-wife .wife-anatomy .wife-arm-rest .coat-n { fill: #985f61; }
+.site-root.is-dark .sv-desk-view .blond-wife .wife-anatomy .trews { fill: #ded7c8; }
+.site-root.is-dark .sv-desk-view .blond-wife .wife-anatomy .leg.far .trews { fill: #c8c0b1; }
+.site-root.is-dark .sv-desk-view .blond-wife .wife-anatomy .shoe { fill: #714d36; }
+.site-root.is-dark .sv-desk-view .blond-wife .wife-anatomy .shoe-d { fill: #5e402f; }
+.site-root.is-dark .sv-desk-view .blond-wife .wife-anatomy .sneak { fill: #f4ead7; }
+.blond-wife .wife-hair-d { fill: #b78a34; }
+.blond-wife .wife-hair { fill: #e1bb61; }
+.sv-desk-view .blond-wife .wife-anatomy .wife-hair-strand { fill: none; stroke: #f0d58e; stroke-width: .3; stroke-linecap: round; }
+/* The shared SVG already translates each joint to (0, 0), so rotations stay attached. */
+.blond-wife .wife-upper :is(.shoulder, .elbow) { transform-box: view-box; transform-origin: 0 0; }
+.blond-wife.is-active .wife-upper .shoulder { animation: wife-wave 4.2s ease-in-out both; }
+.blond-wife.is-active .wife-upper .elbow { animation: wife-forearm 4.2s ease-in-out both; }
+
+.site-root.is-dark .dog-fur { fill: #e8e0d2; }
+.site-root.is-dark .dog-fur-shadow { fill: #c7bcaa; }
+.site-root.is-dark .fur-volume, .site-root.is-dark .dog-muzzle { fill: #f5ede0; }
+.site-root.is-dark .sv-desk-view .blond-wife .wife-anatomy .shirt { fill: #e7decc; }
+.site-root.is-dark :is(.sv-street-view, .sv-desk-view, .sv-door-view) .walker .hair { fill: #e8c56f; }
+.site-root.is-dark .sv-desk-view .blond-wife .wife-hair { fill: #e1bb61; }
+.site-root.is-dark .sv-desk-view .blond-wife .wife-hair-d { fill: #b78a34; }
+
+@keyframes maltese-tail { from { transform: rotate(-12deg); } to { transform: rotate(20deg); } }
+@keyframes wife-wave {
+  0%, 100% { transform: rotate(8deg); }
+  18%, 78% { transform: rotate(-112deg); }
+}
+@keyframes wife-forearm {
+  0%, 100% { transform: rotate(-5deg); }
+  18%, 38%, 58%, 78% { transform: rotate(-48deg); }
+  28%, 48%, 68% { transform: rotate(-78deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blond-wife.is-active { animation: none; opacity: 1; transform: none; }
+  .blond-wife.is-active .wife-upper :is(.shoulder, .elbow) { animation: none; }
+  .maltese.is-profile :is(.dog-pose, .leg-near, .leg-far, .dog-tail) { transform: none; }
+}
+/* family-characters:end */

@@ -1,0 +1,865 @@
+{
+  "PERSONAL": true,
+  "PROJECTS": {
+    "orbit": {
+      "name": "Orbit",
+      "company": "Pedro Huguenin",
+      "mark": "petal",
+      "year": "2026",
+      "type": "Full stack · Produto · IA aplicada",
+      "tagline": "Uma central pessoal para organizar tarefas, hábitos, finanças, notas, foco e treinos. Produto full stack com persistência real e integração opcional de IA para registrar despesas por áudio.",
+      "intro": "Uma central pessoal para organizar tarefas, hábitos, finanças, notas, foco e treinos. Produto full stack com persistência real e integração opcional de IA para registrar despesas por áudio.",
+      "meta": [
+        [
+          "Projeto",
+          "Projeto próprio"
+        ],
+        [
+          "Tecnologias",
+          "Python · FastAPI · PostgreSQL · React · TypeScript · Docker · Gemini API"
+        ]
+      ],
+      "live": "https://orbit-huguenin.onrender.com",
+      "metrics": [],
+      "sections": [
+        [
+          "Produto",
+          "O dia a dia, conectado",
+          "O Orbit reúne organização pessoal em uma aplicação responsiva, disponível em português, inglês e alemão. Dashboard e busca conectam os módulos; a experiência vai da interface às regras de negócio, autenticação e operação.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/02-dashboard.png",
+          "Dashboard · Captura real com dados fictícios"
+        ],
+        [
+          "Organização",
+          "Tarefas e hábitos com contexto",
+          "Listas, prioridades, prazos, tags e checklists organizam as entregas. Hábitos combinam metas e frequência com registros de quantidade, calendário, aderência e sequências para acompanhar a consistência.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/03-tasks.png",
+          "Tarefas · Captura real com dados fictícios"
+        ],
+        [
+          "Finanças",
+          "Muito além de registrar gastos",
+          "Contas, categorias, receitas, despesas, transferências e recorrências. Cartões incluem parcelas, fechamento, vencimento, pagamentos parciais e estornos. Valores em centavos preservam a soma das parcelas; pagar uma fatura não duplica a despesa da compra.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/05-finance.png",
+          "Finanças · Captura real com dados fictícios"
+        ],
+        [
+          "Notas & Diário",
+          "Espaço para pensar e registrar",
+          "Pastas e registros por data convivem em um editor rico com listas, checklists, código e links. Salvamento automático, versões otimistas e gravações serializadas ajudam a proteger as edições. Favoritos, busca e lixeira completam a organização.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/10-journal.png",
+          "Notas & Diário · Captura real com dados fictícios"
+        ],
+        [
+          "Jardim de Foco",
+          "Concentração que ganha forma",
+          "Sessões de foco permitem pausas, retomadas e intervalos. Cada conclusão adiciona uma árvore ao jardim, com quatro estágios visuais e dez modelos em ciclos sem repetição. O prazo fica no servidor: navegar ou recarregar não perde a sessão.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/11-focus.png",
+          "Jardim de Foco · Captura real com dados fictícios"
+        ],
+        [
+          "Treinos",
+          "Da rotina ao histórico",
+          "Rotinas reutilizáveis, sessões retomáveis e registro de carga, repetições e RPE/RIR. Histórico, volume e recordes acompanham a evolução. Snapshots preservam os treinos realizados mesmo quando a rotina original é editada.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/08-workouts.png",
+          "Treinos · Captura real com dados fictícios"
+        ],
+        [
+          "IA aplicada",
+          "Da voz ao lançamento financeiro",
+          "Na conta pessoal, o bot opcional do Telegram recebe áudio e usa Gemini para interpretar a despesa. Informações ausentes são esclarecidas por texto antes da confirmação. Inbox/outbox no PostgreSQL e um worker embutido sustentam o processamento. Na demonstração, esse fluxo é simulado: nenhum áudio real é enviado ao provedor.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/14-telegram.png",
+          "Telegram · simulação da demo · Captura real com dados fictícios"
+        ],
+        [
+          "Arquitetura",
+          "Um monólito modular, contratos claros",
+          "React e TypeScript consomem uma API FastAPI com Pydantic, SQLAlchemy e Alembic. Tipos do frontend são gerados pelo OpenAPI. A SPA e a API compartilham uma imagem Docker e a mesma origem; PostgreSQL centraliza o estado. O núcleo funciona sem Gemini, Telegram, Redis ou microsserviços."
+        ],
+        [
+          "Segurança",
+          "Identidades separadas, dados protegidos",
+          "Cada visitante da demo recebe seu próprio conjunto de dados e um token temporário. A API aplica escopo por proprietário e o banco protege relações com chaves compostas. Contas pessoais usam hash scrypt, cookie HttpOnly, CSRF e limite de tentativas. Operações sensíveis usam idempotência, transações e controle de concorrência."
+        ],
+        [
+          "Demonstração",
+          "Experimente de verdade",
+          "A demo dispensa cadastro e permite criar, editar e persistir registros fictícios. Cada sessão dura 24 horas e pode ser reiniciada sem afetar outros visitantes. A primeira abertura pode demorar enquanto a hospedagem desperta. O Telegram permanece explicitamente simulado."
+        ],
+        [
+          "Qualidade & operação",
+          "Do teste ao deploy",
+          "pytest com PostgreSQL real, Vitest/Testing Library e Playwright cobrem domínio, componentes e jornadas desktop/mobile. Ruff, mypy e TypeScript complementam a validação. Docker multi-stage, migrações, health checks, logs estruturados e rotinas de backup apoiam a operação. A publicação usa Render e Neon; Terraform/AWS é um laboratório separado."
+        ]
+      ],
+      "story": [
+        [
+          "Produto",
+          "O dia a dia, conectado",
+          "O Orbit reúne organização pessoal em uma aplicação responsiva, disponível em português, inglês e alemão. Dashboard e busca conectam os módulos; a experiência vai da interface às regras de negócio, autenticação e operação.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/02-dashboard.png",
+          "Dashboard · Captura real com dados fictícios"
+        ],
+        [
+          "Organização",
+          "Tarefas e hábitos com contexto",
+          "Listas, prioridades, prazos, tags e checklists organizam as entregas. Hábitos combinam metas e frequência com registros de quantidade, calendário, aderência e sequências para acompanhar a consistência.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/03-tasks.png",
+          "Tarefas · Captura real com dados fictícios"
+        ],
+        [
+          "Finanças",
+          "Muito além de registrar gastos",
+          "Contas, categorias, receitas, despesas, transferências e recorrências. Cartões incluem parcelas, fechamento, vencimento, pagamentos parciais e estornos. Valores em centavos preservam a soma das parcelas; pagar uma fatura não duplica a despesa da compra.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/05-finance.png",
+          "Finanças · Captura real com dados fictícios"
+        ],
+        [
+          "Notas & Diário",
+          "Espaço para pensar e registrar",
+          "Pastas e registros por data convivem em um editor rico com listas, checklists, código e links. Salvamento automático, versões otimistas e gravações serializadas ajudam a proteger as edições. Favoritos, busca e lixeira completam a organização.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/10-journal.png",
+          "Notas & Diário · Captura real com dados fictícios"
+        ],
+        [
+          "Jardim de Foco",
+          "Concentração que ganha forma",
+          "Sessões de foco permitem pausas, retomadas e intervalos. Cada conclusão adiciona uma árvore ao jardim, com quatro estágios visuais e dez modelos em ciclos sem repetição. O prazo fica no servidor: navegar ou recarregar não perde a sessão.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/11-focus.png",
+          "Jardim de Foco · Captura real com dados fictícios"
+        ],
+        [
+          "Treinos",
+          "Da rotina ao histórico",
+          "Rotinas reutilizáveis, sessões retomáveis e registro de carga, repetições e RPE/RIR. Histórico, volume e recordes acompanham a evolução. Snapshots preservam os treinos realizados mesmo quando a rotina original é editada.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/08-workouts.png",
+          "Treinos · Captura real com dados fictícios"
+        ],
+        [
+          "IA aplicada",
+          "Da voz ao lançamento financeiro",
+          "Na conta pessoal, o bot opcional do Telegram recebe áudio e usa Gemini para interpretar a despesa. Informações ausentes são esclarecidas por texto antes da confirmação. Inbox/outbox no PostgreSQL e um worker embutido sustentam o processamento. Na demonstração, esse fluxo é simulado: nenhum áudio real é enviado ao provedor.",
+          "https://github.com/Hugueninfer/orbit/raw/main/docs/screenshots/showcase/14-telegram.png",
+          "Telegram · simulação da demo · Captura real com dados fictícios"
+        ],
+        [
+          "Arquitetura",
+          "Um monólito modular, contratos claros",
+          "React e TypeScript consomem uma API FastAPI com Pydantic, SQLAlchemy e Alembic. Tipos do frontend são gerados pelo OpenAPI. A SPA e a API compartilham uma imagem Docker e a mesma origem; PostgreSQL centraliza o estado. O núcleo funciona sem Gemini, Telegram, Redis ou microsserviços."
+        ],
+        [
+          "Segurança",
+          "Identidades separadas, dados protegidos",
+          "Cada visitante da demo recebe seu próprio conjunto de dados e um token temporário. A API aplica escopo por proprietário e o banco protege relações com chaves compostas. Contas pessoais usam hash scrypt, cookie HttpOnly, CSRF e limite de tentativas. Operações sensíveis usam idempotência, transações e controle de concorrência."
+        ],
+        [
+          "Demonstração",
+          "Experimente de verdade",
+          "A demo dispensa cadastro e permite criar, editar e persistir registros fictícios. Cada sessão dura 24 horas e pode ser reiniciada sem afetar outros visitantes. A primeira abertura pode demorar enquanto a hospedagem desperta. O Telegram permanece explicitamente simulado."
+        ],
+        [
+          "Qualidade & operação",
+          "Do teste ao deploy",
+          "pytest com PostgreSQL real, Vitest/Testing Library e Playwright cobrem domínio, componentes e jornadas desktop/mobile. Ruff, mypy e TypeScript complementam a validação. Docker multi-stage, migrações, health checks, logs estruturados e rotinas de backup apoiam a operação. A publicação usa Render e Neon; Terraform/AWS é um laboratório separado."
+        ]
+      ],
+      "results": [],
+      "quote": null,
+      "gallery": [],
+      "showcase": []
+    },
+    "workflow": {
+      "name": "Workflow",
+      "company": "Pedro Huguenin",
+      "mark": "petal",
+      "year": "2026",
+      "type": "Full stack · Automação",
+      "tagline": "Plataforma de gestão que reúne projetos, tarefas, quadros, faturamento e controle de tempo, com permissões e organização multi-tenant.",
+      "intro": "Plataforma de gestão que reúne projetos, tarefas, quadros, faturamento e controle de tempo, com permissões e organização multi-tenant.",
+      "meta": [
+        [
+          "Projeto",
+          "Repositório privado"
+        ],
+        [
+          "Tecnologias",
+          "PHP 8.3 · Laravel · React 19 · Sanctum · Docker"
+        ]
+      ],
+      "live": "",
+      "metrics": [],
+      "sections": [
+        [
+          "Produto",
+          "Organização em um só lugar",
+          "Projetos e tarefas com subtarefas, comentários e anexos. Quadros, faturamento e controle de tempo integram a organização do trabalho em uma única plataforma."
+        ],
+        [
+          "Arquitetura",
+          "Backend com limites claros",
+          "API Laravel organizada em Controller, Service, Repository e Model. Autenticação Sanctum com cookies e CSRF, middleware de tenant e permissões por operação. Frontend React com Vite, Tailwind, arrastar e soltar e Excalidraw."
+        ],
+        [
+          "Automação",
+          "Integração com Fathom",
+          "Integração via webhook com Fathom para conectar eventos de reuniões ao fluxo de gestão de tarefas. Uma aplicação de automação sobre a arquitetura do produto."
+        ]
+      ],
+      "story": [
+        [
+          "Produto",
+          "Organização em um só lugar",
+          "Projetos e tarefas com subtarefas, comentários e anexos. Quadros, faturamento e controle de tempo integram a organização do trabalho em uma única plataforma."
+        ],
+        [
+          "Arquitetura",
+          "Backend com limites claros",
+          "API Laravel organizada em Controller, Service, Repository e Model. Autenticação Sanctum com cookies e CSRF, middleware de tenant e permissões por operação. Frontend React com Vite, Tailwind, arrastar e soltar e Excalidraw."
+        ],
+        [
+          "Automação",
+          "Integração com Fathom",
+          "Integração via webhook com Fathom para conectar eventos de reuniões ao fluxo de gestão de tarefas. Uma aplicação de automação sobre a arquitetura do produto."
+        ]
+      ],
+      "results": [],
+      "quote": null,
+      "gallery": [],
+      "showcase": []
+    }
+  },
+  "PROJECT_ORDER": [
+    "orbit",
+    "workflow"
+  ],
+  "WORK_FEED": [],
+  "WORK": [],
+  "AI_WORK": [],
+  "AI_TOOLS": [
+    {
+      "id": "modelcontextprotocol",
+      "name": "MCP",
+      "role": "Especialização em andamento",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/modelcontextprotocol.svg"
+    },
+    {
+      "id": "langchain",
+      "name": "LangChain",
+      "role": "Especialização em andamento",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/langchain.svg"
+    },
+    {
+      "id": "langgraph",
+      "name": "LangGraph",
+      "role": "Especialização em andamento",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/langgraph.svg"
+    },
+    {
+      "id": "pydantic",
+      "name": "Pydantic",
+      "role": "Backend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/pydantic.svg"
+    },
+    {
+      "id": "tanstack",
+      "name": "TanStack Query",
+      "role": "Frontend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/tanstack.svg"
+    },
+    {
+      "id": "reacthookform",
+      "name": "React Hook Form",
+      "role": "Frontend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/reacthookform.svg"
+    },
+    {
+      "id": "livewire",
+      "name": "Livewire",
+      "role": "Frontend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/livewire.svg"
+    },
+    {
+      "id": "testinglibrary",
+      "name": "Testing Library",
+      "role": "Testes",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/testinglibrary.svg"
+    },
+    {
+      "id": "dockercompose",
+      "name": "Docker Compose",
+      "role": "Infraestrutura",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/docker.svg"
+    },
+    {
+      "id": "openapiinitiative",
+      "name": "OpenAPI",
+      "role": "Backend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/openapiinitiative.svg"
+    },
+    {
+      "id": "render",
+      "name": "Render",
+      "role": "Infraestrutura",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/render.svg"
+    },
+    {
+      "id": "neon",
+      "name": "Neon",
+      "role": "Dados",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/neon.svg"
+    },
+    {
+      "id": "php",
+      "name": "PHP",
+      "role": "Backend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/php.svg"
+    },
+    {
+      "id": "laravel",
+      "name": "Laravel",
+      "role": "Backend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/laravel.svg"
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "role": "Backend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/python.svg"
+    },
+    {
+      "id": "fastapi",
+      "name": "FastAPI",
+      "role": "Backend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/fastapi.svg"
+    },
+    {
+      "id": "mysql",
+      "name": "MySQL",
+      "role": "Dados",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/mysql.svg"
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "role": "Dados",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/postgresql.svg"
+    },
+    {
+      "id": "redis",
+      "name": "Redis",
+      "role": "Cache",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/redis.svg"
+    },
+    {
+      "id": "sqlalchemy",
+      "name": "SQLAlchemy",
+      "role": "Dados",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/sqlalchemy.svg"
+    },
+    {
+      "id": "rabbitmq",
+      "name": "RabbitMQ",
+      "role": "Mensageria",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/rabbitmq.svg"
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "role": "Frontend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/javascript.svg"
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript",
+      "role": "Frontend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/typescript.svg"
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "role": "Frontend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/react.svg"
+    },
+    {
+      "id": "vuejs",
+      "name": "Vue.js",
+      "role": "Frontend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/vuejs.svg"
+    },
+    {
+      "id": "vitejs",
+      "name": "Vite",
+      "role": "Frontend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/vitejs.svg"
+    },
+    {
+      "id": "html5",
+      "name": "HTML5",
+      "role": "Frontend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/html5.svg"
+    },
+    {
+      "id": "css3",
+      "name": "CSS3",
+      "role": "Frontend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/css.svg"
+    },
+    {
+      "id": "bootstrap",
+      "name": "Bootstrap",
+      "role": "Frontend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/bootstrap.svg"
+    },
+    {
+      "id": "tailwindcss",
+      "name": "Tailwind CSS",
+      "role": "Frontend",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/tailwindcss.svg"
+    },
+    {
+      "id": "pytest",
+      "name": "pytest",
+      "role": "Testes",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/pytest.svg"
+    },
+    {
+      "id": "vitest",
+      "name": "Vitest",
+      "role": "Testes",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/vitest.svg"
+    },
+    {
+      "id": "playwright",
+      "name": "Playwright",
+      "role": "Testes",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/playwright.svg"
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "role": "Versionamento",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/git.svg"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "role": "Código",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/github.svg"
+    },
+    {
+      "id": "githubactions",
+      "name": "GitHub Actions",
+      "role": "CI/CD",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/githubactions.svg"
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "role": "Infraestrutura",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/docker.svg"
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "role": "Infraestrutura",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/linux.svg"
+    },
+    {
+      "id": "terraform",
+      "name": "Terraform",
+      "role": "Infraestrutura",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/terraform.svg"
+    },
+    {
+      "id": "amazonwebservices",
+      "name": "AWS",
+      "role": "Fundamentos",
+      "ext": "svg",
+      "iconUrl": "/assets/custom/icons/amazonwebservices.svg"
+    }
+  ],
+  "SCREENSHOTS": [],
+  "MOSAIC": [],
+  "LIFE_SHOTS": [
+    "/media/pedro/portrait.jpeg",
+    "/media/pedro/couple.jpeg",
+    "/media/pedro/graduation.jpeg",
+    "/media/pedro/maltese.jpeg",
+    "/media/pedro/pool.jpeg"
+  ],
+  "MOSAIC_LEAD": "/media/pedro/portrait.jpeg",
+  "COMPANIES": [
+    {
+      "name": "Before",
+      "role": "Engenheiro de Software",
+      "span": "07/2024 — atual",
+      "note": "07/2024 — atual · Arquitetura multi-tenant em PHP e Laravel, APIs, Redis e performance. Redução de 70% no tempo de onboarding de clientes.",
+      "logo": "",
+      "tag": "07/2024 — atual"
+    },
+    {
+      "name": "Formula X — B2B Growth",
+      "role": "Desenvolvedor Web",
+      "span": "08/2023 — atual",
+      "note": "08/2023 — atual · Projetos internacionais, automações e integrações. Economia média de 20 horas mensais e melhoria de aproximadamente 60% no PageSpeed.",
+      "logo": "",
+      "tag": "08/2023 — atual"
+    },
+    {
+      "name": "SENAI Soluções Digitais",
+      "role": "Engenheiro de Software Full Stack",
+      "span": "12/2022 — 05/2024",
+      "note": "12/2022 — 05/2024 · APIs Laravel e otimização de PostgreSQL. Buscas e filtros 50% mais rápidos para sistemas com milhares de usuários.",
+      "logo": "",
+      "tag": "12/2022 — 05/2024"
+    },
+    {
+      "name": "Sertras",
+      "role": "Engenheiro de Software Full Stack",
+      "span": "03/2022 — 12/2022",
+      "note": "03/2022 — 12/2022 · Plataforma de avaliação de fornecedores e integrações governamentais. Redução de aproximadamente 40% na análise manual.",
+      "logo": "",
+      "tag": "03/2022 — 12/2022"
+    },
+    {
+      "name": "Dev4B",
+      "role": "Desenvolvedor Trainee",
+      "span": "03/2021 — 03/2022",
+      "note": "03/2021 — 03/2022 · Sistemas de gestão com PHP, Laravel e MySQL, automação de processos, manutenção e publicação em Ubuntu.",
+      "logo": "",
+      "tag": "03/2021 — 03/2022"
+    }
+  ],
+  "STREET_BRANDS": [
+    {
+      "name": "Before",
+      "role": "Engenheiro de Software"
+    },
+    {
+      "name": "Formula X — B2B Growth",
+      "role": "Desenvolvedor Web"
+    },
+    {
+      "name": "SENAI Soluções Digitais",
+      "role": "Engenheiro de Software Full Stack"
+    },
+    {
+      "name": "Sertras",
+      "role": "Engenheiro de Software Full Stack"
+    },
+    {
+      "name": "Dev4B",
+      "role": "Desenvolvedor Trainee"
+    }
+  ],
+  "STREET_AHEAD": "Próximos projetos",
+  "NAV_LABELS": {
+    "home": "Início",
+    "work": "Projetos",
+    "ai": "IA aplicada",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "NAV_ITEMS": [
+    {
+      "label": "Início",
+      "href": "/"
+    },
+    {
+      "label": "Projetos",
+      "href": "/work"
+    },
+    {
+      "label": "IA aplicada",
+      "href": "/ai"
+    },
+    {
+      "label": "Sobre",
+      "href": "/about"
+    }
+  ],
+  "NAV_CTA": {
+    "label": "Contato",
+    "href": "/contact"
+  },
+  "SITE": {
+    "email": "hugueninpedro@gmail.com",
+    "availability": "Software com foco em IA aplicada",
+    "location": "Rio de Janeiro · Brasil",
+    "disciplines": "Backend · Full stack · IA aplicada",
+    "responseTime": "assim que possível",
+    "socials": [
+      {
+        "label": "WhatsApp",
+        "url": "https://wa.me/5524998770906"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/pedro-huguenin"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/Hugueninfer"
+      }
+    ]
+  },
+  "STATS": [
+    {
+      "v": "5+",
+      "l": "Anos em desenvolvimento de software"
+    },
+    {
+      "v": "70%",
+      "l": "Menos tempo de onboarding · Before"
+    },
+    {
+      "v": "50%",
+      "l": "Buscas mais rápidas · SENAI"
+    },
+    {
+      "v": "20h",
+      "l": "Economia mensal média · Formula X"
+    }
+  ],
+  "FOCUS": [
+    {
+      "title": "Backend & arquitetura",
+      "yr": "5+",
+      "unit": " anos",
+      "desc": "PHP, Laravel, APIs REST e sistemas multi-tenant. Minha base profissional em engenharia de software."
+    },
+    {
+      "title": "Aplicações full stack",
+      "yr": "",
+      "unit": " Na prática",
+      "desc": "Interfaces, dados e integrações trabalhando juntos. Orbit e Workflow conectam essas camadas em projetos próprios."
+    },
+    {
+      "title": "Inteligência artificial",
+      "yr": "",
+      "unit": " Especialização em andamento",
+      "desc": "Transição para IA aplicada com base em engenharia de software e pós-graduação em andamento, com foco em LLMs, RAG e agentes."
+    }
+  ],
+  "COPY": {
+    "home": {
+      "heroTitle": [
+        "Engenharia de software.",
+        "Meu próximo passo: *IA aplicada.*"
+      ],
+      "heroSub": "Sou Pedro Huguenin, engenheiro de software com mais de 5 anos de experiência em backend, APIs e sistemas multi-tenant. Estou direcionando minha carreira para IA aplicada, conectando essa base à construção de aplicações inteligentes, com foco em arquitetura, segurança e qualidade.",
+      "heroCta": "Conheça os projetos",
+      "heroCtaHref": "/work",
+      "heroCta2": "Minha trajetória",
+      "heroCta2Href": "/about",
+      "focusTitle": [
+        "Backend sólido.",
+        "*Novas possibilidades com IA.*"
+      ],
+      "focusSub": "Arquitetura, integrações e qualidade como base para aplicações inteligentes.",
+      "statsTitle": [
+        "Experiência que gera",
+        "*resultado.*"
+      ],
+      "statsSub": "Melhorias em desempenho, automação e operação nos projetos em que atuei.",
+      "statsCta": "Veja minha trajetória",
+      "statsCtaHref": "/about",
+      "companiesTitle": [
+        "Onde construí *experiência*"
+      ],
+      "companiesNote": "Do primeiro sistema de gestão a arquiteturas multi-tenant e projetos internacionais.",
+      "toolsTitle": [
+        "Tecnologia com *propósito.*"
+      ],
+      "toolsSub": "Backend, interfaces, dados, testes e infraestrutura: uma stack voltada à construção e evolução de aplicações.",
+      "expertiseHeading": "Minha bancada",
+      "expertiseTitle": "Bancada interativa — software e IA aplicada",
+      "expertiseSub": "Explore arquitetura, IA, interfaces e produto nesta bancada interativa. Os fluxos são demonstrações visuais.",
+      "expertiseTabs": [
+        {
+          "name": "Backend",
+          "group": "Arquitetura",
+          "year": "Experiência",
+          "note": "APIs, camadas e decisões de engenharia."
+        },
+        {
+          "name": "IA aplicada",
+          "group": "Especialização",
+          "year": "Em andamento",
+          "note": "Entrada, modelo, validação e persistência: a engenharia por trás de uma aplicação com IA."
+        },
+        {
+          "name": "Interfaces",
+          "group": "Full stack",
+          "year": "Componentes",
+          "note": "Da estrutura da aplicação a uma interface consistente."
+        },
+        {
+          "name": "Produto",
+          "group": "Projetos",
+          "year": "Na prática",
+          "note": "Orbit e Workflow: contexto, implementação e evolução."
+        }
+      ]
+    },
+    "work": {
+      "heroEyebrow": "Pedro Huguenin · Projetos",
+      "railTitle": [
+        "Código, produto",
+        "*e engenharia na prática.*"
+      ],
+      "railIntro": "Orbit e Workflow conectam backend, interfaces e integrações para resolver problemas de organização, automação e processamento de dados.",
+      "railCtaShots": "Ver os projetos",
+      "railCtaShotsHref": "#projetos",
+      "railCtaAi": "Meu foco em IA",
+      "railCtaAiHref": "/ai",
+      "railCardCta": "Conhecer projeto",
+      "ndaNames": [],
+      "galleryHeading": [],
+      "galleryIntro": "",
+      "spotlightTitle": [
+        "Software e *automação.*"
+      ],
+      "spotlightDesc": "Da arquitetura à experiência de uso."
+    },
+    "ai": {
+      "heroTitle": [
+        "Do backend",
+        "*à IA aplicada.*"
+      ],
+      "heroSub": "Minha transição para IA aplicada é uma evolução de mais de 5 anos construindo software. Conecto experiência em backend e integrações a projetos com IA, com especialização em Engenharia de Software em IA Aplicada em andamento.",
+      "heroCta": "Ver aplicações",
+      "heroCtaHref": "#ai-work",
+      "heroCta2": "Vamos conversar",
+      "heroCta2Href": "/contact",
+      "loopTitle": [
+        "Meu foco em",
+        "*IA aplicada.*"
+      ],
+      "loopSub": "Áreas da minha especialização em andamento, orientadas à integração entre modelos, dados e aplicações.",
+      "loopSteps": [
+        {
+          "k": "LLMs",
+          "t": "Modelos e integração",
+          "d": "APIs generativas, engenharia de prompts e function calling para conectar modelos a aplicações."
+        },
+        {
+          "k": "Conhecimento",
+          "t": "RAG e embeddings",
+          "d": "Recuperação de contexto, bancos vetoriais e avaliação de respostas baseadas em documentos."
+        },
+        {
+          "k": "Agentes",
+          "t": "Fluxos com ferramentas",
+          "d": "MCP, LangChain, LangGraph, memória e supervisão humana em fluxos de agentes."
+        },
+        {
+          "k": "Engenharia",
+          "t": "Qualidade e operação",
+          "d": "Observabilidade, avaliação, segurança e governança ao longo do ciclo de vida da aplicação."
+        }
+      ],
+      "workTitle": [
+        "Integrações que viram",
+        "*funcionalidade.*"
+      ],
+      "workSub": "No Orbit, a integração com Gemini interpreta despesas por áudio. No Workflow, webhooks conectam eventos externos à gestão de tarefas.",
+      "stackTitle": [
+        "Minha base",
+        "*de engenharia.*"
+      ],
+      "stackSub": "Da API à interface, com atenção à qualidade e à operação."
+    },
+    "about": {
+      "heroLead": "Sou Pedro Huguenin Ferreira, engenheiro de software no Rio de Janeiro. Atuo com PHP, Laravel, APIs e sistemas multi-tenant. Minha próxima etapa conecta essa trajetória à *engenharia de software com IA aplicada.*",
+      "statement": [
+        "Experiência em backend.",
+        "Visão de produto.",
+        "Uma nova direção:",
+        "*IA aplicada.*"
+      ],
+      "statementBody": "Minha carreira foi construída na entrega e evolução de sistemas. Estou direcionando essa experiência para IA aplicada, com projetos próprios e pós-graduação em andamento, mantendo arquitetura, segurança e qualidade no centro das decisões.",
+      "statementEyebrow": "Minha trajetória",
+      "credTitle": [
+        "Experiência em software.",
+        "*Evolução com propósito.*"
+      ],
+      "credMeta": "2021 — atual · Rio de Janeiro, Brasil",
+      "credLead": "APIs REST, integrações, bancos de dados e aplicações full stack. Meu foco é entender o problema, construir uma solução consistente e cuidar do que acontece depois da entrega.",
+      "companiesTitle": [
+        "Experiência *profissional*"
+      ],
+      "companiesNote": "Experiência em desenvolvimento, integrações e evolução de sistemas."
+    },
+    "contact": {
+      "heroTitle": [
+        "Vamos *conversar?*"
+      ],
+      "heroSub": "Vamos conversar sobre software, automação e IA aplicada. Estou em transição para essa área e busco oportunidades em que minha experiência em backend faça a diferença. Entre em contato pelo WhatsApp ou por e-mail."
+    },
+    "notFound": {
+      "heroTitle": [
+        "Página *não encontrada*"
+      ],
+      "heroSub": "Este endereço não existe no portfólio. Volte ao início para conhecer meus projetos.",
+      "bubble": "Não encontrei esta página.",
+      "ctaLabel": "Voltar ao início"
+    },
+    "privacy": {
+      "heroTitle": [
+        "Privacidade"
+      ],
+      "heroSub": "Informações sobre esta versão local do portfólio.",
+      "updated": "Atualizado em 4 de setembro de 2026",
+      "contactLabel": "Dúvidas",
+      "sections": [
+        {
+          "h": "Nesta versão local",
+          "p": [
+            "Não há cadastro ou formulário. A coleta de analytics da referência está desativada. Textos, fontes, fotos pessoais e ícones SVG são servidos localmente. As capturas do Orbit são carregadas do repositório público no GitHub, que recebe as requisições dessas imagens.",
+            "O navegador pode guardar preferências de aparência. Links para WhatsApp, GitHub e LinkedIn levam a serviços externos, sujeitos às suas próprias políticas."
+          ]
+        }
+      ]
+    }
+  }
+}
