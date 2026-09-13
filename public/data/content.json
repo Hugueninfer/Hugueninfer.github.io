@@ -168,58 +168,144 @@
       "gallery": [],
       "showcase": []
     },
-    "workflow": {
-      "name": "Workflow",
+    "agency-hub": {
+      "name": "Agency Hub",
       "company": "Pedro Huguenin",
       "mark": "petal",
       "year": "2026",
-      "type": "Full stack · Automação",
-      "tagline": "Plataforma de gestão que reúne projetos, tarefas, quadros, faturamento e controle de tempo, com permissões e organização multi-tenant.",
-      "intro": "Plataforma de gestão que reúne projetos, tarefas, quadros, faturamento e controle de tempo, com permissões e organização multi-tenant.",
+      "type": "Full stack · SaaS · Multi-tenant",
+      "tagline": "Uma central operacional para agências gerenciarem projetos, tarefas, horas, faturas e boards em um workspace multi-tenant, com permissões granulares e uma demonstração isolada por 24 horas.",
+      "intro": "Uma central operacional para agências gerenciarem projetos, tarefas, horas, faturas e boards em um workspace multi-tenant, com permissões granulares e uma demonstração isolada por 24 horas.",
       "meta": [
         [
           "Projeto",
-          "Repositório privado"
+          "Projeto próprio"
         ],
         [
           "Tecnologias",
-          "PHP 8.3 · Laravel · React 19 · Sanctum · Docker"
+          "PHP 8.4 · Laravel 13 · MySQL 8.4 · React 19 · Sanctum · Docker · Render"
         ]
       ],
-      "live": "",
+      "live": "https://agency-hub-bf8l.onrender.com",
       "metrics": [],
       "sections": [
         [
-          "Produto",
-          "Organização em um só lugar",
-          "Projetos e tarefas com subtarefas, comentários e anexos. Quadros, faturamento e controle de tempo integram a organização do trabalho em uma única plataforma."
+          "Demonstração",
+          "Entre sem cadastro",
+          "A entrada separa contas pessoais da experiência temporária. Cada visitante inicia uma demonstração isolada por 24 horas, com dados fictícios próprios e liberdade para explorar o produto sem compartilhar uma conta pública.",
+          "https://github.com/Hugueninfer/agency-hub/raw/main/docs/screenshots/login.jpg",
+          "Entrada · Demonstração online sem cadastro"
+        ],
+        [
+          "Visão geral",
+          "A operação no mesmo dashboard",
+          "Indicadores de projetos, tarefas, boards, horas do mês e atividade recente transformam o workspace em uma visão rápida da agência. O dashboard nasce dos mesmos dados que alimentam o restante da aplicação.",
+          "https://github.com/Hugueninfer/agency-hub/raw/main/docs/screenshots/dashboard.jpg",
+          "Dashboard · Captura real com dados fictícios"
+        ],
+        [
+          "Projetos",
+          "Contexto para cada iniciativa",
+          "O diretório reúne projetos ativos, responsáveis e informações operacionais. Criar, editar, arquivar e excluir mantém o portfólio de trabalho organizado dentro do tenant da equipe.",
+          "https://github.com/Hugueninfer/agency-hub/raw/main/docs/screenshots/projects.jpg",
+          "Projetos · Captura real com dados fictícios"
+        ],
+        [
+          "Kanban",
+          "Do plano à entrega",
+          "Tarefas avançam por etapas e podem ser filtradas por projeto, responsável ou coluna. Cada card concentra atribuições, subtarefas, comentários e o contexto necessário para a execução.",
+          "https://github.com/Hugueninfer/agency-hub/raw/main/docs/screenshots/tasks.jpg",
+          "Tarefas · Captura real com dados fictícios"
+        ],
+        [
+          "Tempo & faturamento",
+          "Trabalho registrado, cobrança acompanhada",
+          "O time pode iniciar cronômetros ou lançar horas manualmente, filtrar registros e exportar relatórios. Faturas passam por rascunho, envio e pagamento sem sair do mesmo fluxo operacional."
+        ],
+        [
+          "Colaboração",
+          "Boards, comentários e notificações",
+          "Boards com Excalidraw apoiam o trabalho visual, enquanto comentários, subtarefas e notificações mantêm decisões e mudanças próximas das entregas."
         ],
         [
           "Arquitetura",
-          "Backend com limites claros",
-          "API Laravel organizada em Controller, Service, Repository e Model. Autenticação Sanctum com cookies e CSRF, middleware de tenant e permissões por operação. Frontend React com Vite, Tailwind, arrastar e soltar e Excalidraw."
+          "Um monólito modular, uma única origem",
+          "React 19 e Vite entregam a interface; Laravel 13 e PHP 8.4 expõem a API REST. SPA e API compartilham a mesma imagem Docker e origem, enquanto o MySQL 8.4 centraliza a persistência com migrações e escopo multi-tenant."
         ],
         [
-          "Automação",
-          "Integração com Fathom",
-          "Integração via webhook com Fathom para conectar eventos de reuniões ao fluxo de gestão de tarefas. Uma aplicação de automação sobre a arquitetura do produto."
+          "Segurança",
+          "Tenant e permissões aplicados no servidor",
+          "A identidade autenticada determina o tenant, e a API valida todas as relações sensíveis. Sanctum protege contas pessoais; funções e permissões explícitas controlam cada operação. A conexão com o MySQL usa TLS e certificado validado em runtime."
+        ],
+        [
+          "Demonstração 24h",
+          "Dados reais de produto, isolamento temporário",
+          "Ao entrar na demo, a aplicação cria um tenant e um usuário exclusivos, carrega a fixture padrão e salva apenas o hash do token. A validade é absoluta: atividade não renova as 24 horas, e sessões vencidas são removidas sem afetar outras contas."
+        ],
+        [
+          "Qualidade & operação",
+          "Testado do domínio ao deploy",
+          "PHPUnit cobre autenticação, RBAC, isolamento multi-tenant e regras do produto; Vitest e Testing Library validam a interface. Docker multi-stage, health check e validadores de infraestrutura sustentam a publicação gratuita no Render com MySQL gerenciado no Aiven."
         ]
       ],
       "story": [
         [
-          "Produto",
-          "Organização em um só lugar",
-          "Projetos e tarefas com subtarefas, comentários e anexos. Quadros, faturamento e controle de tempo integram a organização do trabalho em uma única plataforma."
+          "Demonstração",
+          "Entre sem cadastro",
+          "A entrada separa contas pessoais da experiência temporária. Cada visitante inicia uma demonstração isolada por 24 horas, com dados fictícios próprios e liberdade para explorar o produto sem compartilhar uma conta pública.",
+          "https://github.com/Hugueninfer/agency-hub/raw/main/docs/screenshots/login.jpg",
+          "Entrada · Demonstração online sem cadastro"
+        ],
+        [
+          "Visão geral",
+          "A operação no mesmo dashboard",
+          "Indicadores de projetos, tarefas, boards, horas do mês e atividade recente transformam o workspace em uma visão rápida da agência. O dashboard nasce dos mesmos dados que alimentam o restante da aplicação.",
+          "https://github.com/Hugueninfer/agency-hub/raw/main/docs/screenshots/dashboard.jpg",
+          "Dashboard · Captura real com dados fictícios"
+        ],
+        [
+          "Projetos",
+          "Contexto para cada iniciativa",
+          "O diretório reúne projetos ativos, responsáveis e informações operacionais. Criar, editar, arquivar e excluir mantém o portfólio de trabalho organizado dentro do tenant da equipe.",
+          "https://github.com/Hugueninfer/agency-hub/raw/main/docs/screenshots/projects.jpg",
+          "Projetos · Captura real com dados fictícios"
+        ],
+        [
+          "Kanban",
+          "Do plano à entrega",
+          "Tarefas avançam por etapas e podem ser filtradas por projeto, responsável ou coluna. Cada card concentra atribuições, subtarefas, comentários e o contexto necessário para a execução.",
+          "https://github.com/Hugueninfer/agency-hub/raw/main/docs/screenshots/tasks.jpg",
+          "Tarefas · Captura real com dados fictícios"
+        ],
+        [
+          "Tempo & faturamento",
+          "Trabalho registrado, cobrança acompanhada",
+          "O time pode iniciar cronômetros ou lançar horas manualmente, filtrar registros e exportar relatórios. Faturas passam por rascunho, envio e pagamento sem sair do mesmo fluxo operacional."
+        ],
+        [
+          "Colaboração",
+          "Boards, comentários e notificações",
+          "Boards com Excalidraw apoiam o trabalho visual, enquanto comentários, subtarefas e notificações mantêm decisões e mudanças próximas das entregas."
         ],
         [
           "Arquitetura",
-          "Backend com limites claros",
-          "API Laravel organizada em Controller, Service, Repository e Model. Autenticação Sanctum com cookies e CSRF, middleware de tenant e permissões por operação. Frontend React com Vite, Tailwind, arrastar e soltar e Excalidraw."
+          "Um monólito modular, uma única origem",
+          "React 19 e Vite entregam a interface; Laravel 13 e PHP 8.4 expõem a API REST. SPA e API compartilham a mesma imagem Docker e origem, enquanto o MySQL 8.4 centraliza a persistência com migrações e escopo multi-tenant."
         ],
         [
-          "Automação",
-          "Integração com Fathom",
-          "Integração via webhook com Fathom para conectar eventos de reuniões ao fluxo de gestão de tarefas. Uma aplicação de automação sobre a arquitetura do produto."
+          "Segurança",
+          "Tenant e permissões aplicados no servidor",
+          "A identidade autenticada determina o tenant, e a API valida todas as relações sensíveis. Sanctum protege contas pessoais; funções e permissões explícitas controlam cada operação. A conexão com o MySQL usa TLS e certificado validado em runtime."
+        ],
+        [
+          "Demonstração 24h",
+          "Dados reais de produto, isolamento temporário",
+          "Ao entrar na demo, a aplicação cria um tenant e um usuário exclusivos, carrega a fixture padrão e salva apenas o hash do token. A validade é absoluta: atividade não renova as 24 horas, e sessões vencidas são removidas sem afetar outras contas."
+        ],
+        [
+          "Qualidade & operação",
+          "Testado do domínio ao deploy",
+          "PHPUnit cobre autenticação, RBAC, isolamento multi-tenant e regras do produto; Vitest e Testing Library validam a interface. Docker multi-stage, health check e validadores de infraestrutura sustentam a publicação gratuita no Render com MySQL gerenciado no Aiven."
         ]
       ],
       "results": [],
@@ -230,7 +316,7 @@
   },
   "PROJECT_ORDER": [
     "orbit",
-    "workflow"
+    "agency-hub"
   ],
   "WORK_FEED": [],
   "WORK": [],
@@ -673,7 +759,7 @@
       "title": "Aplicações full stack",
       "yr": "",
       "unit": " Na prática",
-      "desc": "Interfaces, dados e integrações trabalhando juntos. Orbit e Workflow conectam essas camadas em projetos próprios."
+      "desc": "Interfaces, dados e integrações trabalhando juntos. Orbit e Agency Hub conectam essas camadas em projetos próprios."
     },
     {
       "title": "Inteligência artificial",
@@ -739,7 +825,7 @@
           "name": "Produto",
           "group": "Projetos",
           "year": "Na prática",
-          "note": "Orbit e Workflow: contexto, implementação e evolução."
+          "note": "Orbit e Agency Hub: contexto, implementação e evolução."
         }
       ]
     },
@@ -749,7 +835,7 @@
         "Código, produto",
         "*e engenharia na prática.*"
       ],
-      "railIntro": "Orbit e Workflow conectam backend, interfaces e integrações para resolver problemas de organização, automação e processamento de dados.",
+      "railIntro": "Orbit e Agency Hub conectam backend, interfaces e dados para resolver problemas de organização pessoal e operação de equipes.",
       "railCtaShots": "Ver os projetos",
       "railCtaShotsHref": "#projetos",
       "railCtaAi": "Meu foco em IA",
@@ -759,7 +845,7 @@
       "galleryHeading": [],
       "galleryIntro": "",
       "spotlightTitle": [
-        "Software e *automação.*"
+        "Software e *produto.*"
       ],
       "spotlightDesc": "Da arquitetura à experiência de uso."
     },
@@ -804,7 +890,7 @@
         "Integrações que viram",
         "*funcionalidade.*"
       ],
-      "workSub": "No Orbit, a integração com Gemini interpreta despesas por áudio. No Workflow, webhooks conectam eventos externos à gestão de tarefas.",
+      "workSub": "No Orbit, Gemini transforma áudio em lançamentos financeiros. No Agency Hub, uma demo multi-tenant entrega um workspace completo e isolado por 24 horas.",
       "stackTitle": [
         "Minha base",
         "*de engenharia.*"
@@ -857,7 +943,7 @@
         {
           "h": "Nesta versão local",
           "p": [
-            "Não há cadastro ou formulário. A coleta de analytics da referência está desativada. Textos, fontes, fotos pessoais e ícones SVG são servidos localmente. As capturas do Orbit são carregadas do repositório público no GitHub, que recebe as requisições dessas imagens.",
+            "Não há cadastro ou formulário. A coleta de analytics da referência está desativada. Textos, fontes, fotos pessoais e ícones SVG são servidos localmente. As capturas do Orbit e do Agency Hub são carregadas dos repositórios públicos no GitHub, que recebe as requisições dessas imagens.",
             "O navegador pode guardar preferências de aparência. Links para WhatsApp, GitHub e LinkedIn levam a serviços externos, sujeitos às suas próprias políticas."
           ]
         }

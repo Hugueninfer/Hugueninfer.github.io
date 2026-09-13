@@ -41,8 +41,7 @@ export function ProjectLinks({name}) {
   const project=projects.find(p=>p.name===name);
   if(!project)return null;
   return h.jsxs('div',{className:'personal-actions sv-pad',children:[
-    h.jsx('a',{className:'sv-btn sv-btn--amber',href:project.repo,target:'_blank',rel:'noopener noreferrer',children:project.id==='workflow'?'GitHub · acesso restrito ↗':'Ver código no GitHub ↗'}),
+    h.jsx('a',{className:'sv-btn sv-btn--amber',href:project.repo,target:'_blank',rel:'noopener noreferrer',children:'Ver código no GitHub ↗'}),
     project.live&&h.jsx('a',{className:'sv-btn sv-btn--ghost',href:project.live,target:'_blank',rel:'noopener noreferrer',children:'Abrir demonstração ↗'}),
-    project.id==='workflow'&&h.jsx('p',{children:'Repositório privado · acesso mediante autorização.'}),
   ]});
 }

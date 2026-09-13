@@ -138,7 +138,7 @@ const es = ["workspace", "ai", "system", "product"],
     ["php", "laravel", "api"],
     ["llm", "mcp", "integração"],
     ["tokens", "react", "docs"],
-    ["orbit", "workflow", "full stack"],
+    ["orbit", "agency hub", "full stack"],
   ],
   ns = () =>
     es.map((e, c) => {
@@ -711,7 +711,7 @@ function js() {
                 s.jsx("span", { className: "av" }),
                 s.jsx("p", {
                   className: "r1",
-                  children: "Workflow · plataforma de gestão",
+                  children: "Agency Hub · gestão de agências",
                 }),
                 s.jsx("p", {
                   className: "r2",

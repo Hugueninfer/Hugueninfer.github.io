@@ -1,6 +1,6 @@
 # Pedro Huguenin — Portfólio
 
-Portfólio de engenharia de software, backend e IA aplicada, com projetos Orbit e Workflow, trajetória profissional, formação e contato.
+Portfólio de engenharia de software, backend e IA aplicada, com projetos Orbit e Agency Hub, trajetória profissional, formação e contato.
 
 Site: https://hugueninfer.github.io/
 

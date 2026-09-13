@@ -1,10 +1,11 @@
 // Static publishing shell for the existing client-side portfolio. No server required.
-import {cp, mkdir, readFile, writeFile} from 'node:fs/promises';
+import {cp, mkdir, readFile, rm, writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {buildPersonalContent} from '../reference/custom/personal-content.mjs';
 
 const root=resolve(import.meta.dirname,'..');
 const out=resolve(root,'out');
+await rm(out,{recursive:true,force:true});
 await mkdir(out,{recursive:true});
 await cp(resolve(root,'public'),out,{recursive:true});
 const html=`<!doctype html>

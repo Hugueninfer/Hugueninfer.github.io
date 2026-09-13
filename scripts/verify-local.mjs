@@ -4,6 +4,7 @@ import { SourceTextModule } from 'node:vm';
 import assert from 'node:assert/strict';
 import { adaptHome, adaptAbout, adaptContact, adaptCommuter, appendFamilyStyles } from './reference-adapters.mjs';
 import { personalize } from './personal-adapters.mjs';
+import { isApprovedRemoteMedia } from './remote-media-policy.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const assets = resolve(root, 'public/assets');
@@ -46,7 +47,7 @@ for (const local of Object.values(manifest.assets)) {
 const content = JSON.parse(await readFile(resolve(root, 'public/data/content.json'), 'utf8'));
 const remoteImages = JSON.stringify(content).match(/https?:[^" ]+\.(avif|png|webp|jpg|svg)(?:\?[^" ]*)?/g) ?? [];
 const approvedIcons = new Set(content.AI_TOOLS.map(tool => tool.iconUrl).filter(Boolean));
-assert.deepEqual(remoteImages.filter(url => !approvedIcons.has(url)), [], 'Content contains unapproved nonlocal media');
+assert.deepEqual(remoteImages.filter(url => !isApprovedRemoteMedia(url, approvedIcons)), [], 'Content contains unapproved nonlocal media');
 const fonts = await readFile(resolve(root, 'public/fonts/fonts.css'), 'utf8');
 assert.ok(!fonts.includes('//cdn.'));
 for (const [, local] of fonts.matchAll(/url\(['"]([^'"]+)/g)) await stat(resolve(root, `public${local}`));
