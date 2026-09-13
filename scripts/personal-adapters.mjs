@@ -35,7 +35,7 @@ export function personalize(name,input) {
   if(name==='Console-CyBRxdTz.js') {
     code='import {fitDiagramLabel} from "./custom/diagram-label-fit.mjs";\n'+code;
     code='import {additionalStack, aiStudies} from "./custom/stack-catalog.mjs";\n'+code;
-    code=replace(code,'          className: "dg-t",\n          x: e + n / 2,','          className: "dg-t",\n          style: fitDiagramLabel(o, n),\n          x: e + n / 2,');
+    code=replace(code,'          className: "dg-t",\n          x: e + n / 2,','          className: "dg-t",\n          ...fitDiagramLabel(o, n),\n          x: e + n / 2,');
     code=replace(code,'src: B(`assets/logos/${e.id}.${e.ext || "webp"}`),','src: e.iconUrl || B(`assets/logos/${e.id}.${e.ext || "webp"}`),\n            onError: event => { const img=event.currentTarget; if (!img.dataset.fallback) { img.dataset.fallback="true"; img.src="/assets/logos/stack-fallback.svg"; } },');
     code=replace(code,'s.jsx("span", { className: "name", children: i.name }),','');
     code=replace(code,'      id: "tools",','      id: "tools",');

@@ -262,7 +262,7 @@ const ds = () => [
         }),
         s.jsx("text", {
           className: "dg-t",
-          style: fitDiagramLabel(o, n),
+          ...fitDiagramLabel(o, n),
           x: e + n / 2,
           y: c + 21.5,
           children: o,

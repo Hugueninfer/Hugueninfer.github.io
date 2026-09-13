@@ -8,8 +8,12 @@ export function fitDiagramLabel(label, boxWidth) {
   const variants = [label, ...(translations[label] ?? [])];
   const longest = Math.max(...variants.map(value => [...value].length));
   const availableWidth = Math.max(0, boxWidth - HORIZONTAL_PADDING);
-  const fittedSize = Math.floor(Math.min(DEFAULT_FONT_SIZE, availableWidth / (longest * MONO_GLYPH_RATIO)) * 10) / 10;
+  const fittedSize = Math.min(DEFAULT_FONT_SIZE, availableWidth / (longest * MONO_GLYPH_RATIO));
 
   if (fittedSize >= DEFAULT_FONT_SIZE) return undefined;
-  return {fontSize:`${fittedSize}px`,letterSpacing:'0em'};
+  return {
+    style:{fontSize:'9px',letterSpacing:'0em'},
+    textLength:availableWidth,
+    lengthAdjust:'spacingAndGlyphs',
+  };
 }
