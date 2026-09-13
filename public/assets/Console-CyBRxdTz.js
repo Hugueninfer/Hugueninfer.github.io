@@ -1,4 +1,5 @@
 import {additionalStack, aiStudies} from "./custom/stack-catalog.mjs";
+import {fitDiagramLabel} from "./custom/diagram-label-fit.mjs";
 import { j as s, C as A, k as G, g as X } from "./index-DwCqBxFL.js";
 import { r, L as O } from "./router-5ag9yOgs.js";
 import { i as U, j as Q, l as J, A as W } from "./theme-CvJK8SGN.js";
@@ -261,6 +262,7 @@ const ds = () => [
         }),
         s.jsx("text", {
           className: "dg-t",
+          style: fitDiagramLabel(o, n),
           x: e + n / 2,
           y: c + 21.5,
           children: o,
