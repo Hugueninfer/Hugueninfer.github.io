@@ -5,8 +5,8 @@ import vm from 'node:vm';
 import * as jsxRuntime from 'react/jsx-runtime';
 import {buildPersonalContent, projects} from '../reference/custom/personal-content.mjs';
 
-test('portfolio publishes Agency Hub as the second full case study', () => {
-  assert.deepEqual(projects.map(({id}) => id), ['orbit', 'agency-hub']);
+test('portfolio publishes every full case study in its intended order', () => {
+  assert.deepEqual(projects.map(({id}) => id), ['orbit', 'agency-hub', 'smart-waste-ai', 'complyflow-ai']);
 
   const agencyHub = projects[1];
   assert.equal(agencyHub.name, 'Agency Hub');
@@ -23,13 +23,39 @@ test('portfolio publishes Agency Hub as the second full case study', () => {
   ]);
 });
 
-test('portfolio copy replaces Workflow claims with Agency Hub', () => {
+test('portfolio publishes ComplyFlow AI with its live product evidence', () => {
+  const complyFlow = projects[3];
+
+  assert.equal(complyFlow.name, 'ComplyFlow AI');
+  assert.equal(complyFlow.repo, 'https://github.com/Hugueninfer/complyflow-ai');
+  assert.equal(complyFlow.live, 'https://complyflow-ai.onrender.com');
+  assert.deepEqual(complyFlow.stack, [
+    'PHP 8.4', 'Laravel 13', 'Python', 'FastAPI', 'Vue 3', 'PostgreSQL', 'Groq', 'Gemini', 'Docker',
+  ]);
+  assert.ok(complyFlow.sections.length >= 10, 'ComplyFlow AI should be a detailed portfolio case study');
+  assert.match(complyFlow.sections[1][2], /revisão humana mais recente/);
+  assert.doesNotMatch(complyFlow.sections[1][2], /decisão humana prevalece/);
+
+  const screenshots = complyFlow.sections.map((section) => section[3]).filter(Boolean);
+  assert.deepEqual(screenshots, [
+    'https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/login.png',
+    'https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/dashboard.png',
+    'https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/supplier-dossier.png',
+    'https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/compliance-matrix.png',
+    'https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/comparison.png',
+    'https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/audit.png',
+  ]);
+});
+
+test('portfolio copy presents ComplyFlow AI across projects, applied AI and privacy', () => {
   const content = buildPersonalContent();
   const serialized = JSON.stringify(content);
 
-  assert.deepEqual(content.PROJECT_ORDER, ['orbit', 'agency-hub']);
+  assert.deepEqual(content.PROJECT_ORDER, ['orbit', 'agency-hub', 'smart-waste-ai', 'complyflow-ai']);
   assert.doesNotMatch(serialized, /Workflow|Fathom/);
-  assert.match(serialized, /Orbit e Agency Hub/);
+  assert.match(content.COPY.work.railIntro, /ComplyFlow AI/);
+  assert.match(content.COPY.ai.workSub, /ComplyFlow AI/);
+  assert.match(content.COPY.privacy.sections[0].p[0], /ComplyFlow AI/);
   assert.match(serialized, /demonstração isolada por 24 horas/i);
 });
 

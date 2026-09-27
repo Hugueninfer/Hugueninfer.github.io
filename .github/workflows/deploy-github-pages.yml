@@ -26,10 +26,10 @@ jobs:
           node-version: "24"
           cache: npm
 
-      # The Pages shell uses the checked-in browser bundles; no server/npm install needed.
-      - run: npm run build:pages
+      - run: npm ci
 
-      - run: node --test tests/pages-export.test.mjs
+      - name: Test and build static export
+        run: npm test
 
       # Garante que o artefacto é o output do Vite (evita página em branco se index de origem fosse servido por engano)
       - run: |

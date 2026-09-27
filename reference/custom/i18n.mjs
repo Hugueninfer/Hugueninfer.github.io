@@ -15,7 +15,7 @@ export function translateText(value,locale=getLocale()){
  const absent=/^no project called "(.*)" — try `list`$/.exec(value);
  if(absent)return locale==='de'?`Kein Projekt namens "${absent[1]}" — \`list\` ausprobieren`:locale==='pt'?`Nenhum projeto chamado "${absent[1]}" — use \`list\``:value;
  if(locale==='pt')return value;
- const prefixPatterns=[['↳ ', '↳ ', '↳ '],['opening the ', 'opening ', 'Öffne '],['A walk across the board: ', 'A walk across the board: ', 'Ein Rundgang über die Platine: ']];
+ const prefixPatterns=[['↳ ', '↳ ', '↳ '],['opening the ', 'opening ', 'Öffne '],['A walk across the board: ', 'A walk across the board: ', 'Ein Rundgang über die Platine: '],['Diagrama conceitual de ', 'Conceptual diagram of ', 'Konzeptdiagramm von ']];
  for(const [prefix,en,de] of prefixPatterns)if(value.startsWith(prefix))return (locale==='de'?de:en)+translateText(value.slice(prefix.length),locale);
  if(value.includes(' — TODOS OS DIREITOS RESERVADOS'))return value.replace('TODOS OS DIREITOS RESERVADOS',locale==='de'?'ALLE RECHTE VORBEHALTEN':'ALL RIGHTS RESERVED');
  // Rich headings are split into emphasis fragments by the reference renderer.

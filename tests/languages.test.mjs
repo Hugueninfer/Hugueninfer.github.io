@@ -12,6 +12,20 @@ test('translation retains rich-text markers and spacing while leaving names inta
  assert.equal(translateText('*IA aplicada.*','de'),'*Angewandte KI.*');
  assert.equal(translateText('PostgreSQL','de'),'PostgreSQL');
 });
+
+test('ComplyFlow AI case study is localized without changing its product name',()=>{
+ assert.equal(translateText('ComplyFlow AI','en'),'ComplyFlow AI');
+ assert.equal(translateText('Diagrama conceitual de ComplyFlow AI','en'),'Conceptual diagram of ComplyFlow AI');
+ assert.equal(translateText('Diagrama conceitual de ComplyFlow AI','de'),'Konzeptdiagramm von ComplyFlow AI');
+ assert.equal(translateText('Conformidade com evidência verificável','en'),'Compliance with verifiable evidence');
+ assert.equal(translateText('Conformidade com evidência verificável','de'),'Compliance mit überprüfbaren Nachweisen');
+ assert.equal(translateText('Da evidência à decisão humana','en'),'From evidence to human decision');
+ assert.equal(translateText('Da evidência à decisão humana','de'),'Vom Nachweis zur menschlichen Entscheidung');
+ assert.equal(
+  translateText('Os indicadores usam o status efetivo: a revisão humana mais recente prevalece sobre a sugestão da IA sem apagar o histórico original.','en'),
+  'Indicators use the effective status: the latest human review takes precedence over the AI suggestion without erasing the original history.',
+ );
+});
 test('content translation never changes routes or identifiers',()=>{
  const data={id:'Sobre',href:'/about',label:'Sobre',children:['Contato'],src:'/media/pedro/portrait.jpeg'};
  assert.deepEqual(translateContent(data,'de'),{id:'Sobre',href:'/about',label:'Über mich',children:['Kontakt'],src:'/media/pedro/portrait.jpeg'});

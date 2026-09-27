@@ -7,7 +7,7 @@ import {resolve} from 'node:path';
 test('Pages export serves every route with the existing renderer and local assets',()=>{
   const root=resolve(import.meta.dirname,'..');
   execFileSync(process.execPath,['scripts/build-pages.mjs'],{cwd:root});
-  for(const route of ['','about','work','work/orbit','work/agency-hub','ai','contact','privacy']) {
+  for(const route of ['','about','work','work/orbit','work/agency-hub','work/smart-waste-ai','work/complyflow-ai','ai','contact','privacy']) {
     const html=readFileSync(resolve(root,'out',route,'index.html'),'utf8');
     assert.match(html,/id="reference-root"/);
     assert.match(html,/__PLEURAT_LOCAL__\.mount/);

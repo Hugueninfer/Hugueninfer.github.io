@@ -312,11 +312,273 @@
       "quote": null,
       "gallery": [],
       "showcase": []
+    },
+    "smart-waste-ai": {
+      "name": "Smart Waste AI",
+      "company": "Pedro Huguenin",
+      "mark": "petal",
+      "year": "2026",
+      "type": "IA aplicada · Computer Vision · Frontend",
+      "tagline": "Uma aplicação web que classifica resíduos a partir de uma imagem ou webcam, transformando um dataset do Kaggle em uma experiência prática de IA no navegador.",
+      "intro": "Uma aplicação web que classifica resíduos a partir de uma imagem ou webcam, transformando um dataset do Kaggle em uma experiência prática de IA no navegador.",
+      "meta": [
+        [
+          "Projeto",
+          "Projeto próprio"
+        ],
+        [
+          "Tecnologias",
+          "React · TypeScript · Vite · TensorFlow.js · Teachable Machine · Tailwind CSS · Recharts"
+        ]
+      ],
+      "live": "https://hugueninfer.github.io/smart-waste-ai/",
+      "metrics": [],
+      "sections": [
+        [
+          "Contexto",
+          "Do aprendizado ao produto",
+          "Comecei a pós-graduação em Engenharia de Software em IA Aplicada e usei este projeto para transformar os primeiros aprendizados em uma aplicação funcionando de ponta a ponta.",
+          "https://github.com/Hugueninfer/smart-waste-ai/raw/main/docs/screenshots/dashboard.png",
+          "Dashboard · Métricas e histórico local"
+        ],
+        [
+          "Dados",
+          "Um dataset real como ponto de partida",
+          "As imagens vieram de um dataset público de classificação de resíduos no Kaggle. A seleção foi organizada em seis classes: cardboard, glass, metal, paper, plastic e trash."
+        ],
+        [
+          "Modelo",
+          "Treinado no Teachable Machine",
+          "O modelo foi treinado e exportado como TensorFlow.js pelo Google Teachable Machine. A aplicação carrega model.json, metadata.json e weights.bin diretamente no navegador.",
+          "https://github.com/Hugueninfer/smart-waste-ai/raw/main/docs/screenshots/scanner.png",
+          "Scanner · Upload, webcam e análise"
+        ],
+        [
+          "Experiência",
+          "Mais do que uma previsão",
+          "O resultado mostra todas as probabilidades, classifica o nível de confiança e apresenta informações de descarte. Um histórico local e um dashboard transformam cada análise em contexto."
+        ],
+        [
+          "Arquitetura",
+          "IA isolada, interface simples",
+          "React e TypeScript organizam as rotas, hooks e componentes. Um serviço separado mantém a lógica TensorFlow.js fora da interface; LocalStorage persiste apenas metadados, nunca as imagens."
+        ],
+        [
+          "Privacidade",
+          "Processamento no próprio navegador",
+          "As imagens ficam em memória durante a análise e não são enviadas para um backend. O projeto também possui um mock model para desenvolvimento e um fluxo real para o modelo exportado."
+        ]
+      ],
+      "story": [
+        [
+          "Contexto",
+          "Do aprendizado ao produto",
+          "Comecei a pós-graduação em Engenharia de Software em IA Aplicada e usei este projeto para transformar os primeiros aprendizados em uma aplicação funcionando de ponta a ponta.",
+          "https://github.com/Hugueninfer/smart-waste-ai/raw/main/docs/screenshots/dashboard.png",
+          "Dashboard · Métricas e histórico local"
+        ],
+        [
+          "Dados",
+          "Um dataset real como ponto de partida",
+          "As imagens vieram de um dataset público de classificação de resíduos no Kaggle. A seleção foi organizada em seis classes: cardboard, glass, metal, paper, plastic e trash."
+        ],
+        [
+          "Modelo",
+          "Treinado no Teachable Machine",
+          "O modelo foi treinado e exportado como TensorFlow.js pelo Google Teachable Machine. A aplicação carrega model.json, metadata.json e weights.bin diretamente no navegador.",
+          "https://github.com/Hugueninfer/smart-waste-ai/raw/main/docs/screenshots/scanner.png",
+          "Scanner · Upload, webcam e análise"
+        ],
+        [
+          "Experiência",
+          "Mais do que uma previsão",
+          "O resultado mostra todas as probabilidades, classifica o nível de confiança e apresenta informações de descarte. Um histórico local e um dashboard transformam cada análise em contexto."
+        ],
+        [
+          "Arquitetura",
+          "IA isolada, interface simples",
+          "React e TypeScript organizam as rotas, hooks e componentes. Um serviço separado mantém a lógica TensorFlow.js fora da interface; LocalStorage persiste apenas metadados, nunca as imagens."
+        ],
+        [
+          "Privacidade",
+          "Processamento no próprio navegador",
+          "As imagens ficam em memória durante a análise e não são enviadas para um backend. O projeto também possui um mock model para desenvolvimento e um fluxo real para o modelo exportado."
+        ]
+      ],
+      "results": [],
+      "quote": null,
+      "gallery": [],
+      "showcase": []
+    },
+    "complyflow-ai": {
+      "name": "ComplyFlow AI",
+      "company": "Pedro Huguenin",
+      "mark": "petal",
+      "year": "2026",
+      "type": "Full stack · Compliance · IA aplicada",
+      "tagline": "Uma plataforma multi-tenant para avaliar fornecedores com documentos, checklists versionados, análise assistida por IA, evidências rastreáveis e decisão humana.",
+      "intro": "Uma plataforma multi-tenant para avaliar fornecedores com documentos, checklists versionados, análise assistida por IA, evidências rastreáveis e decisão humana.",
+      "meta": [
+        [
+          "Projeto",
+          "Projeto próprio"
+        ],
+        [
+          "Tecnologias",
+          "PHP 8.4 · Laravel 13 · Python · FastAPI · Vue 3 · PostgreSQL · Groq · Gemini · Docker"
+        ]
+      ],
+      "live": "https://complyflow-ai.onrender.com",
+      "metrics": [],
+      "sections": [
+        [
+          "Demonstração",
+          "Explore sem cadastro",
+          "Cada visitante pode iniciar uma demonstração isolada por 24 horas com fornecedores, documentos e resultados fictícios. Contas próprias também podem percorrer o fluxo completo de autoria e análise.",
+          "https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/login.png",
+          "Entrada · Demo isolada e conta própria"
+        ],
+        [
+          "Visão geral",
+          "Risco e trabalho pendente em um só lugar",
+          "O dashboard resume fornecedores, requisitos, análises recentes e revisões pendentes. Os indicadores usam o status efetivo: a revisão humana mais recente prevalece sobre a sugestão da IA sem apagar o histórico original.",
+          "https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/dashboard.png",
+          "Dashboard · Indicadores reais com dados fictícios"
+        ],
+        [
+          "Dossiê do fornecedor",
+          "Documentos, histórico e decisão no mesmo contexto",
+          "O dossiê reúne cadastro, PDFs, análises, revisões e decisão final. Checklists publicados são imutáveis e novas versões preservam a rastreabilidade das avaliações anteriores.",
+          "https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/supplier-dossier.png",
+          "Dossiê · Documentos e histórico da avaliação"
+        ],
+        [
+          "IA aplicada",
+          "Conformidade com evidência verificável",
+          "O pipeline extrai texto dos PDFs, seleciona contexto e pede ao modelo uma resposta estruturada por requisito. Cada achado precisa citar página, trecho e offsets válidos; respostas sem suporte são rejeitadas antes da persistência.",
+          "https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/compliance-matrix.png",
+          "Matriz · Achados, confiança e evidências"
+        ],
+        [
+          "Revisão humana",
+          "Da evidência à decisão humana",
+          "Revisores consultam o trecho citado, mantêm ou corrigem o status sugerido e registram uma justificativa. A decisão final é sempre humana, explícita e vinculada à versão exata da análise e do checklist."
+        ],
+        [
+          "Comparação",
+          "Fornecedores lado a lado",
+          "A comparação alinha os mesmos requisitos entre dois fornecedores e separa claramente sugestão da IA, revisão humana, ausência de evidência e versões obsoletas.",
+          "https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/comparison.png",
+          "Comparação · Requisitos e evidências lado a lado"
+        ],
+        [
+          "Auditoria",
+          "Histórico append-only verificável",
+          "Eventos sensíveis registram ator, ação, objeto, horário e hashes encadeados. A interface verifica a integridade disponível sem apresentar o ledger como prova externa ou certificação.",
+          "https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/audit.png",
+          "Auditoria · Eventos e verificação de integridade"
+        ],
+        [
+          "Arquitetura",
+          "Laravel, FastAPI e Vue com fronteiras claras",
+          "Vue 3 entrega a SPA; Laravel 13 concentra autenticação, autorização, domínio, fila e persistência; FastAPI isola extração e inferência. Contratos assinados por HMAC e schemas fechados conectam os runtimes sem confiar em payloads arbitrários."
+        ],
+        [
+          "Segurança",
+          "Multi-tenancy aplicado em todas as camadas",
+          "A organização vem da sessão autenticada, nunca do cliente. UUIDs públicos, escopo por tenant, RBAC, cookies HttpOnly, CSRF, rate limits, idempotência, transações e validação de relacionamentos protegem as operações sensíveis."
+        ],
+        [
+          "Provedores de IA",
+          "Groq principal, Gemini como contingência",
+          "O processador usa Groq com resposta estruturada e pode recorrer ao Gemini após falhas sanitizadas do provedor. O modo local simulado é sempre explícito; a aplicação nunca transforma silenciosamente uma falha externa em resultado fictício."
+        ],
+        [
+          "Qualidade & operação",
+          "Testado do domínio ao navegador",
+          "PHPUnit, pytest, Vitest, Testing Library e Playwright cobrem regras, contratos e jornadas reais. Docker multi-stage, PostgreSQL com pgvector, health checks e deploy gratuito no Render completam a entrega. A disponibilidade dos modelos segue os limites dos planos gratuitos."
+        ]
+      ],
+      "story": [
+        [
+          "Demonstração",
+          "Explore sem cadastro",
+          "Cada visitante pode iniciar uma demonstração isolada por 24 horas com fornecedores, documentos e resultados fictícios. Contas próprias também podem percorrer o fluxo completo de autoria e análise.",
+          "https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/login.png",
+          "Entrada · Demo isolada e conta própria"
+        ],
+        [
+          "Visão geral",
+          "Risco e trabalho pendente em um só lugar",
+          "O dashboard resume fornecedores, requisitos, análises recentes e revisões pendentes. Os indicadores usam o status efetivo: a revisão humana mais recente prevalece sobre a sugestão da IA sem apagar o histórico original.",
+          "https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/dashboard.png",
+          "Dashboard · Indicadores reais com dados fictícios"
+        ],
+        [
+          "Dossiê do fornecedor",
+          "Documentos, histórico e decisão no mesmo contexto",
+          "O dossiê reúne cadastro, PDFs, análises, revisões e decisão final. Checklists publicados são imutáveis e novas versões preservam a rastreabilidade das avaliações anteriores.",
+          "https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/supplier-dossier.png",
+          "Dossiê · Documentos e histórico da avaliação"
+        ],
+        [
+          "IA aplicada",
+          "Conformidade com evidência verificável",
+          "O pipeline extrai texto dos PDFs, seleciona contexto e pede ao modelo uma resposta estruturada por requisito. Cada achado precisa citar página, trecho e offsets válidos; respostas sem suporte são rejeitadas antes da persistência.",
+          "https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/compliance-matrix.png",
+          "Matriz · Achados, confiança e evidências"
+        ],
+        [
+          "Revisão humana",
+          "Da evidência à decisão humana",
+          "Revisores consultam o trecho citado, mantêm ou corrigem o status sugerido e registram uma justificativa. A decisão final é sempre humana, explícita e vinculada à versão exata da análise e do checklist."
+        ],
+        [
+          "Comparação",
+          "Fornecedores lado a lado",
+          "A comparação alinha os mesmos requisitos entre dois fornecedores e separa claramente sugestão da IA, revisão humana, ausência de evidência e versões obsoletas.",
+          "https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/comparison.png",
+          "Comparação · Requisitos e evidências lado a lado"
+        ],
+        [
+          "Auditoria",
+          "Histórico append-only verificável",
+          "Eventos sensíveis registram ator, ação, objeto, horário e hashes encadeados. A interface verifica a integridade disponível sem apresentar o ledger como prova externa ou certificação.",
+          "https://github.com/Hugueninfer/complyflow-ai/raw/main/complyflow-ai/docs/screenshots/live/audit.png",
+          "Auditoria · Eventos e verificação de integridade"
+        ],
+        [
+          "Arquitetura",
+          "Laravel, FastAPI e Vue com fronteiras claras",
+          "Vue 3 entrega a SPA; Laravel 13 concentra autenticação, autorização, domínio, fila e persistência; FastAPI isola extração e inferência. Contratos assinados por HMAC e schemas fechados conectam os runtimes sem confiar em payloads arbitrários."
+        ],
+        [
+          "Segurança",
+          "Multi-tenancy aplicado em todas as camadas",
+          "A organização vem da sessão autenticada, nunca do cliente. UUIDs públicos, escopo por tenant, RBAC, cookies HttpOnly, CSRF, rate limits, idempotência, transações e validação de relacionamentos protegem as operações sensíveis."
+        ],
+        [
+          "Provedores de IA",
+          "Groq principal, Gemini como contingência",
+          "O processador usa Groq com resposta estruturada e pode recorrer ao Gemini após falhas sanitizadas do provedor. O modo local simulado é sempre explícito; a aplicação nunca transforma silenciosamente uma falha externa em resultado fictício."
+        ],
+        [
+          "Qualidade & operação",
+          "Testado do domínio ao navegador",
+          "PHPUnit, pytest, Vitest, Testing Library e Playwright cobrem regras, contratos e jornadas reais. Docker multi-stage, PostgreSQL com pgvector, health checks e deploy gratuito no Render completam a entrega. A disponibilidade dos modelos segue os limites dos planos gratuitos."
+        ]
+      ],
+      "results": [],
+      "quote": null,
+      "gallery": [],
+      "showcase": []
     }
   },
   "PROJECT_ORDER": [
     "orbit",
-    "agency-hub"
+    "agency-hub",
+    "smart-waste-ai",
+    "complyflow-ai"
   ],
   "WORK_FEED": [],
   "WORK": [],
@@ -759,7 +1021,7 @@
       "title": "Aplicações full stack",
       "yr": "",
       "unit": " Na prática",
-      "desc": "Interfaces, dados e integrações trabalhando juntos. Orbit e Agency Hub conectam essas camadas em projetos próprios."
+      "desc": "Interfaces, dados e integrações trabalhando juntos. Orbit, Agency Hub, Smart Waste AI e ComplyFlow AI conectam essas camadas em projetos próprios."
     },
     {
       "title": "Inteligência artificial",
@@ -825,7 +1087,7 @@
           "name": "Produto",
           "group": "Projetos",
           "year": "Na prática",
-          "note": "Orbit e Agency Hub: contexto, implementação e evolução."
+          "note": "Orbit, Agency Hub, Smart Waste AI e ComplyFlow AI: contexto, implementação e evolução."
         }
       ]
     },
@@ -835,7 +1097,7 @@
         "Código, produto",
         "*e engenharia na prática.*"
       ],
-      "railIntro": "Orbit e Agency Hub conectam backend, interfaces e dados para resolver problemas de organização pessoal e operação de equipes.",
+      "railIntro": "Orbit, Agency Hub, Smart Waste AI e ComplyFlow AI conectam backend, interfaces, dados e IA aplicada em produtos completos.",
       "railCtaShots": "Ver os projetos",
       "railCtaShotsHref": "#projetos",
       "railCtaAi": "Meu foco em IA",
@@ -890,7 +1152,7 @@
         "Integrações que viram",
         "*funcionalidade.*"
       ],
-      "workSub": "No Orbit, Gemini transforma áudio em lançamentos financeiros. No Agency Hub, uma demo multi-tenant entrega um workspace completo e isolado por 24 horas.",
+      "workSub": "No Orbit, Gemini interpreta despesas por áudio; o Smart Waste AI classifica resíduos no navegador; e o ComplyFlow AI conecta modelos a evidências documentais e revisão humana.",
       "stackTitle": [
         "Minha base",
         "*de engenharia.*"
@@ -943,7 +1205,7 @@
         {
           "h": "Nesta versão local",
           "p": [
-            "Não há cadastro ou formulário. A coleta de analytics da referência está desativada. Textos, fontes, fotos pessoais e ícones SVG são servidos localmente. As capturas do Orbit e do Agency Hub são carregadas dos repositórios públicos no GitHub, que recebe as requisições dessas imagens.",
+            "Não há cadastro ou formulário. A coleta de analytics da referência está desativada. Textos, fontes, fotos pessoais e ícones SVG são servidos localmente. As capturas do Orbit, Agency Hub, Smart Waste AI e ComplyFlow AI são carregadas dos repositórios públicos no GitHub, que recebe as requisições dessas imagens.",
             "O navegador pode guardar preferências de aparência. Links para WhatsApp, GitHub e LinkedIn levam a serviços externos, sujeitos às suas próprias políticas."
           ]
         }
