@@ -6,7 +6,7 @@ import * as jsxRuntime from 'react/jsx-runtime';
 import {buildPersonalContent, projects} from '../reference/custom/personal-content.mjs';
 
 test('portfolio publishes every full case study in its intended order', () => {
-  assert.deepEqual(projects.map(({id}) => id), ['orbit', 'agency-hub', 'smart-waste-ai', 'complyflow-ai']);
+  assert.deepEqual(projects.map(({id}) => id), ['orbit', 'agency-hub', 'smart-waste-ai', 'cineflix', 'complyflow-ai']);
 
   const agencyHub = projects[1];
   assert.equal(agencyHub.name, 'Agency Hub');
@@ -24,7 +24,7 @@ test('portfolio publishes every full case study in its intended order', () => {
 });
 
 test('portfolio publishes ComplyFlow AI with its live product evidence', () => {
-  const complyFlow = projects[3];
+  const complyFlow = projects[4];
 
   assert.equal(complyFlow.name, 'ComplyFlow AI');
   assert.equal(complyFlow.repo, 'https://github.com/Hugueninfer/complyflow-ai');
@@ -47,11 +47,24 @@ test('portfolio publishes ComplyFlow AI with its live product evidence', () => {
   ]);
 });
 
+test('portfolio publishes CineFlix with its live product evidence', () => {
+  const cineflix = projects[3];
+
+  assert.equal(cineflix.name, 'CineFlix');
+  assert.equal(cineflix.repo, 'https://github.com/Hugueninfer/cineflix-recomendador');
+  assert.equal(cineflix.live, 'https://recomendador-de-filmes-rho.vercel.app');
+  assert.deepEqual(cineflix.stack, ['javascript', 'html5', 'css3', 'bootstrap', 'git', 'github']);
+  assert.ok(cineflix.sections.length >= 5, 'CineFlix should be a detailed portfolio case study');
+
+  const screenshots = cineflix.sections.map((section) => section[3]).filter(Boolean);
+  assert.ok(screenshots.length >= 1, 'CineFlix should have at least one screenshot');
+});
+
 test('portfolio copy presents ComplyFlow AI across projects, applied AI and privacy', () => {
   const content = buildPersonalContent();
   const serialized = JSON.stringify(content);
 
-  assert.deepEqual(content.PROJECT_ORDER, ['orbit', 'agency-hub', 'smart-waste-ai', 'complyflow-ai']);
+  assert.deepEqual(content.PROJECT_ORDER, ['orbit', 'agency-hub', 'smart-waste-ai', 'cineflix', 'complyflow-ai']);
   assert.doesNotMatch(serialized, /Workflow|Fathom/);
   assert.match(content.COPY.work.railIntro, /ComplyFlow AI/);
   assert.match(content.COPY.ai.workSub, /ComplyFlow AI/);
