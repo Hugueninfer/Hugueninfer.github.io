@@ -92,3 +92,15 @@ test('every project technology has an icon', async () => {
     }
   }
 });
+
+test('recommendations link to the author and keep the original quote in Portuguese', () => {
+  const en = getContent('en').recommendations;
+  const pt = getContent('pt').recommendations;
+  assert.ok(en.items.length >= 4);
+  en.items.forEach((r, i) => {
+    assert.match(r.url, /^https:\/\/www\.linkedin\.com\/in\/[\w-]+\/$/);
+    assert.ok(r.quote.length > 80 && r.name && r.role && r.relation, `${r.name}: incomplete`);
+    assert.notEqual(r.quote, pt.items[i].quote, `${r.name}: quote not translated`);
+  });
+  assert.match(pt.items[0].quote, /^Tive o prazer de trabalhar com ele/);
+});

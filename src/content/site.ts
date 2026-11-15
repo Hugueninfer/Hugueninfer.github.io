@@ -15,6 +15,7 @@ export const sectionIds = [
   'results',
   'projects',
   'builds',
+  'recommendations',
   'stack',
   'contact',
 ] as const;
@@ -69,6 +70,7 @@ const source = {
     { id: 'results', label: t('Results by area', 'Resultados por área') },
     { id: 'projects', label: t('Selected work.', 'Trabalhos selecionados.') },
     { id: 'builds', label: t('Smaller builds, real lessons.', 'Projetos menores, lições reais.') },
+    { id: 'recommendations', label: t('In their words.', 'O que dizem sobre mim.') },
     { id: 'stack', label: t('What I build with.', 'Com o que eu construo.') },
     { id: 'contact', label: t("Let's talk.", 'Vamos conversar.') },
   ],
@@ -431,6 +433,57 @@ const source = {
   buildsSection: {
     eyebrow: t('More projects', 'Mais projetos'),
     title: t('Smaller builds, real lessons.', 'Projetos menores, lições reais.'),
+  },
+  recommendations: {
+    eyebrow: t('Recommendations', 'Recomendações'),
+    title: t('In their words.', 'O que dizem sobre mim.'),
+    lead: t(
+      'From people who worked with me, as posted on LinkedIn.',
+      'De pessoas que trabalharam comigo, como publicado no LinkedIn.',
+    ),
+    translated: t('Translated from Portuguese', ''),
+    items: [
+      {
+        name: 'Roberto Peres de Souza Júnior',
+        url: 'https://www.linkedin.com/in/roberto-peres-souza-jr/',
+        role: t('Project Coordinator · Before TI', 'Coordenador de Projetos · Before TI'),
+        relation: t('Supervised Pedro directly · Oct 2026', 'Supervisionava Pedro diretamente · out 2026'),
+        quote: t(
+          'I had the pleasure of working with him and seeing up close his growth and dedication as a back-end developer. Beyond his strong command of Laravel, Huguenin recently stood out by diving headfirst into new technologies focused on Artificial Intelligence. He played a key role in structuring and documenting AI agents, showing exemplary commitment to making the project happen. Huguenin is an extremely committed professional, with clear communication and impeccable day-to-day alignment.',
+          'Tive o prazer de trabalhar com ele e ver de perto sua evolução e dedicação como desenvolvedor back-end. Além do seu forte domínio em Laravel, o Huguenin se destacou recentemente ao mergulhar de cabeça em novas tecnologias voltadas para Inteligência Artificial. Ele teve um papel fundamental na estruturação e documentação de agentes de IA, demonstrando um empenho exemplar para fazer o projeto acontecer. O Huguenin é um profissional extremamente comprometido, com uma comunicação clara e um alinhamento impecável no dia a dia.',
+        ),
+      },
+      {
+        name: 'Denilson Felix',
+        url: 'https://www.linkedin.com/in/denilson-felix-488b76198/',
+        role: t('Graphic Designer · Digital Arts & Branding', 'Designer Gráfico · Artes Digitais e Branding'),
+        relation: t('Worked with Pedro on a different team · Apr 2024', 'Trabalhou com Pedro em outra equipe · abr 2024'),
+        quote: t(
+          'Pedro is extremely dedicated to what he does. He anticipates problems, proposes improvements and has a very critical eye that helps the team evolve. No matter how complex the project is, having him on the team makes a huge difference.',
+          'Pedro é um profissional extremamente dedicado no que faz, antecipa-se aos problemas, propõe melhorias e possui um olhar bastante critico que proporciona evolução para equipe, não importa quão complexo seja o projeto tê-lo no time é um diferencial enorme.',
+        ),
+      },
+      {
+        name: 'Rondineiler de Paula',
+        url: 'https://www.linkedin.com/in/rondineiler/',
+        role: t('Full Stack Developer', 'Desenvolvedor FullStack'),
+        relation: t('Same team as Pedro · Jul 2023', 'Mesma equipe que Pedro · jul 2023'),
+        quote: t(
+          'I had the great pleasure of working with Pedro, who was always very proactive, communicative and attentive to detail. He picks up new things easily and quickly puts them to work in the projects he builds, delivering great work and meeting deadlines.',
+          'Tive um grande prazer de trabalhar com o Pedro que sempre foi muito proativo, comunicativo e atento aos detalhes, além de ter muita facilidade de aprender coisas novas e logo implementá-las nos projetos desenvolvidos, prestando um ótimo serviço e respeitando os prazos.',
+        ),
+      },
+      {
+        name: 'Pedro Hugo Barbosa',
+        url: 'https://www.linkedin.com/in/pedro-hugo-b502/',
+        role: t('Full Stack Developer · Node.js, NestJS, TypeScript, Vue.js', 'Desenvolvedor Full Stack · Node.js, NestJS, TypeScript, Vue.js'),
+        relation: t('Same team as Pedro · Nov 2022', 'Mesma equipe que Pedro · nov 2022'),
+        quote: t(
+          'Pedro is a very committed, dedicated and responsible professional. He is the kind of person who dives headfirst into projects and keeps surprising us with his strategic view of the market, always attentive and helpful in everything that was his responsibility.',
+          'Pedro é um profissional muito comprometido, dedicado e responsável em sua função, é aquele profissional que entra de cabeça nos projetos e tá sempre nos surpreendendo com sua visão estratégica do mercado, sempre atencioso e prestativo em todas as funções que eram de sua responsabilidade.',
+        ),
+      },
+    ],
   },
   stack: {
     eyebrow: t('Stack', 'Stack'),
