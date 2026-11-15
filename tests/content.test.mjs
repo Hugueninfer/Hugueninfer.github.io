@@ -12,8 +12,7 @@ const shape = (value) =>
 test('both locales resolve to the same shape with no untranslated leaves', () => {
   const [en, pt] = locales.map(getContent);
   assert.deepEqual(shape(en), shape(pt));
-  const leaves = JSON.stringify(en);
-  assert.ok(!leaves.includes('"en":'), 'an {en, pt} pair was left unresolved');
+  assert.ok(!JSON.stringify(en).includes('"en":'), 'an {en, pt} pair was left unresolved');
 });
 
 test('navigation covers every section in order', () => {
@@ -22,17 +21,32 @@ test('navigation covers every section in order', () => {
   }
 });
 
-test('every project links to a Hugueninfer repository and tells the full story', () => {
+test('work experience and education are separate lists', () => {
+  const { experience, education, certifications } = getContent('en');
+  assert.ok(experience.items.length >= 5);
+  assert.deepEqual(education.items.map((e) => e.school), ['UNIPDS', 'UniFOA', 'Escola Técnica Pandiá Calógeras']);
+  assert.ok(experience.items.every((e) => !('school' in e)));
+  assert.ok(certifications.items.length >= 4);
+  for (const c of certifications.items) assert.match(c.year, /^\d{4}$/);
+});
+
+test('every project has a unique slug, a repository and a full case study', () => {
   for (const locale of locales) {
-    const { featured, builds } = getContent(locale);
-    assert.ok(featured.length >= 5);
-    for (const p of [...featured, ...builds]) {
+    const { projects } = getContent(locale);
+    const slugs = projects.map((p) => p.slug);
+    assert.equal(new Set(slugs).size, slugs.length, 'duplicate slug');
+    assert.ok(projects.filter((p) => p.featured).length >= 5);
+    for (const p of projects) {
+      assert.match(p.slug, /^[a-z0-9-]+$/);
       assert.match(p.repo, /^https:\/\/github\.com\/Hugueninfer\/[\w.-]+$/);
-      for (const block of p.blocks) {
-        assert.ok(block.label.trim() && block.text.trim(), `${p.name}: empty block`);
-      }
-      assert.equal(p.blocks.length, 4, `${p.name}: needs four blocks`);
       if (p.live) assert.match(p.live, /^https:\/\//);
+      assert.equal(p.blocks.length, 4, `${p.name}: needs four blocks`);
+      assert.ok(p.tech.length > 0, `${p.name}: no tech`);
+      assert.ok(p.sections.length >= 4, `${p.name}: case study too short`);
+      for (const s of [...p.blocks.map((b) => ({ heading: b.label, text: b.text })), ...p.sections]) {
+        assert.ok(s.heading.trim() && s.text.trim(), `${p.name}: empty block`);
+      }
+      for (const s of p.sections) if (s.image) assert.match(s.image.src, /^https:\/\/github\.com\/Hugueninfer\//);
     }
   }
 });
