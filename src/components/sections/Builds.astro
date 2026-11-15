@@ -1,13 +1,16 @@
 ---
 import type { SiteContent } from '../../content/site';
+import { href, type Locale } from '../../content/i18n';
 import Icon from '../Icon.astro';
 
 interface Props {
   content: SiteContent;
+  locale: Locale;
 }
 
-const { content } = Astro.props;
-const { buildsSection: section, builds, ui } = content;
+const { content, locale } = Astro.props;
+const { buildsSection: section, ui } = content;
+const builds = content.projects.filter((p) => !p.featured);
 ---
 
 <section id="builds" class="section">
@@ -16,12 +19,14 @@ const { buildsSection: section, builds, ui } = content;
   <div class="builds">
     {
       builds.map((p) => (
-        <article class="build">
+        <article class="build card-link">
           <header>
             <p class="case-tag">{p.tag}</p>
-            <h3 class="build-name">{p.name}</h3>
+            <h3 class="build-name">
+              <a class="card-target" href={href(locale, `projects/${p.slug}/`)}>{p.name}</a>
+            </h3>
             <ul class="chips">
-              {p.tech.map((t) => <li>{t}</li>)}
+              {p.tech.slice(0, 5).map((t) => <li>{t}</li>)}
             </ul>
           </header>
           <dl class="build-blocks">
@@ -33,7 +38,10 @@ const { buildsSection: section, builds, ui } = content;
             ))}
           </dl>
           <footer class="case-links">
-            {'live' in p && p.live && (
+            <span class="case-more">
+              {ui.caseStudy} <span aria-hidden="true">→</span>
+            </span>
+            {p.live && (
               <a href={p.live} target="_blank" rel="noopener">
                 {ui.live} <Icon name="arrow" />
               </a>

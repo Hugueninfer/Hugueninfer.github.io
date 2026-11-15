@@ -1,27 +1,37 @@
 ---
-import type { SiteContent } from '../content/site';
 import Icon from './Icon.astro';
 
 interface Props {
-  content: SiteContent;
+  eyebrow: string;
+  title: string[];
+  meta: string[];
+  nav: { id: string; label: string }[];
+  menuLabel: string;
+  back?: { href: string; label: string };
+  social?: { label: string; url?: string }[];
 }
 
-const { content } = Astro.props;
-const [first, last] = content.profile.name.split(' ');
-const social = content.contact.links.filter((l) => ['Email', 'GitHub', 'LinkedIn'].includes(l.label));
+const { eyebrow, title, meta, nav, menuLabel, back, social = [] } = Astro.props;
 ---
 
 <aside class="sidebar">
-  <p class="label">{content.ui.profile}</p>
-  <p class="sidebar-name">{first}<br />{last}.</p>
-  <p class="sidebar-meta">{content.profile.role}<br />{content.profile.location}</p>
+  {
+    back && (
+      <a class="sidebar-back" href={back.href}>
+        ← {back.label}
+      </a>
+    )
+  }
+  <p class="label">{eyebrow}</p>
+  <p class="sidebar-name">{title.map((line, i) => (i ? [<br />, line] : line))}</p>
+  <p class="sidebar-meta">{meta.map((line, i) => (i ? [<br />, line] : line))}</p>
 
   <details class="index" open>
-    <summary class="label">{content.ui.menu}</summary>
-    <nav aria-label={content.ui.menu}>
+    <summary class="label">{menuLabel}</summary>
+    <nav aria-label={menuLabel}>
       <ol>
         {
-          content.nav.map((item, i) => (
+          nav.map((item, i) => (
             <li>
               <a href={`#${item.id}`} data-spy={item.id}>
                 <span class="index-num">{String(i).padStart(2, '0')}</span>
@@ -34,13 +44,15 @@ const social = content.contact.links.filter((l) => ['Email', 'GitHub', 'LinkedIn
     </nav>
   </details>
 
-  <div class="sidebar-social">
-    {
-      social.map((l) => (
-        <a href={l.url} aria-label={l.label} target={l.url?.startsWith('http') ? '_blank' : undefined} rel="noopener">
-          <Icon name={l.label.toLowerCase()} />
-        </a>
-      ))
-    }
-  </div>
+  {
+    social.length > 0 && (
+      <div class="sidebar-social">
+        {social.map((l) => (
+          <a href={l.url} aria-label={l.label} target={l.url?.startsWith('http') ? '_blank' : undefined} rel="noopener">
+            <Icon name={l.label.toLowerCase()} />
+          </a>
+        ))}
+      </div>
+    )
+  }
 </aside>

@@ -1,13 +1,16 @@
 ---
 import type { SiteContent } from '../../content/site';
+import { href, type Locale } from '../../content/i18n';
 import Icon from '../Icon.astro';
 
 interface Props {
   content: SiteContent;
+  locale: Locale;
 }
 
-const { content } = Astro.props;
-const { projectsSection: section, featured, ui } = content;
+const { content, locale } = Astro.props;
+const { projectsSection: section, ui } = content;
+const featured = content.projects.filter((p) => p.featured);
 ---
 
 <section id="projects" class="section">
@@ -16,12 +19,14 @@ const { projectsSection: section, featured, ui } = content;
   <div class="cases">
     {
       featured.map((p) => (
-        <article class="case">
+        <article class="case card-link">
           <header class="case-head">
             <p class="case-tag">{p.tag}</p>
-            <h3 class="case-name">{p.name}</h3>
+            <h3 class="case-name">
+              <a class="card-target" href={href(locale, `projects/${p.slug}/`)}>{p.name}</a>
+            </h3>
             <p class="case-headline">{p.headline}</p>
-            <p class="case-period">{p.period}</p>
+            <p class="case-period">{p.period} · {p.tech.slice(0, 3).join(', ')}</p>
           </header>
           <dl class="case-blocks">
             {p.blocks.map((b) => (
@@ -32,7 +37,10 @@ const { projectsSection: section, featured, ui } = content;
             ))}
           </dl>
           <footer class="case-links">
-            {'live' in p && p.live && (
+            <span class="case-more">
+              {ui.caseStudy} <span aria-hidden="true">→</span>
+            </span>
+            {p.live && (
               <a href={p.live} target="_blank" rel="noopener">
                 {ui.live} <Icon name="arrow" />
               </a>

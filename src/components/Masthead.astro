@@ -1,0 +1,31 @@
+---
+import type { SiteContent } from '../content/site';
+import { href, type Locale } from '../content/i18n';
+
+interface Props {
+  content: SiteContent;
+  locale: Locale;
+  /** Locale-free path of the current page, so the switch lands on the same page. */
+  path?: string;
+}
+
+const { content, locale, path = '' } = Astro.props;
+const other: Locale = locale === 'en' ? 'pt' : 'en';
+---
+
+<header class="masthead">
+  <a class="brand" href={href(locale)}>
+    <span class="brand-mark">PH</span>
+    <span class="brand-title">/ {content.ui.masthead}</span>
+  </a>
+  <div class="masthead-right">
+    <span class="disciplines">{content.ui.disciplines}</span>
+    <a
+      class="lang-switch"
+      href={href(other, path)}
+      data-lang-switch
+      aria-label={content.ui.switchLabel}
+      hreflang={other === 'pt' ? 'pt-BR' : 'en'}>{content.ui.switchShort}</a
+    >
+  </div>
+</header>

@@ -1,0 +1,119 @@
+---
+import Base from '../layouts/Base.astro';
+import Masthead from './Masthead.astro';
+import Sidebar from './Sidebar.astro';
+import Icon from './Icon.astro';
+import { getContent, type Locale } from '../content/site';
+import { href } from '../content/i18n';
+
+interface Props {
+  locale: Locale;
+  slug: string;
+}
+
+const { locale, slug } = Astro.props;
+const content = getContent(locale);
+const { ui, projects } = content;
+const index = projects.findIndex((p) => p.slug === slug);
+const project = projects[index];
+const prev = projects[(index - 1 + projects.length) % projects.length];
+const next = projects[(index + 1) % projects.length];
+const path = `projects/${slug}/`;
+const anchor = project.featured ? 'projects' : 'builds';
+const sectionId = (i: number) => `part-${i + 1}`;
+const nav = [
+  { id: 'summary', label: ui.atAGlance },
+  ...project.sections.map((s, i) => ({ id: sectionId(i), label: s.title })),
+];
+---
+
+<Base locale={locale} title={`${project.name} — ${project.headline} | Pedro Huguenin`} description={project.headline} path={path}>
+  <a class="skip" href="#main">{content.ui.skip}</a>
+  <div class="page">
+    <Masthead content={content} locale={locale} path={path} />
+    <div class="layout">
+      <Sidebar
+        eyebrow={project.tag}
+        title={[project.name]}
+        meta={[project.period]}
+        nav={nav}
+        menuLabel={content.ui.menu}
+        back={{ href: href(locale, `#${anchor}`), label: ui.allProjects }}
+      />
+      <main id="main">
+        <section id="summary" class="hero project-hero">
+          <a class="project-back" href={href(locale, `#${anchor}`)}>← {ui.allProjects}</a>
+          <p class="kicker">{project.tag}</p>
+          <h1 class="hero-name project-title">{project.name}</h1>
+          <p class="project-headline">{project.headline}</p>
+          <dl class="hero-facts">
+            <div>
+              <dt class="label">{ui.typeLabel}</dt>
+              <dd>{project.period}</dd>
+            </div>
+            <div>
+              <dt class="label">{ui.linksLabel}</dt>
+              <dd class="project-links">
+                {
+                  project.live && (
+                    <a href={project.live} target="_blank" rel="noopener">
+                      {ui.live} <Icon name="arrow" />
+                    </a>
+                  )
+                }
+                <a href={project.repo} target="_blank" rel="noopener">
+                  {ui.repo} <Icon name="arrow" />
+                </a>
+              </dd>
+            </div>
+          </dl>
+          <ul class="chips project-tech" aria-label={ui.stackLabel}>
+            {project.tech.map((t) => <li>{t}</li>)}
+          </ul>
+          <dl class="case-blocks project-summary">
+            {
+              project.blocks.map((b) => (
+                <div>
+                  <dt class="label">{b.label}</dt>
+                  <dd>{b.text}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </section>
+
+        {
+          project.sections.map((s, i) => (
+            <section id={sectionId(i)} class="section project-part">
+              <p class="label">
+                <span class="index-num">{String(i + 1).padStart(2, '0')}</span> {s.title}
+              </p>
+              <h2 class="section-title">{s.heading}</h2>
+              <p class="lead project-text">{s.text}</p>
+              {s.image && (
+                <figure class="shot">
+                  <img src={s.image.src} alt={s.image.caption} loading="lazy" decoding="async" />
+                  <figcaption>{s.image.caption}</figcaption>
+                </figure>
+              )}
+            </section>
+          ))
+        }
+
+        <nav class="pager" aria-label={ui.allProjects}>
+          <a href={href(locale, `projects/${prev.slug}/`)} class="pager-prev">
+            <span class="label">← {ui.previous}</span>
+            <span class="pager-name">{prev.name}</span>
+          </a>
+          <a href={href(locale, `projects/${next.slug}/`)} class="pager-next">
+            <span class="label">{ui.next} →</span>
+            <span class="pager-name">{next.name}</span>
+          </a>
+        </nav>
+      </main>
+    </div>
+    <footer class="site-footer">{content.ui.footer}</footer>
+  </div>
+</Base>
+
+<script src="../scripts/page.ts"></script>

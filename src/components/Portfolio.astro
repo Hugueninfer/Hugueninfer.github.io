@@ -1,9 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
+import Masthead from './Masthead.astro';
 import Sidebar from './Sidebar.astro';
 import Hero from './sections/Hero.astro';
 import About from './sections/About.astro';
-import Trajectory from './sections/Trajectory.astro';
+import Experience from './sections/Experience.astro';
+import Education from './sections/Education.astro';
+import Certifications from './sections/Certifications.astro';
 import Results from './sections/Results.astro';
 import Projects from './sections/Projects.astro';
 import Builds from './sections/Builds.astro';
@@ -17,39 +20,36 @@ interface Props {
 
 const { locale } = Astro.props;
 const content = getContent(locale);
-const otherHref = locale === 'en' ? '/pt/' : '/';
+const [first, last] = content.profile.name.split(' ');
+const social = content.contact.links.filter((l) => ['Email', 'GitHub', 'LinkedIn'].includes(l.label));
 ---
 
 <Base locale={locale} title={content.meta.title} description={content.meta.description}>
   <a class="skip" href="#main">{content.ui.skip}</a>
   <div class="page">
-    <header class="masthead">
-      <a class="brand" href="#overview">
-        <span class="brand-mark">PH</span>
-        <span class="brand-title">/ {content.ui.masthead}</span>
-      </a>
-      <div class="masthead-right">
-        <span class="disciplines">{content.ui.disciplines}</span>
-        <a class="lang-switch" href={otherHref} data-lang-switch aria-label={content.ui.switchLabel} hreflang={locale === 'en' ? 'pt-BR' : 'en'}>
-          {content.ui.switchShort}
-        </a>
-      </div>
-    </header>
-
+    <Masthead content={content} locale={locale} />
     <div class="layout">
-      <Sidebar content={content} />
+      <Sidebar
+        eyebrow={content.ui.profile}
+        title={[first, `${last}.`]}
+        meta={[content.profile.role, content.profile.location]}
+        nav={content.nav}
+        menuLabel={content.ui.menu}
+        social={social}
+      />
       <main id="main">
         <Hero content={content} />
         <About content={content} />
-        <Trajectory content={content} />
+        <Experience content={content} />
+        <Education content={content} />
+        <Certifications content={content} />
         <Results content={content} />
-        <Projects content={content} />
-        <Builds content={content} />
+        <Projects content={content} locale={locale} />
+        <Builds content={content} locale={locale} />
         <Stack content={content} />
         <Contact content={content} />
       </main>
     </div>
-
     <footer class="site-footer">{content.ui.footer}</footer>
   </div>
 </Base>

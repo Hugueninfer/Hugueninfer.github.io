@@ -1,17 +1,19 @@
 ---
 import '../styles/global.css';
-import type { Locale } from '../content/site';
+import { href, type Locale } from '../content/i18n';
 
 interface Props {
   locale: Locale;
   title: string;
   description: string;
+  /** Locale-free path of this page, e.g. `projects/orbit/`. */
+  path?: string;
 }
 
-const { locale, title, description } = Astro.props;
+const { locale, title, description, path = '' } = Astro.props;
 const lang = locale === 'pt' ? 'pt-BR' : 'en';
 const site = Astro.site?.toString().replace(/\/$/, '') ?? '';
-const canonical = `${site}${locale === 'pt' ? '/pt/' : '/'}`;
+const canonical = `${site}${href(locale, path)}`;
 ---
 
 <!doctype html>
@@ -22,9 +24,9 @@ const canonical = `${site}${locale === 'pt' ? '/pt/' : '/'}`;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en" href={`${site}/`} />
-    <link rel="alternate" hreflang="pt-BR" href={`${site}/pt/`} />
-    <link rel="alternate" hreflang="x-default" href={`${site}/`} />
+    <link rel="alternate" hreflang="en" href={`${site}${href('en', path)}`} />
+    <link rel="alternate" hreflang="pt-BR" href={`${site}${href('pt', path)}`} />
+    <link rel="alternate" hreflang="x-default" href={`${site}${href('en', path)}`} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

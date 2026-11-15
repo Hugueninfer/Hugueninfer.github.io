@@ -192,6 +192,19 @@ main {
   padding: 52px 16px 32px 0;
 }
 
+.sidebar-back {
+  display: inline-block;
+  margin-bottom: 28px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.sidebar-back:hover {
+  text-decoration: underline;
+}
+
 .sidebar-name {
   margin-top: 26px;
   font-family: var(--serif);
@@ -403,72 +416,199 @@ main {
   color: var(--muted);
 }
 
-/* Trajectory */
+/* Work experience */
 
-.timeline {
+.jobs {
   margin-top: 40px;
-  border-left: 1px solid var(--rule);
+  border-top: 1px solid var(--ink);
 }
 
-.timeline-item {
-  position: relative;
-  padding: 0 0 34px 28px;
+.job {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 12px 32px;
+  padding: 28px 0 30px;
+  border-bottom: 1px solid var(--rule);
 }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -5px;
-  top: 8px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--paper);
-  border: 1.5px solid var(--accent);
-}
-
-.timeline-item.is-work::before {
-  background: var(--accent);
-}
-
-.timeline-head {
+.job-when {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 4px 18px;
-}
-
-.timeline-head h3 {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 20px;
-}
-
-.timeline-date {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
   font-family: var(--mono);
   font-size: 12px;
   color: var(--muted);
 }
 
-.timeline-org {
+.job-num {
+  color: var(--accent);
+}
+
+.job-current {
+  padding: 2px 8px;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.job-org {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.job-role {
   margin-top: 4px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.job-points {
+  margin-top: 12px;
+}
+
+.job-points li {
+  font-size: 14.5px;
+  color: var(--muted);
+}
+
+.job-points li::before {
+  content: '• ';
+  color: var(--accent);
+}
+
+.job-impact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: var(--accent-soft);
+  font-size: 14.5px;
+}
+
+.job-impact .label {
+  color: var(--accent);
+}
+
+/* Education */
+
+.schools {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.school {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  border-top: 2px solid var(--ink);
+}
+
+.school-level {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.school-degree {
+  margin-top: 10px;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.school-name {
+  margin-top: 8px;
   font-weight: 600;
   font-size: 15px;
 }
 
-.timeline-item ul {
-  margin-top: 8px;
-}
-
-.timeline-item li {
-  font-size: 14px;
+.school-date {
+  margin-top: 2px;
+  font-family: var(--mono);
+  font-size: 12px;
   color: var(--muted);
 }
 
-.timeline-item li::before {
-  content: '• ';
+.school-text {
+  margin-top: 14px;
+  font-size: 14.5px;
+  color: var(--muted);
+}
+
+/* Certifications */
+
+.certs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.cert {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 4px 16px;
+  padding: 18px 20px;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule-soft);
+}
+
+.cert-seal {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
   color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 50%;
+}
+
+.cert-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.cert-meta {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.cert-year {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.cert-link {
+  grid-column: 2 / -1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.cert-link .icon {
+  width: 13px;
+  height: 13px;
 }
 
 /* Results */
@@ -628,6 +768,59 @@ main {
   height: 14px;
 }
 
+.card-link {
+  position: relative;
+}
+
+.card-target {
+  text-decoration: none;
+}
+
+.card-target::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.card-link:hover .card-target {
+  color: var(--accent);
+}
+
+.card-link .case-links a {
+  position: relative;
+  z-index: 1;
+}
+
+.card-link:has(.card-target:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.card-target:focus-visible {
+  outline: none;
+}
+
+.case-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.card-link:hover .case-more {
+  color: var(--accent);
+}
+
+.build {
+  transition: background 0.25s;
+}
+
+.build:hover {
+  background: var(--paper-raised);
+}
+
 /* Smaller builds */
 
 .builds {
@@ -740,6 +933,124 @@ main {
   overflow-wrap: anywhere;
 }
 
+/* Project page */
+
+.project-back {
+  display: none;
+  margin-bottom: 24px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-title {
+  font-size: clamp(44px, 5.6vw, 76px);
+}
+
+.project-headline {
+  margin-top: 18px;
+  max-width: 760px;
+  font-family: var(--serif);
+  font-size: clamp(20px, 2vw, 25px);
+  line-height: 1.35;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+}
+
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
+.project-links .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.project-tech {
+  margin-top: 28px;
+}
+
+.project-summary {
+  margin-top: 36px;
+}
+
+.project-part .label .index-num {
+  margin-right: 6px;
+}
+
+.project-text {
+  color: var(--ink);
+  line-height: 1.8;
+}
+
+.shot {
+  margin: 36px 0 0;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  box-shadow: 0 18px 40px -28px rgb(29 41 59 / 0.45);
+  background: var(--paper-raised);
+}
+
+.shot figcaption {
+  margin-top: 12px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 48px 0 72px;
+  border-top: 1px solid var(--rule);
+}
+
+.pager a {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 22px;
+  border: 1px solid var(--rule);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.pager a:hover {
+  border-color: var(--ink);
+  background: var(--paper-raised);
+}
+
+.pager-next {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.pager-name {
+  font-family: var(--serif);
+  font-size: 22px;
+}
+
 .site-footer {
   padding: 28px 0 40px;
   border-top: 2px solid var(--ink);
@@ -759,6 +1070,14 @@ main {
 
   .stack-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .schools {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .certs {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -844,6 +1163,25 @@ main {
   .builds {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  .job {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .job-when {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sidebar-back {
+    display: none;
+  }
+
+  .project-back {
+    display: inline-block;
+  }
 }
 
 @media (max-width: 580px) {
@@ -870,6 +1208,18 @@ main {
 
   .prose p {
     text-align: left;
+  }
+
+  .pager {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cert {
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+
+  .cert-year {
+    grid-column: 2;
   }
 }
 
