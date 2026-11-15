@@ -14,10 +14,13 @@ Live: https://hugueninfer.github.io/ · Portuguese: https://hugueninfer.github.i
 
 | Path | Purpose |
 |---|---|
-| `src/content/site.ts` | Every string on the site, in English and Portuguese |
-| `src/components/Portfolio.astro` | Page shell: masthead, sidebar, sections |
-| `src/components/sections/` | One component per section |
-| `src/pages/index.astro`, `src/pages/pt/index.astro` | English and Portuguese routes |
+| `src/content/site.ts` | Home page strings: profile, experience, education, certifications, results, stack, contact |
+| `src/content/projects.ts` | Projects: card summary and the full case study for each one |
+| `src/content/i18n.ts` | `t()` pairs, locale resolution and localized URLs |
+| `src/components/Portfolio.astro` | Home page: masthead, sidebar, sections |
+| `src/components/ProjectPage.astro` | Case-study page for one project |
+| `src/components/sections/` | One component per home section |
+| `src/pages/` | English routes at `/`, Portuguese at `/pt/`, case studies at `projects/<slug>/` |
 | `tests/` | Content consistency and build output checks |
 
 ## Develop
@@ -35,7 +38,12 @@ Pushing to `main` builds, tests and publishes to GitHub Pages.
 
 ## Editing content
 
-Add or change a project in `src/content/site.ts`. Each translatable string is a `t('english', 'português')` pair; the tests fail if a locale is missing a field or a project lacks a repository link or one of its four story blocks.
+Each translatable string is a `t('english', 'português')` pair.
+
+- **Project:** add an entry to `src/content/projects.ts` with a unique `slug`; `featured: true` puts it in the large cards. Its page is generated at `/projects/<slug>/` and `/pt/projects/<slug>/`.
+- **Certification:** add an item to `certifications.items` in `src/content/site.ts`; set `url` to show a credential link.
+
+The tests fail if a locale is missing a field, a slug repeats, or a project lacks a repository link, its four summary blocks or its case-study sections.
 
 ## Credits
 
