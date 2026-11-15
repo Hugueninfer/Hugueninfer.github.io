@@ -58,3 +58,24 @@ test('contact links point to the right profiles', () => {
   assert.ok(urls.includes('https://github.com/Hugueninfer'));
   assert.ok(urls.includes('mailto:hugueninpedro@gmail.com'));
 });
+
+test('every stack item and job has icons that exist', async () => {
+  const { hasIcon } = await import('../src/lib/icons.ts');
+  const { stack, experience } = getContent('en');
+  const keys = [
+    ...stack.groups.flatMap((g) => g.items.flatMap((i) => i.icons)),
+    ...experience.items.flatMap((j) => j.tech.map((t) => t.icon)),
+  ];
+  assert.ok(stack.groups.every((g) => g.items.every((i) => i.icons.length > 0)), 'stack item without icon');
+  for (const key of keys) assert.ok(hasIcon(key), `unknown icon ${key}`);
+});
+
+test('every job explains its impact in depth', () => {
+  for (const locale of locales) {
+    for (const job of getContent(locale).experience.items) {
+      assert.ok(job.impact.metric.trim() && job.impact.label.trim(), `${job.org}: no headline metric`);
+      assert.ok(job.impact.details.length >= 2, `${job.org}: impact needs at least two details`);
+      assert.ok(job.tech.length > 0, `${job.org}: no tech icons`);
+    }
+  }
+});
