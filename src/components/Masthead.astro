@@ -1,6 +1,7 @@
 ---
 import type { SiteContent } from '../content/site';
 import { href, type Locale } from '../content/i18n';
+import Icon from './Icon.astro';
 
 interface Props {
   content: SiteContent;
@@ -20,6 +21,10 @@ const other: Locale = locale === 'en' ? 'pt' : 'en';
   </a>
   <div class="masthead-right">
     <span class="disciplines">{content.ui.disciplines}</span>
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label={content.ui.themeLabel} title={content.ui.themeLabel}>
+      <Icon name="moon" />
+      <Icon name="sun" />
+    </button>
     <a
       class="lang-switch"
       href={href(other, path)}

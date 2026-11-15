@@ -62,3 +62,15 @@ for (const tabs of document.querySelectorAll<HTMLElement>('[data-tabs]')) {
     });
   });
 }
+
+// Theme toggle: flips between light and dark and remembers the choice.
+const root = document.documentElement;
+const systemDark = matchMedia('(prefers-color-scheme: dark)');
+const isDark = () => (root.dataset.theme ? root.dataset.theme === 'dark' : systemDark.matches);
+document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+  const next = isDark() ? 'light' : 'dark';
+  root.dataset.theme = next;
+  try {
+    localStorage.setItem('theme', next);
+  } catch {}
+});

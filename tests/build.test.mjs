@@ -1,7 +1,7 @@
 // Checks the static export in out/. Run `npm run build` first (CI does).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { getContent, sectionIds } from '../src/content/site.ts';
 
 const file = (path) => new URL(`../out/${path}`, import.meta.url);
@@ -44,4 +44,18 @@ test('portuguese pages are actually translated', () => {
   assert.match(page('pt/index.html'), /Onde trabalhei\./);
   assert.doesNotMatch(page('pt/index.html'), /Where I have worked\./);
   assert.match(page('pt/projects/orbit/index.html'), /Todos os projetos/);
+});
+
+test('pages support a dark theme without a flash of the light one', () => {
+  const html = page('index.html');
+  const head = html.slice(0, html.indexOf('</head>'));
+  assert.ok(
+    head.includes("localStorage.getItem('theme')") && head.includes('dataset.theme'),
+    'no inline theme script in <head>',
+  );
+  assert.match(html, /<button[^>]+data-theme-toggle/, 'no theme toggle');
+  assert.match(page('pt/projects/orbit/index.html'), /<button[^>]+data-theme-toggle/);
+  const css = readdirSync(file('_astro/')).filter((f) => f.endsWith('.css')).map((f) => page(`_astro/${f}`)).join('');
+  assert.match(css, /prefers-color-scheme:\s*dark/);
+  assert.match(css, /\[data-theme=["']?dark["']?\]/);
 });

@@ -31,7 +31,15 @@ const canonical = `${site}${href(locale, path)}`;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="theme-color" content="#f3eee7" />
+    <meta name="theme-color" content="#f3eee7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#12161d" media="(prefers-color-scheme: dark)" />
+    <script is:inline>
+      // Apply the saved theme before first paint; without one, CSS follows the OS.
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch {}
+    </script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

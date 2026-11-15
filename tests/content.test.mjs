@@ -104,3 +104,9 @@ test('recommendations link to the author and keep the original quote in Portugue
   });
   assert.match(pt.items[0].quote, /^Tive o prazer de trabalhar com ele/);
 });
+
+test('near-black brand logos follow the text colour so they show in dark mode', async () => {
+  const { iconSvg } = await import('../src/lib/icons.ts');
+  assert.match(iconSvg('si:nextdotjs'), /fill="currentColor"/);
+  assert.match(iconSvg('si:laravel'), /fill="#FF2D20"/);
+});

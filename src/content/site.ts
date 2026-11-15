@@ -42,6 +42,7 @@ const source = {
     repo: t('Repository', 'Repositório'),
     live: t('Live demo', 'Demo online'),
     menu: t('Sections', 'Seções'),
+    themeLabel: t('Switch light / dark theme', 'Alternar tema claro / escuro'),
     caseStudy: t('Read case study', 'Ver estudo de caso'),
     allProjects: t('All projects', 'Todos os projetos'),
     atAGlance: t('At a glance', 'Em resumo'),
