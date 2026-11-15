@@ -1,0 +1,27 @@
+---
+import type { SiteContent } from '../../content/site';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { education } = Astro.props.content;
+---
+
+<section id="education" class="section">
+  <p class="label">{education.eyebrow}</p>
+  <h2 class="section-title">{education.title}</h2>
+  <div class="schools">
+    {
+      education.items.map((e) => (
+        <article class="school">
+          <p class="school-level">{e.level}</p>
+          <h3 class="school-degree">{e.degree}</h3>
+          <p class="school-name">{e.school}</p>
+          <p class="school-date">{e.date}</p>
+          <p class="school-text">{e.text}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>

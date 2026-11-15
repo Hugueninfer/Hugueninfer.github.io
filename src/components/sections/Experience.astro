@@ -1,0 +1,38 @@
+---
+import type { SiteContent } from '../../content/site';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { experience } = Astro.props.content;
+---
+
+<section id="experience" class="section">
+  <p class="label">{experience.eyebrow}</p>
+  <h2 class="section-title">{experience.title}</h2>
+  <ol class="jobs">
+    {
+      experience.items.map((job, i) => (
+        <li class="job">
+          <div class="job-when">
+            <span class="job-num">{String(i + 1).padStart(2, '0')}</span>
+            <span class="job-date">{job.date}</span>
+            {job.current && <span class="job-current">{experience.currentLabel}</span>}
+          </div>
+          <div class="job-body">
+            <h3 class="job-org">{job.org}</h3>
+            <p class="job-role">{job.role}</p>
+            <ul class="job-points">
+              {job.points.map((p) => <li>{p}</li>)}
+            </ul>
+            <p class="job-impact">
+              <span class="label">{experience.impactLabel}</span>
+              {job.impact}
+            </p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</section>
