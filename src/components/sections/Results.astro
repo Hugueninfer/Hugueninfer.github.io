@@ -1,0 +1,48 @@
+---
+import type { SiteContent } from '../../content/site';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { results } = Astro.props.content;
+---
+
+<section id="results" class="section">
+  <p class="label">{results.eyebrow}</p>
+  <h2 class="section-title">{results.title}</h2>
+  <div class="tabs" data-tabs>
+    <div class="tab-list" role="tablist" aria-label={results.tabLabel}>
+      {
+        results.areas.map((area, i) => (
+          <button
+            type="button"
+            role="tab"
+            id={`tab-${area.id}`}
+            aria-controls={`panel-${area.id}`}
+            aria-selected={i === 0 ? 'true' : 'false'}
+            tabindex={i === 0 ? 0 : -1}
+          >
+            {area.name}
+          </button>
+        ))
+      }
+    </div>
+    {
+      results.areas.map((area, i) => (
+        <div class="tab-panel" role="tabpanel" id={`panel-${area.id}`} aria-labelledby={`tab-${area.id}`} hidden={i !== 0}>
+          <h3 class="visually-hidden">{area.name}</h3>
+          <ul class="metrics">
+            {area.items.map((m) => (
+              <li class="metric">
+                <span class="metric-value">{m.value}</span>
+                <span class="metric-label">{m.label}</span>
+                <span class="metric-source">{m.source}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>

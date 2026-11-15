@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import Sidebar from './Sidebar.astro';
+import Hero from './sections/Hero.astro';
+import About from './sections/About.astro';
+import Trajectory from './sections/Trajectory.astro';
+import Results from './sections/Results.astro';
+import Projects from './sections/Projects.astro';
+import Builds from './sections/Builds.astro';
+import Stack from './sections/Stack.astro';
+import Contact from './sections/Contact.astro';
+import { getContent, type Locale } from '../content/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const content = getContent(locale);
+const otherHref = locale === 'en' ? '/pt/' : '/';
+---
+
+<Base locale={locale} title={content.meta.title} description={content.meta.description}>
+  <a class="skip" href="#main">{content.ui.skip}</a>
+  <div class="page">
+    <header class="masthead">
+      <a class="brand" href="#overview">
+        <span class="brand-mark">PH</span>
+        <span class="brand-title">/ {content.ui.masthead}</span>
+      </a>
+      <div class="masthead-right">
+        <span class="disciplines">{content.ui.disciplines}</span>
+        <a class="lang-switch" href={otherHref} data-lang-switch aria-label={content.ui.switchLabel} hreflang={locale === 'en' ? 'pt-BR' : 'en'}>
+          {content.ui.switchShort}
+        </a>
+      </div>
+    </header>
+
+    <div class="layout">
+      <Sidebar content={content} />
+      <main id="main">
+        <Hero content={content} />
+        <About content={content} />
+        <Trajectory content={content} />
+        <Results content={content} />
+        <Projects content={content} />
+        <Builds content={content} />
+        <Stack content={content} />
+        <Contact content={content} />
+      </main>
+    </div>
+
+    <footer class="site-footer">{content.ui.footer}</footer>
+  </div>
+</Base>
+
+<script src="../scripts/page.ts"></script>

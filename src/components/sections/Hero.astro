@@ -1,0 +1,27 @@
+---
+import type { SiteContent } from '../../content/site';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+---
+
+<section id="overview" class="hero">
+  <p class="kicker">{content.hero.kicker}</p>
+  <h1 class="hero-name">{content.profile.name}</h1>
+  <dl class="hero-facts">
+    {
+      content.hero.facts.map((f) => (
+        <div>
+          <dt class="label">{f.label}</dt>
+          <dd>
+            {f.value}
+            {'note' in f && f.note && <span class="hero-note">{f.note}</span>}
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
+</section>

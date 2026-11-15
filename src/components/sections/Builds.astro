@@ -1,0 +1,49 @@
+---
+import type { SiteContent } from '../../content/site';
+import Icon from '../Icon.astro';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+const { buildsSection: section, builds, ui } = content;
+---
+
+<section id="builds" class="section">
+  <p class="label">{section.eyebrow}</p>
+  <h2 class="section-title">{section.title}</h2>
+  <div class="builds">
+    {
+      builds.map((p) => (
+        <article class="build">
+          <header>
+            <p class="case-tag">{p.tag}</p>
+            <h3 class="build-name">{p.name}</h3>
+            <ul class="chips">
+              {p.tech.map((t) => <li>{t}</li>)}
+            </ul>
+          </header>
+          <dl class="build-blocks">
+            {p.blocks.map((b) => (
+              <div>
+                <dt class="label">{b.label}</dt>
+                <dd>{b.text}</dd>
+              </div>
+            ))}
+          </dl>
+          <footer class="case-links">
+            {'live' in p && p.live && (
+              <a href={p.live} target="_blank" rel="noopener">
+                {ui.live} <Icon name="arrow" />
+              </a>
+            )}
+            <a href={p.repo} target="_blank" rel="noopener">
+              {ui.repo} <Icon name="arrow" />
+            </a>
+          </footer>
+        </article>
+      ))
+    }
+  </div>
+</section>

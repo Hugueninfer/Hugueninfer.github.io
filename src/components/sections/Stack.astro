@@ -1,0 +1,32 @@
+---
+import type { SiteContent } from '../../content/site';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { stack } = Astro.props.content;
+---
+
+<section id="stack" class="section">
+  <p class="label">{stack.eyebrow}</p>
+  <h2 class="section-title">{stack.title}</h2>
+  <p class="lead">{stack.lead}</p>
+  <div class="stack-grid">
+    {
+      stack.groups.map((g) => (
+        <div class="stack-group">
+          <h3>{g.name}</h3>
+          <ul>
+            {g.items.map((item) => (
+              <li>
+                <span>{item.name}</span>
+                {'note' in item && item.note && <span class="stack-note">{item.note}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>

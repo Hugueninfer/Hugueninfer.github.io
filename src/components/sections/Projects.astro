@@ -1,0 +1,48 @@
+---
+import type { SiteContent } from '../../content/site';
+import Icon from '../Icon.astro';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+const { projectsSection: section, featured, ui } = content;
+---
+
+<section id="projects" class="section">
+  <p class="label">{section.eyebrow}</p>
+  <h2 class="section-title">{section.title}</h2>
+  <div class="cases">
+    {
+      featured.map((p) => (
+        <article class="case">
+          <header class="case-head">
+            <p class="case-tag">{p.tag}</p>
+            <h3 class="case-name">{p.name}</h3>
+            <p class="case-headline">{p.headline}</p>
+            <p class="case-period">{p.period}</p>
+          </header>
+          <dl class="case-blocks">
+            {p.blocks.map((b) => (
+              <div>
+                <dt class="label">{b.label}</dt>
+                <dd>{b.text}</dd>
+              </div>
+            ))}
+          </dl>
+          <footer class="case-links">
+            {'live' in p && p.live && (
+              <a href={p.live} target="_blank" rel="noopener">
+                {ui.live} <Icon name="arrow" />
+              </a>
+            )}
+            <a href={p.repo} target="_blank" rel="noopener">
+              {ui.repo} <Icon name="arrow" />
+            </a>
+          </footer>
+        </article>
+      ))
+    }
+  </div>
+</section>

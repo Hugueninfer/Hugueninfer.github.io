@@ -1,0 +1,39 @@
+---
+import type { SiteContent } from '../../content/site';
+import Icon from '../Icon.astro';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { contact } = Astro.props.content;
+const iconFor = (label: string) => (label.startsWith('Loc') ? 'pin' : label.toLowerCase());
+---
+
+<section id="contact" class="section">
+  <p class="label">{contact.eyebrow}</p>
+  <h2 class="section-title">{contact.title}</h2>
+  <p class="lead contact-body">{contact.body}</p>
+  <ul class="contact-list">
+    {
+      contact.links.map((l) => (
+        <li>
+          {'url' in l && l.url ? (
+            <a href={l.url} target={l.url.startsWith('http') ? '_blank' : undefined} rel="noopener">
+              <Icon name={iconFor(l.label)} />
+              <span class="label">{l.label}</span>
+              <span class="contact-value">{l.value}</span>
+              <Icon name="arrow" />
+            </a>
+          ) : (
+            <div>
+              <Icon name={iconFor(l.label)} />
+              <span class="label">{l.label}</span>
+              <span class="contact-value">{l.value}</span>
+            </div>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</section>
