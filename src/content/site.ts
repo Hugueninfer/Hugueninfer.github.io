@@ -146,65 +146,177 @@ const source = {
   experience: {
     eyebrow: t('Work experience', 'Experiência profissional'),
     title: t('Where I have worked.', 'Onde trabalhei.'),
+    currentLabel: t('Current', 'Atual'),
+    impactLabel: t('Impact', 'Impacto'),
+    techLabel: t('Worked with', 'Trabalhei com'),
     items: [
       {
         role: t('Software Engineer', 'Engenheiro de Software'),
         org: 'Before',
         date: t('Jul 2024 – Present', 'Jul 2024 – atual'),
         current: true,
-        points: [
-          t('Multi-tenant architecture in PHP and Laravel', 'Arquitetura multi-tenant em PHP e Laravel'),
-          t('APIs, Redis caching and performance work', 'APIs, cache com Redis e trabalho de performance'),
+        summary: t(
+          'Backend engineering on a multi-tenant platform in PHP and Laravel: architecture, APIs, Redis caching and performance.',
+          'Engenharia backend em uma plataforma multi-tenant em PHP e Laravel: arquitetura, APIs, cache com Redis e performance.',
+        ),
+        tech: [
+          { icon: 'si:php', name: 'PHP' },
+          { icon: 'si:laravel', name: 'Laravel' },
+          { icon: 'si:redis', name: 'Redis' },
+          { icon: 'tb:api', name: 'REST APIs' },
+          { icon: 'tb:building-skyscraper', name: 'Multi-tenancy' },
         ],
-        impact: t('Client onboarding time cut by 70%', 'Tempo de onboarding de clientes reduzido em 70%'),
+        impact: {
+          metric: '70%',
+          label: t('less time to onboard a new client', 'menos tempo para integrar um novo cliente'),
+          details: [
+            t(
+              'Designed multi-tenant architecture so each new client runs on the same codebase with its own isolated data.',
+              'Desenhei a arquitetura multi-tenant para que cada novo cliente rode na mesma base de código, com dados isolados.',
+            ),
+            t(
+              'Built and evolved the APIs that connect the platform, with Redis caching to keep responses fast as tenants grow.',
+              'Construí e evoluí as APIs que conectam a plataforma, com cache em Redis para manter as respostas rápidas conforme os tenants crescem.',
+            ),
+            t(
+              'Result: bringing a new client onto the platform now takes 70% less time.',
+              'Resultado: colocar um novo cliente na plataforma hoje leva 70% menos tempo.',
+            ),
+          ],
+        },
       },
       {
         role: t('Web Developer', 'Desenvolvedor Web'),
         org: 'Formula X — B2B Growth',
         date: t('Aug 2023 – Present', 'Ago 2023 – atual'),
         current: true,
-        points: [
-          t('International projects, automations and integrations', 'Projetos internacionais, automações e integrações'),
-          t('Performance work on client websites', 'Trabalho de performance em sites de clientes'),
+        summary: t(
+          'International client projects for a B2B growth agency: websites, automations and integrations.',
+          'Projetos internacionais para uma agência de crescimento B2B: sites, automações e integrações.',
+        ),
+        tech: [
+          { icon: 'tb:world', name: t('International projects', 'Projetos internacionais') },
+          { icon: 'tb:settings-automation', name: t('Automation', 'Automação') },
+          { icon: 'tb:plug-connected', name: t('Integrations', 'Integrações') },
+          { icon: 'tb:gauge', name: 'PageSpeed' },
         ],
-        impact: t('~20 hours saved per month and PageSpeed ~60% better', '~20 horas economizadas por mês e PageSpeed ~60% melhor'),
+        impact: {
+          metric: '~20h',
+          label: t('saved per month through automation', 'economizadas por mês com automação'),
+          details: [
+            t(
+              'Delivered projects for international clients, from the build to the integrations with their tools.',
+              'Entreguei projetos para clientes internacionais, da construção às integrações com as ferramentas deles.',
+            ),
+            t(
+              'Automated repetitive work, saving about 20 hours per month on average.',
+              'Automatizei trabalho repetitivo, economizando em média cerca de 20 horas por mês.',
+            ),
+            t(
+              'Performance work improved PageSpeed scores by roughly 60%.',
+              'O trabalho de performance melhorou as notas de PageSpeed em cerca de 60%.',
+            ),
+          ],
+        },
       },
       {
         role: t('Full Stack Software Engineer', 'Engenheiro de Software Full Stack'),
         org: 'SENAI Soluções Digitais',
         date: t('Dec 2022 – May 2024', 'Dez 2022 – Mai 2024'),
         current: false,
-        points: [
-          t('Laravel APIs and PostgreSQL optimization', 'APIs Laravel e otimização de PostgreSQL'),
-          t('Systems used by thousands of people', 'Sistemas usados por milhares de pessoas'),
+        summary: t(
+          'Full stack development of systems used by thousands of people, with Laravel APIs on PostgreSQL.',
+          'Desenvolvimento full stack de sistemas usados por milhares de pessoas, com APIs Laravel sobre PostgreSQL.',
+        ),
+        tech: [
+          { icon: 'si:php', name: 'PHP' },
+          { icon: 'si:laravel', name: 'Laravel' },
+          { icon: 'si:postgresql', name: 'PostgreSQL' },
+          { icon: 'tb:api', name: 'REST APIs' },
         ],
-        impact: t('Searches and filters 50% faster', 'Buscas e filtros 50% mais rápidos'),
+        impact: {
+          metric: '50%',
+          label: t('faster searches and filters', 'buscas e filtros mais rápidos'),
+          details: [
+            t(
+              'Built and maintained Laravel APIs for systems with thousands of users.',
+              'Construí e mantive APIs Laravel para sistemas com milhares de usuários.',
+            ),
+            t(
+              'Optimized the PostgreSQL queries behind searches and filters, cutting their response time in half.',
+              'Otimizei as consultas PostgreSQL por trás das buscas e filtros, reduzindo o tempo de resposta pela metade.',
+            ),
+          ],
+        },
       },
       {
         role: t('Full Stack Software Engineer', 'Engenheiro de Software Full Stack'),
         org: 'Sertras',
         date: t('Mar 2022 – Dec 2022', 'Mar 2022 – Dez 2022'),
         current: false,
-        points: [
-          t('Supplier evaluation platform', 'Plataforma de avaliação de fornecedores'),
-          t('Government integrations', 'Integrações governamentais'),
+        summary: t(
+          'Full stack work on a supplier evaluation platform with government integrations.',
+          'Trabalho full stack em uma plataforma de avaliação de fornecedores com integrações governamentais.',
+        ),
+        tech: [
+          { icon: 'tb:checklist', name: t('Supplier evaluation', 'Avaliação de fornecedores') },
+          { icon: 'tb:building-community', name: t('Government integrations', 'Integrações governamentais') },
+          { icon: 'tb:file-search', name: t('Analysis', 'Análise') },
         ],
-        impact: t('Manual analysis reduced by ~40%', 'Análise manual reduzida em ~40%'),
+        impact: {
+          metric: '~40%',
+          label: t('less manual analysis', 'menos análise manual'),
+          details: [
+            t(
+              'Developed the supplier evaluation platform, from interface to backend.',
+              'Desenvolvi a plataforma de avaliação de fornecedores, da interface ao backend.',
+            ),
+            t(
+              'Integrated it with government systems so part of the checks happen automatically.',
+              'Integrei a plataforma a sistemas governamentais para que parte das checagens aconteça automaticamente.',
+            ),
+            t(
+              'Result: about 40% less manual analysis per evaluation.',
+              'Resultado: cerca de 40% menos análise manual por avaliação.',
+            ),
+          ],
+        },
       },
       {
         role: t('Developer Trainee', 'Desenvolvedor Trainee'),
         org: 'Dev4B',
         date: t('Mar 2021 – Mar 2022', 'Mar 2021 – Mar 2022'),
         current: false,
-        points: [
-          t('Management systems in PHP, Laravel and MySQL', 'Sistemas de gestão em PHP, Laravel e MySQL'),
-          t('Process automation, maintenance and Ubuntu deploys', 'Automação de processos, manutenção e deploys em Ubuntu'),
+        summary: t(
+          'Where I started: management systems in PHP, Laravel and MySQL, from code to deploy.',
+          'Onde comecei: sistemas de gestão em PHP, Laravel e MySQL, do código ao deploy.',
+        ),
+        tech: [
+          { icon: 'si:php', name: 'PHP' },
+          { icon: 'si:laravel', name: 'Laravel' },
+          { icon: 'si:mysql', name: 'MySQL' },
+          { icon: 'si:ubuntu', name: 'Ubuntu' },
         ],
-        impact: t('First production systems, deployed end to end', 'Primeiros sistemas em produção, publicados de ponta a ponta'),
+        impact: {
+          metric: t('1 year', '1 ano'),
+          label: t('from trainee to shipping production systems', 'de trainee a entregar sistemas em produção'),
+          details: [
+            t(
+              'Built management systems with PHP, Laravel and MySQL.',
+              'Construí sistemas de gestão com PHP, Laravel e MySQL.',
+            ),
+            t(
+              'Automated internal processes and maintained systems already in use.',
+              'Automatizei processos internos e mantive sistemas que já estavam em uso.',
+            ),
+            t(
+              'Published and ran the applications myself on Ubuntu servers.',
+              'Publiquei e operei as aplicações eu mesmo em servidores Ubuntu.',
+            ),
+          ],
+        },
       },
     ],
-    currentLabel: t('Current', 'Atual'),
-    impactLabel: t('Impact', 'Impacto'),
   },
   education: {
     eyebrow: t('Education', 'Formação'),
@@ -320,69 +432,69 @@ const source = {
       {
         name: t('Languages', 'Linguagens'),
         items: [
-          { name: 'PHP', note: '8.4' },
-          { name: 'Python' },
-          { name: 'TypeScript' },
-          { name: 'JavaScript' },
-          { name: 'SQL', note: 'PostgreSQL, MySQL' },
-          { name: 'Bash' },
+          { name: 'PHP', note: '8.4', icons: ['si:php'] },
+          { name: 'Python', icons: ['si:python'] },
+          { name: 'TypeScript', icons: ['si:typescript'] },
+          { name: 'JavaScript', icons: ['si:javascript'] },
+          { name: 'SQL', note: 'PostgreSQL, MySQL', icons: ['si:postgresql', 'si:mysql'] },
+          { name: 'Bash', icons: ['si:gnubash'] },
         ],
       },
       {
         name: t('Backend', 'Backend'),
         items: [
-          { name: 'Laravel', note: 'Sanctum, queues' },
-          { name: 'FastAPI', note: 'Pydantic' },
-          { name: 'Symfony' },
-          { name: 'REST / OpenAPI' },
-          { name: 'gRPC' },
-          { name: 'Multi-tenancy' },
-          { name: t('Idempotency & retries', 'Idempotência e retries') },
+          { name: 'Laravel', note: 'Sanctum, queues', icons: ['si:laravel'] },
+          { name: 'FastAPI', note: 'Pydantic', icons: ['si:fastapi'] },
+          { name: 'Symfony', icons: ['si:symfony'] },
+          { name: 'REST / OpenAPI', icons: ['si:openapiinitiative'] },
+          { name: 'gRPC', icons: ['tb:arrows-exchange'] },
+          { name: 'Multi-tenancy', icons: ['tb:building-skyscraper'] },
+          { name: t('Idempotency & retries', 'Idempotência e retries'), icons: ['tb:repeat'] },
         ],
       },
       {
         name: t('Data & Messaging', 'Dados e Mensageria'),
         items: [
-          { name: 'PostgreSQL', note: 'pgvector' },
-          { name: 'MySQL' },
-          { name: 'Redis' },
-          { name: 'Kafka', note: 'Redpanda' },
-          { name: 'SQLAlchemy', note: 'Alembic' },
-          { name: 'SQLite' },
+          { name: 'PostgreSQL', note: 'pgvector', icons: ['si:postgresql'] },
+          { name: 'MySQL', icons: ['si:mysql'] },
+          { name: 'Redis', icons: ['si:redis'] },
+          { name: 'Kafka', note: 'Redpanda', icons: ['si:apachekafka'] },
+          { name: 'SQLAlchemy', note: 'Alembic', icons: ['si:sqlalchemy'] },
+          { name: 'SQLite', icons: ['si:sqlite'] },
         ],
       },
       {
         name: t('Applied AI', 'IA aplicada'),
         items: [
-          { name: 'LLM APIs', note: 'Claude, Gemini, Groq' },
-          { name: t('Agents', 'Agentes'), note: 'LangChain, LangGraph' },
-          { name: 'MCP' },
-          { name: 'RAG', note: 'embeddings' },
-          { name: t('Evals', 'Avaliações'), note: 'LLM-as-judge' },
-          { name: 'TensorFlow.js' },
+          { name: 'LLM APIs', note: 'Claude, Gemini, Groq', icons: ['si:claude', 'si:googlegemini', 'tb:bolt'] },
+          { name: t('Agents', 'Agentes'), note: 'LangChain, LangGraph', icons: ['si:langchain', 'si:langgraph'] },
+          { name: 'MCP', icons: ['si:modelcontextprotocol'] },
+          { name: 'RAG', note: 'embeddings', icons: ['tb:database-search'] },
+          { name: t('Evals', 'Avaliações'), note: 'LLM-as-judge', icons: ['tb:checklist'] },
+          { name: 'TensorFlow.js', icons: ['si:tensorflow'] },
         ],
       },
       {
         name: t('Frontend', 'Frontend'),
         items: [
-          { name: 'React' },
-          { name: 'Vue 3', note: 'Nuxt' },
-          { name: 'Next.js' },
-          { name: 'Tailwind CSS' },
-          { name: 'Vite' },
-          { name: 'Astro' },
+          { name: 'React', icons: ['si:react'] },
+          { name: 'Vue 3', note: 'Nuxt', icons: ['si:vuedotjs', 'si:nuxt'] },
+          { name: 'Next.js', icons: ['si:nextdotjs'] },
+          { name: 'Tailwind CSS', icons: ['si:tailwindcss'] },
+          { name: 'Vite', icons: ['si:vite'] },
+          { name: 'Astro', icons: ['si:astro'] },
         ],
       },
       {
         name: t('Quality & Ops', 'Qualidade e Operação'),
         items: [
-          { name: 'PHPUnit · pytest' },
-          { name: 'Vitest · Playwright' },
-          { name: 'Docker' },
-          { name: 'GitHub Actions' },
-          { name: 'OpenTelemetry' },
-          { name: 'Terraform' },
-          { name: 'Render · Vercel' },
+          { name: 'PHPUnit · pytest', icons: ['tb:test-pipe', 'si:pytest'] },
+          { name: 'Vitest · Playwright', icons: ['si:vitest', 'tb:masks-theater'] },
+          { name: 'Docker', icons: ['si:docker'] },
+          { name: 'GitHub Actions', icons: ['si:githubactions'] },
+          { name: 'OpenTelemetry', icons: ['si:opentelemetry'] },
+          { name: 'Terraform', icons: ['si:terraform'] },
+          { name: 'Render · Vercel', icons: ['si:render', 'si:vercel'] },
         ],
       },
     ],
