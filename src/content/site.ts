@@ -193,14 +193,16 @@ const source = {
         date: t('Aug 2023 – Present', 'Ago 2023 – atual'),
         current: true,
         summary: t(
-          'International client projects for a B2B growth agency: websites, automations and integrations.',
-          'Projetos internacionais para uma agência de crescimento B2B: sites, automações e integrações.',
+          'International client projects for a B2B growth agency: websites on WordPress, Webflow and Shopify, HubSpot automations and integrations.',
+          'Projetos internacionais para uma agência de crescimento B2B: sites em WordPress, Webflow e Shopify, automações com HubSpot e integrações.',
         ),
         tech: [
-          { icon: 'tb:world', name: t('International projects', 'Projetos internacionais') },
-          { icon: 'tb:settings-automation', name: t('Automation', 'Automação') },
-          { icon: 'tb:plug-connected', name: t('Integrations', 'Integrações') },
-          { icon: 'tb:gauge', name: 'PageSpeed' },
+          { icon: 'si:wordpress', name: 'WordPress' },
+          { icon: 'si:hubspot', name: 'HubSpot' },
+          { icon: 'si:elementor', name: 'Elementor' },
+          { icon: 'si:shopify', name: 'Shopify' },
+          { icon: 'si:webflow', name: 'Webflow' },
+          { icon: 'si:php', name: 'PHP' },
         ],
         impact: {
           metric: '~20h',
@@ -263,9 +265,10 @@ const source = {
           'Trabalho full stack em uma plataforma de avaliação de fornecedores com integrações governamentais.',
         ),
         tech: [
-          { icon: 'tb:checklist', name: t('Supplier evaluation', 'Avaliação de fornecedores') },
-          { icon: 'tb:building-community', name: t('Government integrations', 'Integrações governamentais') },
-          { icon: 'tb:file-search', name: t('Analysis', 'Análise') },
+          { icon: 'si:php', name: 'PHP' },
+          { icon: 'si:laravel', name: 'Laravel' },
+          { icon: 'si:wordpress', name: 'WordPress' },
+          { icon: 'si:react', name: 'React' },
         ],
         impact: {
           metric: '~40%',
