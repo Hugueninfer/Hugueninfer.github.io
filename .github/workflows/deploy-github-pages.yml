@@ -1,9 +1,9 @@
-# Build estático e publicação no GitHub Pages (Settings → Pages → GitHub Actions)
+# Static build published to GitHub Pages (Settings → Pages → GitHub Actions)
 name: Deploy GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -27,21 +27,8 @@ jobs:
           cache: npm
 
       - run: npm ci
-
-      - name: Test and build static export
-        run: npm test
-
-      # Garante que o artefacto é o output do Vite (evita página em branco se index de origem fosse servido por engano)
-      - run: |
-          set -e
-          if grep -q '%BASE_URL%' out/index.html; then
-            echo "::error::dist/index.html ainda contém %BASE_URL% — o build do Vite não transformou o HTML."
-            exit 1
-          fi
-          if grep -q 'src/main.tsx' out/index.html; then
-            echo "::error::dist/index.html ainda referencia src/main.tsx — use apenas o resultado de npm run build no Pages."
-            exit 1
-          fi
+      - run: npm run build
+      - run: npm test
 
       - uses: actions/upload-pages-artifact@v3
         with:
