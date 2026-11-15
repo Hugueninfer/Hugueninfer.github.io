@@ -8,8 +8,7 @@ interface Props {
 const { content } = Astro.props;
 ---
 
-<section id="overview" class="hero hero-split">
-  <div class="hero-text">
+<section id="overview" class="hero">
   <p class="kicker">{content.hero.kicker}</p>
   <h1 class="hero-name">{content.profile.name}</h1>
   <dl class="hero-facts">
@@ -25,18 +24,4 @@ const { content } = Astro.props;
       ))
     }
   </dl>
-  </div>
-  <figure class="hero-figure">
-    <img
-      class="hero-photo"
-      src={content.profile.photo.src}
-      srcset={content.profile.photo.srcset}
-      sizes="(max-width: 900px) 220px, 300px"
-      alt={content.profile.photo.alt}
-      width="480"
-      height="600"
-      fetchpriority="high"
-    />
-    <figcaption>{content.profile.photo.caption}</figcaption>
-  </figure>
 </section>

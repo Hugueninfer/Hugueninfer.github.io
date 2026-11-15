@@ -8,10 +8,11 @@ interface Props {
   nav: { id: string; label: string }[];
   menuLabel: string;
   back?: { href: string; label: string };
+  photo?: { src: string; srcset: string; alt: string };
   social?: { label: string; url?: string }[];
 }
 
-const { eyebrow, title, meta, nav, menuLabel, back, social = [] } = Astro.props;
+const { eyebrow, title, meta, nav, menuLabel, back, photo, social = [] } = Astro.props;
 ---
 
 <aside class="sidebar">
@@ -23,6 +24,20 @@ const { eyebrow, title, meta, nav, menuLabel, back, social = [] } = Astro.props;
     )
   }
   <p class="label">{eyebrow}</p>
+  {
+    photo && (
+      <img
+        class="sidebar-photo"
+        src={photo.src}
+        srcset={photo.srcset}
+        sizes="96px"
+        alt={photo.alt}
+        width="96"
+        height="120"
+        fetchpriority="high"
+      />
+    )
+  }
   <p class="sidebar-name">{title.map((line, i) => (i ? [<br />, line] : line))}</p>
   <p class="sidebar-meta">{meta.map((line, i) => (i ? [<br />, line] : line))}</p>
 
