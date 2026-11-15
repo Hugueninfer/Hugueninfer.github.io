@@ -504,14 +504,14 @@ main {
   font-size: 15.5px;
 }
 
-.job-tech {
+.tech-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 16px;
 }
 
-.job-tech li {
+.tech-tags li {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -519,6 +519,10 @@ main {
   font-size: 13px;
   background: var(--paper-raised);
   border: 1px solid var(--rule-soft);
+}
+
+.case .tech-tags li {
+  background: var(--paper);
 }
 
 .tech-icon {
@@ -929,20 +933,6 @@ main {
   font-family: var(--serif);
   font-weight: 500;
   font-size: 24px;
-}
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 12px;
-}
-
-.chips li {
-  font-size: 12px;
-  padding: 3px 10px;
-  background: var(--accent-soft);
-  color: var(--ink);
 }
 
 .build-blocks {

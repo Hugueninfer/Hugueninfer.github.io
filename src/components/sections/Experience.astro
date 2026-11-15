@@ -1,6 +1,6 @@
 ---
 import type { SiteContent } from '../../content/site';
-import TechIcon from '../TechIcon.astro';
+import TechTags from '../TechTags.astro';
 
 interface Props {
   content: SiteContent;
@@ -40,14 +40,7 @@ const initials = (org: string) => {
               </div>
             </div>
             <p class="job-summary">{job.summary}</p>
-            <ul class="job-tech" aria-label={experience.techLabel}>
-              {job.tech.map((tech) => (
-                <li title={tech.name}>
-                  <TechIcon icon={tech.icon} size={20} />
-                  <span>{tech.name}</span>
-                </li>
-              ))}
-            </ul>
+            <TechTags items={job.tech} label={experience.techLabel} />
             <div class="job-impact">
               <div class="job-impact-head">
                 <span class="label">{experience.impactLabel}</span>

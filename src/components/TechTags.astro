@@ -1,0 +1,26 @@
+---
+import TechIcon from './TechIcon.astro';
+import { techIcon } from '../content/tech-icons';
+
+interface Props {
+  /** Either `{ icon, name }` pairs or plain names looked up in tech-icons. */
+  items: ({ icon: string; name: string } | string)[];
+  label?: string;
+}
+
+const { items, label } = Astro.props;
+const tags = items.map((item) =>
+  typeof item === 'string' ? { name: item, icon: techIcon(item) } : item,
+);
+---
+
+<ul class="tech-tags" aria-label={label}>
+  {
+    tags.map((tag) => (
+      <li title={tag.name}>
+        {tag.icon && <TechIcon icon={tag.icon} size={18} />}
+        <span>{tag.name}</span>
+      </li>
+    ))
+  }
+</ul>

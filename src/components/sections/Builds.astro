@@ -2,6 +2,7 @@
 import type { SiteContent } from '../../content/site';
 import { href, type Locale } from '../../content/i18n';
 import Icon from '../Icon.astro';
+import TechTags from '../TechTags.astro';
 
 interface Props {
   content: SiteContent;
@@ -25,9 +26,7 @@ const builds = content.projects.filter((p) => !p.featured);
             <h3 class="build-name">
               <a class="card-target" href={href(locale, `projects/${p.slug}/`)}>{p.name}</a>
             </h3>
-            <ul class="chips">
-              {p.tech.slice(0, 5).map((t) => <li>{t}</li>)}
-            </ul>
+            <TechTags items={p.tech} label={ui.stackLabel} />
           </header>
           <dl class="build-blocks">
             {p.blocks.map((b) => (

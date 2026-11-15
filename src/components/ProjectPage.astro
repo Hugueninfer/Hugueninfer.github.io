@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Masthead from './Masthead.astro';
 import Sidebar from './Sidebar.astro';
 import Icon from './Icon.astro';
+import TechTags from './TechTags.astro';
 import { getContent, type Locale } from '../content/site';
 import { href } from '../content/i18n';
 
@@ -67,9 +68,9 @@ const nav = [
               </dd>
             </div>
           </dl>
-          <ul class="chips project-tech" aria-label={ui.stackLabel}>
-            {project.tech.map((t) => <li>{t}</li>)}
-          </ul>
+          <div class="project-tech">
+            <TechTags items={project.tech} label={ui.stackLabel} />
+          </div>
           <dl class="case-blocks project-summary">
             {
               project.blocks.map((b) => (

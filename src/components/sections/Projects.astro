@@ -2,6 +2,7 @@
 import type { SiteContent } from '../../content/site';
 import { href, type Locale } from '../../content/i18n';
 import Icon from '../Icon.astro';
+import TechTags from '../TechTags.astro';
 
 interface Props {
   content: SiteContent;
@@ -26,7 +27,8 @@ const featured = content.projects.filter((p) => p.featured);
               <a class="card-target" href={href(locale, `projects/${p.slug}/`)}>{p.name}</a>
             </h3>
             <p class="case-headline">{p.headline}</p>
-            <p class="case-period">{p.period} · {p.tech.slice(0, 3).join(', ')}</p>
+            <p class="case-period">{p.period}</p>
+            <TechTags items={p.tech} label={ui.stackLabel} />
           </header>
           <dl class="case-blocks">
             {p.blocks.map((b) => (
