@@ -1,0 +1,46 @@
+---
+import type { SiteContent } from '../content/site';
+import Icon from './Icon.astro';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+const [first, last] = content.profile.name.split(' ');
+const social = content.contact.links.filter((l) => ['Email', 'GitHub', 'LinkedIn'].includes(l.label));
+---
+
+<aside class="sidebar">
+  <p class="label">{content.ui.profile}</p>
+  <p class="sidebar-name">{first}<br />{last}.</p>
+  <p class="sidebar-meta">{content.profile.role}<br />{content.profile.location}</p>
+
+  <details class="index" open>
+    <summary class="label">{content.ui.menu}</summary>
+    <nav aria-label={content.ui.menu}>
+      <ol>
+        {
+          content.nav.map((item, i) => (
+            <li>
+              <a href={`#${item.id}`} data-spy={item.id}>
+                <span class="index-num">{String(i).padStart(2, '0')}</span>
+                <span>{item.label}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+  </details>
+
+  <div class="sidebar-social">
+    {
+      social.map((l) => (
+        <a href={l.url} aria-label={l.label} target={l.url?.startsWith('http') ? '_blank' : undefined} rel="noopener">
+          <Icon name={l.label.toLowerCase()} />
+        </a>
+      ))
+    }
+  </div>
+</aside>
