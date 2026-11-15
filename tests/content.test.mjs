@@ -1,5 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
 import { getContent, locales, sectionIds } from '../src/content/site.ts';
 
 const shape = (value) =>
@@ -76,6 +77,7 @@ test('every job explains its impact in depth', () => {
       assert.ok(job.impact.metric.trim() && job.impact.label.trim(), `${job.org}: no headline metric`);
       assert.ok(job.impact.details.length >= 2, `${job.org}: impact needs at least two details`);
       assert.ok(job.tech.length > 0, `${job.org}: no tech icons`);
+      assert.ok(existsSync(new URL(`../public${job.logo}`, import.meta.url)), `${job.org}: logo ${job.logo} missing`);
     }
   }
 });

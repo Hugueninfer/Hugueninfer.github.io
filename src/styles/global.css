@@ -475,6 +475,15 @@ main {
   background: var(--ink);
 }
 
+.job-logo {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border: 1px solid var(--rule-soft);
+  background: #fff;
+}
+
 .job-org {
   font-family: var(--serif);
   font-weight: 500;

@@ -29,7 +29,11 @@ const initials = (org: string) => {
           </div>
           <div class="job-body">
             <div class="job-head">
-              <span class="job-mark" aria-hidden="true">{initials(job.org)}</span>
+              {job.logo ? (
+                <img class="job-logo" src={job.logo} alt={`${job.org} logo`} width="56" height="56" loading="lazy" decoding="async" />
+              ) : (
+                <span class="job-mark" aria-hidden="true">{initials(job.org)}</span>
+              )}
               <div>
                 <h3 class="job-org">{job.org}</h3>
                 <p class="job-role">{job.role}</p>

@@ -153,6 +153,7 @@ const source = {
       {
         role: t('Software Engineer', 'Engenheiro de Software'),
         org: 'Before',
+        logo: '/logos/companies/before.webp',
         date: t('Jul 2024 – Present', 'Jul 2024 – atual'),
         current: true,
         summary: t(
@@ -188,6 +189,7 @@ const source = {
       {
         role: t('Web Developer', 'Desenvolvedor Web'),
         org: 'Formula X — B2B Growth',
+        logo: '/logos/companies/formula-x.webp',
         date: t('Aug 2023 – Present', 'Ago 2023 – atual'),
         current: true,
         summary: t(
@@ -222,6 +224,7 @@ const source = {
       {
         role: t('Full Stack Software Engineer', 'Engenheiro de Software Full Stack'),
         org: 'SENAI Soluções Digitais',
+        logo: '/logos/companies/senai.webp',
         date: t('Dec 2022 – May 2024', 'Dez 2022 – Mai 2024'),
         current: false,
         summary: t(
@@ -252,6 +255,7 @@ const source = {
       {
         role: t('Full Stack Software Engineer', 'Engenheiro de Software Full Stack'),
         org: 'Sertras',
+        logo: '/logos/companies/sertras.webp',
         date: t('Mar 2022 – Dec 2022', 'Mar 2022 – Dez 2022'),
         current: false,
         summary: t(
@@ -285,6 +289,7 @@ const source = {
       {
         role: t('Developer Trainee', 'Desenvolvedor Trainee'),
         org: 'Dev4B',
+        logo: '/logos/companies/dev4b.webp',
         date: t('Mar 2021 – Mar 2022', 'Mar 2021 – Mar 2022'),
         current: false,
         summary: t(
