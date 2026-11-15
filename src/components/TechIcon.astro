@@ -1,0 +1,12 @@
+---
+import { iconSvg } from '../lib/icons';
+
+interface Props {
+  icon: string;
+  size?: number;
+}
+
+const { icon, size = 24 } = Astro.props;
+---
+
+<span class="tech-icon" set:html={iconSvg(icon, size)} />

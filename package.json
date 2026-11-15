@@ -16,6 +16,8 @@
     "astro": "5.18.2"
   },
   "devDependencies": {
+    "@tabler/icons": "^3.52.0",
+    "simple-icons": "^16.38.0",
     "tsx": "^4.20.3"
   }
 }
