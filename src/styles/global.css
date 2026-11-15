@@ -205,16 +205,6 @@ main {
   text-decoration: underline;
 }
 
-.sidebar-photo {
-  display: block;
-  width: 96px;
-  height: 120px;
-  margin-top: 22px;
-  object-fit: cover;
-  background: #1f1d1d;
-  border: 1px solid var(--ink);
-}
-
 .sidebar-name {
   margin-top: 26px;
   font-family: var(--serif);
@@ -1279,7 +1269,6 @@ a.contact-link:hover .contact-arrow {
   }
 
   .sidebar > .label,
-  .sidebar-photo,
   .sidebar-name,
   .sidebar-meta,
   .sidebar-social {

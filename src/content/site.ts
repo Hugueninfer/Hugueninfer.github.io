@@ -59,15 +59,6 @@ const source = {
     name: 'Pedro Huguenin',
     role: t('Software Engineer', 'Engenheiro de Software'),
     location: t('Volta Redonda, Brazil', 'Volta Redonda, Brasil'),
-    photo: {
-      src: '/images/pedro-480.webp',
-      srcset: '/images/pedro-480.webp 480w, /images/pedro-960.webp 960w',
-      alt: t(
-        'Portrait of Pedro Huguenin wearing glasses and a dark sweater, arms crossed',
-        'Retrato de Pedro Huguenin de óculos e suéter escuro, de braços cruzados',
-      ),
-      caption: t('Pedro Huguenin · Software Engineer', 'Pedro Huguenin · Engenheiro de Software'),
-    },
   },
   nav: [
     { id: 'overview', label: t('Overview', 'Visão geral') },

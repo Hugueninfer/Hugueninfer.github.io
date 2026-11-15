@@ -19,8 +19,6 @@ for (const [prefix, lang, other] of [
     assert.match(html, new RegExp(`<a[^>]+href="${other}"[^>]+data-lang-switch`));
     assert.match(html, /rel="alternate" hreflang="pt-BR"/);
     assert.match(html, /linkedin\.com\/in\/pedro-huguenin/);
-    assert.match(html, /<img[^>]+class="sidebar-photo"[^>]+alt="[^"]{20,}"/, 'sidebar portrait missing or without alt text');
-    assert.ok(existsSync(file('images/pedro-960.webp')), 'portrait not exported');
   });
 
   test(`${prefix || '/'} home links every project to its case study`, () => {
