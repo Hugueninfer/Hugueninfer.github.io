@@ -1,38 +1,42 @@
-# Pedro Huguenin — Portfólio
+# Pedro Huguenin — Portfolio
 
-Portfólio de engenharia de software, backend e IA aplicada, com projetos Orbit, Agency Hub, Smart Waste AI e ComplyFlow AI, trajetória profissional, formação e contato.
+Personal portfolio of Pedro Huguenin, software engineer working on backend, full stack and applied AI.
 
-Site: https://hugueninfer.github.io/
+Live: https://hugueninfer.github.io/ · Portuguese: https://hugueninfer.github.io/pt/
 
-## Publicação no GitHub Pages
+## Stack
 
-Requer Node.js 24. A publicação utiliza os módulos de navegador versionados, sem servidor em produção.
+- [Astro](https://astro.build/) static site, no client framework.
+- Plain CSS with design tokens in `src/styles/global.css`.
+- One small script (`src/scripts/page.ts`) for the section index, result tabs and language switch.
 
-```bash
-npm run build:pages
-node --test tests/pages-export.test.mjs
-```
+## Structure
 
-A saída estática fica em `out/`. Cada página tem seu próprio `index.html`, permitindo acesso direto às rotas. O workflow de GitHub Actions publica após alterações em `main`.
+| Path | Purpose |
+|---|---|
+| `src/content/site.ts` | Every string on the site, in English and Portuguese |
+| `src/components/Portfolio.astro` | Page shell: masthead, sidebar, sections |
+| `src/components/sections/` | One component per section |
+| `src/pages/index.astro`, `src/pages/pt/index.astro` | English and Portuguese routes |
+| `tests/` | Content consistency and build output checks |
 
-## Desenvolvimento local
+## Develop
+
+Requires Node.js 22+.
 
 ```bash
 npm ci
-npm run dev
+npm run dev       # http://localhost:4321
+npm run build     # static output in out/
+npm test          # run after build
 ```
 
-## Conteúdo e personalização
+Pushing to `main` builds, tests and publishes to GitHub Pages.
 
-- `reference/custom/personal-content.mjs`: conteúdo profissional e projetos.
-- `reference/custom/translations.mjs`: português, inglês e alemão.
-- `reference/custom/stack-catalog.mjs`: tecnologias e tooltips.
-- `reference/custom/`: personagens, animações, estilos e ícones.
-- `scripts/prepare-reference.mjs`: regenera os módulos públicos personalizados.
-- `scripts/build-pages.mjs`: cria a versão estática para publicação.
+## Editing content
 
-## Créditos
+Add or change a project in `src/content/site.ts`. Each translatable string is a `t('english', 'português')` pair; the tests fail if a locale is missing a field or a project lacks a repository link or one of its four story blocks.
 
-A experiência visual foi adaptada do site público [Pleurat](https://www.pleurat.com/), com personalização de conteúdo, personagens, cores e interações. Não há afiliação ou endosso. Os arquivos de referência não são apresentados como criação original deste portfólio.
+## Credits
 
-Os ícones de tecnologias vêm de [Simple Icons](https://simpleicons.org/), com exceções personalizadas. Fontes, licenças e avisos individuais estão em `reference/custom/icons/`. Marcas pertencem aos respectivos titulares.
+Layout inspired by the editorial style of [ashwingupta.dev](https://www.ashwingupta.dev/). The code and content here are original; no affiliation.
