@@ -327,6 +327,37 @@ main {
   letter-spacing: -0.025em;
 }
 
+.hero-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(220px, 24vw, 300px);
+  align-items: end;
+  gap: 32px 56px;
+}
+
+.hero-figure {
+  margin: 0;
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #1f1d1d;
+  border: 1px solid var(--ink);
+  box-shadow: -10px 10px 0 -1px var(--paper), -10px 10px 0 0 var(--rule);
+}
+
+.hero-figure figcaption {
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 .hero-facts {
   display: flex;
   flex-wrap: wrap;
@@ -1308,6 +1339,20 @@ a.contact-link:hover .contact-arrow {
 
   .hero {
     padding: 36px 0 64px;
+  }
+
+  .hero-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-figure {
+    order: -1;
+    width: min(220px, 60%);
+    margin-left: 10px;
+  }
+
+  .hero-figure figcaption {
+    display: none;
   }
 
   .section {
