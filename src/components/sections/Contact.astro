@@ -13,27 +13,37 @@ const iconFor = (label: string) => (label.startsWith('Loc') ? 'pin' : label.toLo
 <section id="contact" class="section">
   <p class="label">{contact.eyebrow}</p>
   <h2 class="section-title">{contact.title}</h2>
-  <p class="lead contact-body">{contact.body}</p>
-  <ul class="contact-list">
-    {
-      contact.links.map((l) => (
-        <li>
-          {'url' in l && l.url ? (
-            <a href={l.url} target={l.url.startsWith('http') ? '_blank' : undefined} rel="noopener">
-              <Icon name={iconFor(l.label)} />
-              <span class="label">{l.label}</span>
-              <span class="contact-value">{l.value}</span>
-              <Icon name="arrow" />
-            </a>
-          ) : (
-            <div>
-              <Icon name={iconFor(l.label)} />
-              <span class="label">{l.label}</span>
-              <span class="contact-value">{l.value}</span>
-            </div>
-          )}
-        </li>
-      ))
-    }
-  </ul>
+  <div class="contact-grid">
+    <p class="contact-body">{contact.body}</p>
+    <ul class="contact-list">
+      {
+        contact.links.map((l) => (
+          <li>
+            {'url' in l && l.url ? (
+              <a class="contact-link" href={l.url} target={l.url.startsWith('http') ? '_blank' : undefined} rel="noopener">
+                <span class="contact-icon">
+                  <Icon name={iconFor(l.label)} />
+                </span>
+                <span class="contact-text">
+                  <span class="label">{l.label}</span>
+                  <span class="contact-value">{l.value}</span>
+                </span>
+                <span class="contact-arrow" aria-hidden="true">↗</span>
+              </a>
+            ) : (
+              <div class="contact-link">
+                <span class="contact-icon">
+                  <Icon name={iconFor(l.label)} />
+                </span>
+                <span class="contact-text">
+                  <span class="label">{l.label}</span>
+                  <span class="contact-value">{l.value}</span>
+                </span>
+              </div>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>

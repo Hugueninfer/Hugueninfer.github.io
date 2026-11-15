@@ -1,11 +1,18 @@
 ---
 import type { SiteContent } from '../../content/site';
+import TechIcon from '../TechIcon.astro';
 
 interface Props {
   content: SiteContent;
 }
 
 const { experience } = Astro.props.content;
+// Monogram for the company badge: an acronym as-is ("SENAI"), else initials ("FX").
+const initials = (org: string) => {
+  const words = org.split(/[\s—-]+/).filter((w) => /^[A-Z0-9]/.test(w));
+  if (/^[A-Z]{2,5}$/.test(words[0])) return words[0];
+  return words.slice(0, 2).map((w) => w[0]).join('');
+};
 ---
 
 <section id="experience" class="section">
@@ -21,15 +28,32 @@ const { experience } = Astro.props.content;
             {job.current && <span class="job-current">{experience.currentLabel}</span>}
           </div>
           <div class="job-body">
-            <h3 class="job-org">{job.org}</h3>
-            <p class="job-role">{job.role}</p>
-            <ul class="job-points">
-              {job.points.map((p) => <li>{p}</li>)}
+            <div class="job-head">
+              <span class="job-mark" aria-hidden="true">{initials(job.org)}</span>
+              <div>
+                <h3 class="job-org">{job.org}</h3>
+                <p class="job-role">{job.role}</p>
+              </div>
+            </div>
+            <p class="job-summary">{job.summary}</p>
+            <ul class="job-tech" aria-label={experience.techLabel}>
+              {job.tech.map((tech) => (
+                <li title={tech.name}>
+                  <TechIcon icon={tech.icon} size={20} />
+                  <span>{tech.name}</span>
+                </li>
+              ))}
             </ul>
-            <p class="job-impact">
-              <span class="label">{experience.impactLabel}</span>
-              {job.impact}
-            </p>
+            <div class="job-impact">
+              <div class="job-impact-head">
+                <span class="label">{experience.impactLabel}</span>
+                <span class="job-metric">{job.impact.metric}</span>
+                <span class="job-metric-label">{job.impact.label}</span>
+              </div>
+              <ul class="job-impact-details">
+                {job.impact.details.map((d) => <li>{d}</li>)}
+              </ul>
+            </div>
           </div>
         </li>
       ))

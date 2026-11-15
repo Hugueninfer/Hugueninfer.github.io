@@ -1,5 +1,6 @@
 ---
 import type { SiteContent } from '../../content/site';
+import TechIcon from '../TechIcon.astro';
 
 interface Props {
   content: SiteContent;
@@ -17,11 +18,16 @@ const { stack } = Astro.props.content;
       stack.groups.map((g) => (
         <div class="stack-group">
           <h3>{g.name}</h3>
-          <ul>
+          <ul class="tech-list">
             {g.items.map((item) => (
               <li>
-                <span>{item.name}</span>
-                {'note' in item && item.note && <span class="stack-note">{item.note}</span>}
+                <span class="tech-logos">
+                  {item.icons.map((icon) => (
+                    <TechIcon icon={icon} size={26} />
+                  ))}
+                </span>
+                <span class="tech-name">{item.name}</span>
+                {'note' in item && item.note && <span class="tech-note">{item.note}</span>}
               </li>
             ))}
           </ul>
