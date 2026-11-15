@@ -47,4 +47,6 @@ The tests fail if a locale is missing a field, a slug repeats, or a project lack
 
 ## Credits
 
+Brand logos from [Simple Icons](https://simpleicons.org/) (CC0) and outline icons from [Tabler Icons](https://tabler.io/icons) (MIT), rendered to inline SVG at build time. Trademarks belong to their owners.
+
 Layout inspired by the editorial style of [ashwingupta.dev](https://www.ashwingupta.dev/). The code and content here are original; no affiliation.
