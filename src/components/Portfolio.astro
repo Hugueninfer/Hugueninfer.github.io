@@ -10,6 +10,7 @@ import Certifications from './sections/Certifications.astro';
 import Results from './sections/Results.astro';
 import Projects from './sections/Projects.astro';
 import Builds from './sections/Builds.astro';
+import Recommendations from './sections/Recommendations.astro';
 import Stack from './sections/Stack.astro';
 import Contact from './sections/Contact.astro';
 import { getContent, type Locale } from '../content/site';
@@ -46,6 +47,7 @@ const social = content.contact.links.filter((l) => ['Email', 'GitHub', 'LinkedIn
         <Results content={content} />
         <Projects content={content} locale={locale} />
         <Builds content={content} locale={locale} />
+        <Recommendations content={content} />
         <Stack content={content} />
         <Contact content={content} />
       </main>

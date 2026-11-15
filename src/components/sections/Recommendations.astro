@@ -1,0 +1,46 @@
+---
+import type { SiteContent } from '../../content/site';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { recommendations } = Astro.props.content;
+const initials = (name: string) =>
+  name
+    .split(' ')
+    .filter((w) => /^[A-Z]/.test(w))
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join('');
+---
+
+<section id="recommendations" class="section">
+  <p class="label">{recommendations.eyebrow}</p>
+  <h2 class="section-title">{recommendations.title}</h2>
+  <p class="lead">{recommendations.lead}</p>
+  <div class="quotes">
+    {
+      recommendations.items.map((r) => (
+        <figure class="quote">
+          <blockquote>
+            <p>{r.quote}</p>
+          </blockquote>
+          {recommendations.translated && <p class="quote-note">{recommendations.translated}</p>}
+          <figcaption class="quote-author">
+            <span class="quote-initials" aria-hidden="true">
+              {initials(r.name)}
+            </span>
+            <span class="quote-who">
+              <a href={r.url} target="_blank" rel="noopener" class="quote-name">
+                {r.name}
+              </a>
+              <span class="quote-role">{r.role}</span>
+              <span class="quote-relation">{r.relation}</span>
+            </span>
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+</section>
