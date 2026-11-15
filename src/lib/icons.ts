@@ -15,6 +15,15 @@ const brands = new Map<string, SimpleIcon>(
 );
 const outlines = tablerNodes as unknown as Record<string, TablerNode[]>;
 
+// Relative luminance of a hex colour; near-black brand colours would vanish on
+// the dark theme, so those logos are drawn in the current text colour instead.
+function luminance(hex: string): number {
+  const [r, g, b] = [0, 2, 4]
+    .map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
+    .map((v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
 const escape = (v: string) => v.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
 export function hasIcon(key: string): boolean {
@@ -27,7 +36,8 @@ export function iconSvg(key: string, size = 24): string {
   const [set, name] = key.split(':');
   if (set === 'si' && brands.has(name)) {
     const icon = brands.get(name)!;
-    return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="#${icon.hex}" aria-hidden="true"><path d="${icon.path}"/></svg>`;
+    const fill = luminance(icon.hex) < 0.06 ? 'currentColor' : `#${icon.hex}`;
+    return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="${fill}" aria-hidden="true"><path d="${icon.path}"/></svg>`;
   }
   if (set === 'tb' && name in outlines) {
     const children = outlines[name]
