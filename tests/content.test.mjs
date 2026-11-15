@@ -81,3 +81,14 @@ test('every job explains its impact in depth', () => {
     }
   }
 });
+
+test('every project technology has an icon', async () => {
+  const { hasIcon } = await import('../src/lib/icons.ts');
+  const { techIcon } = await import('../src/content/tech-icons.ts');
+  for (const p of getContent('en').projects) {
+    for (const name of p.tech) {
+      const key = techIcon(name);
+      assert.ok(key && hasIcon(key), `${p.name}: no icon for "${name}"`);
+    }
+  }
+});
