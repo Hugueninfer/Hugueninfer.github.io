@@ -77,7 +77,8 @@ test('every job explains its impact in depth', () => {
       assert.ok(job.impact.metric.trim() && job.impact.label.trim(), `${job.org}: no headline metric`);
       assert.ok(job.impact.details.length >= 2, `${job.org}: impact needs at least two details`);
       assert.ok(job.tech.length > 0, `${job.org}: no tech icons`);
-      assert.ok(existsSync(new URL(`../public${job.logo}`, import.meta.url)), `${job.org}: logo ${job.logo} missing`);
+      // A job without a logo falls back to a monogram badge; a logo that is set must exist.
+      if (job.logo) assert.ok(existsSync(new URL(`../public${job.logo}`, import.meta.url)), `${job.org}: logo ${job.logo} missing`);
     }
   }
 });

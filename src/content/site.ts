@@ -24,18 +24,18 @@ export type SectionId = (typeof sectionIds)[number];
 const source = {
   meta: {
     title: t(
-      'Pedro Huguenin | Software Engineer — Backend, Full Stack & Applied AI',
-      'Pedro Huguenin | Engenheiro de Software — Backend, Full Stack e IA Aplicada',
+      'Pedro Huguenin | AI Engineer — LLMs, RAG & AI Agents on a Backend Foundation',
+      'Pedro Huguenin | AI Engineer — LLMs, RAG e Agentes de IA com base em Backend',
     ),
     description: t(
-      'Software engineer with 5+ years in PHP, Laravel, Python and multi-tenant systems, building applied AI products you can verify.',
-      'Engenheiro de software com mais de 5 anos em PHP, Laravel, Python e sistemas multi-tenant, construindo produtos de IA aplicada verificáveis.',
+      'AI Engineer at Linkeed building customer-service agents, RAG and MCP integrations in production, on top of 5+ years of backend engineering in PHP, Laravel, Python and PostgreSQL.',
+      'AI Engineer na Linkeed construindo agentes de atendimento, RAG e integrações MCP em produção, sobre mais de 5 anos de engenharia backend em PHP, Laravel, Python e PostgreSQL.',
     ),
   },
   ui: {
     skip: t('Skip to content', 'Pular para o conteúdo'),
     masthead: t('Engineering Notes', 'Notas de Engenharia'),
-    disciplines: t('Backend / Full stack / Applied AI', 'Backend / Full stack / IA aplicada'),
+    disciplines: t('Applied AI / Backend / Full stack', 'IA aplicada / Backend / Full stack'),
     profile: t('Professional profile', 'Perfil profissional'),
     switchLabel: t('Ler em português', 'Read in English'),
     switchShort: t('PT', 'EN'),
@@ -59,7 +59,7 @@ const source = {
   },
   profile: {
     name: 'Pedro Huguenin',
-    role: t('Software Engineer', 'Engenheiro de Software'),
+    role: t('AI Engineer', 'AI Engineer'),
     location: t('Volta Redonda, Brazil', 'Volta Redonda, Brasil'),
   },
   nav: [
@@ -81,9 +81,9 @@ const source = {
       'Não a demo — o sistema por trás dela: dados, contratos e o que acontece depois do deploy.',
     ),
     facts: [
-      { label: t('Role', 'Cargo'), value: t('Software Engineer', 'Engenheiro de Software') },
-      { label: t('Company', 'Empresa'), value: t('Before', 'Before'), note: t('Jul 2024 – Present', 'Jul 2024 – atual') },
-      { label: t('Focus', 'Foco'), value: t('Backend · Applied AI', 'Backend · IA aplicada') },
+      { label: t('Role', 'Cargo'), value: t('AI Engineer', 'AI Engineer') },
+      { label: t('Company', 'Empresa'), value: t('Linkeed', 'Linkeed'), note: t('Nov 2026 – Present', 'Nov 2026 – atual') },
+      { label: t('Focus', 'Foco'), value: t('LLMs · RAG · AI agents · MCP', 'LLMs · RAG · Agentes de IA · MCP') },
     ],
   },
   about: {
@@ -99,12 +99,12 @@ const source = {
         'Comecei em 2021 como trainee, escrevendo sistemas de gestão em PHP, Laravel e MySQL — e publicando eu mesmo em servidores Ubuntu. O hábito ficou: me importo com o que acontece depois do merge, não só antes dele.',
       ),
       t(
-        'Since then I have built supplier-evaluation platforms with government integrations, tuned PostgreSQL for systems with thousands of users, shipped international projects and, today at Before, designed multi-tenant architecture where tenant isolation, caching and performance are not optional.',
-        'Desde então construí plataformas de avaliação de fornecedores com integrações governamentais, otimizei PostgreSQL para sistemas com milhares de usuários, entreguei projetos internacionais e, hoje na Before, desenho arquitetura multi-tenant onde isolamento de tenant, cache e performance não são opcionais.',
+        'Since then I have built supplier-evaluation platforms with government integrations, tuned PostgreSQL for systems with tens of thousands of users, built Shopify stores for European companies and, at Before, designed a multi-tenant architecture and Pix payment integrations where isolation, idempotency and performance are not optional.',
+        'Desde então construí plataformas de avaliação de fornecedores com integrações governamentais, otimizei PostgreSQL para sistemas com dezenas de milhares de usuários, criei lojas Shopify para empresas europeias e, na Before, desenhei uma arquitetura multi-tenant e integrações de pagamento Pix onde isolamento, idempotência e performance não são opcionais.',
       ),
       t(
-        'Applied AI is the next step, not a detour. I am taking a postgraduate degree in Software Engineering for Applied AI and building products where the model is one component among many: every answer cites its evidence, every fallback is explicit, and a human makes the final call.',
-        'IA aplicada é o próximo passo, não um desvio. Estou cursando a pós-graduação em Engenharia de Software em IA Aplicada e construindo produtos em que o modelo é só um componente entre vários: toda resposta cita sua evidência, todo fallback é explícito e a decisão final é humana.',
+        'Today I am an AI Engineer at Linkeed, an AI-first software house, working on customer-service agents, RAG and MCP integrations in production. I am also taking an MBA in Software Engineering for Applied AI. The model is one component among many: every answer cites its evidence, personal data is masked before it reaches the model, and a human makes the final call where it matters.',
+        'Hoje sou AI Engineer na Linkeed, uma software house AI-first, trabalhando com agentes de atendimento, RAG e integrações MCP em produção. Também curso um MBA em Engenharia de Software em IA Aplicada. O modelo é só um componente entre vários: toda resposta cita sua evidência, dados pessoais são mascarados antes de chegar ao modelo e a decisão final é humana onde importa.',
       ),
     ],
     pillars: [
@@ -154,19 +154,69 @@ const source = {
     techLabel: t('Worked with', 'Trabalhei com'),
     items: [
       {
+        role: t('AI Engineer', 'AI Engineer'),
+        org: 'Linkeed',
+        logo: '/logos/companies/linkeed.webp',
+        date: t('Nov 2026 – Present', 'Nov 2026 – atual'),
+        current: true,
+        summary: t(
+          'AI-first software house. I work on an AI-powered management platform for a property management company: a resident-facing customer-service agent (WhatsApp and webchat) and an internal RAG assistant over the company documents.',
+          'Software house AI-first. Trabalho em uma plataforma de gestão com IA para uma administradora de condomínios: um agente de atendimento para moradores (WhatsApp e webchat) e um assistente RAG interno sobre os documentos da empresa.',
+        ),
+        tech: [
+          { icon: 'si:typescript', name: 'TypeScript' },
+          { icon: 'si:python', name: 'Python' },
+          { icon: 'si:fastapi', name: 'FastAPI' },
+          { icon: 'si:nextdotjs', name: 'Next.js' },
+          { icon: 'si:langgraph', name: 'LangGraph' },
+          { icon: 'si:modelcontextprotocol', name: 'MCP' },
+          { icon: 'si:supabase', name: 'Supabase' },
+          { icon: 'si:postgresql', name: 'pgvector' },
+        ],
+        impact: {
+          metric: t('minutes', 'minutos'),
+          label: t('to adjust agent behavior, instead of a code deploy', 'para ajustar o comportamento do agente, em vez de um deploy'),
+          details: [
+            t(
+              'Evolving a LangGraph agent with tool calling that answers residents from FAQs and documents and only opens service requests after the resident confirms.',
+              'Evoluo um agente LangGraph com tool calling que responde moradores a partir de FAQs e documentos e só abre chamados depois que o morador confirma.',
+            ),
+            t(
+              'Built in-app configuration (editable prompt, team routing by keyword and emergency alerts) so behavior changes no longer need a deploy.',
+              'Construí configuração dentro do app (prompt editável, roteamento por palavra-chave e alertas de emergência) para que mudanças de comportamento não dependam de deploy.',
+            ),
+            t(
+              'Building an MCP server with OAuth so employees can query the system from Claude with the same permissions they have in the app.',
+              'Construo um servidor MCP com OAuth para que colaboradores consultem o sistema pelo Claude com as mesmas permissões que têm no app.',
+            ),
+            t(
+              'Working on an internal RAG assistant (pgvector + embeddings) over PDFs, Office documents and spreadsheets, with OCR when needed.',
+              'Trabalho em um assistente RAG interno (pgvector + embeddings) sobre PDFs, documentos Office e planilhas, com OCR quando necessário.',
+            ),
+            t(
+              'Applying LGPD guardrails across the pipeline: personal data masked before reaching the model, PII stripped from logs and identity verification before exposing user data.',
+              'Aplico guardrails de LGPD em todo o pipeline: dados pessoais mascarados antes de chegar ao modelo, PII removida dos logs e verificação de identidade antes de expor dados do usuário.',
+            ),
+          ],
+        },
+      },
+      {
         role: t('Software Engineer', 'Engenheiro de Software'),
         org: 'Before',
         logo: '/logos/companies/before.webp',
-        date: t('Jul 2024 – Present', 'Jul 2024 – atual'),
-        current: true,
+        date: t('Jul 2024 – Oct 2026', 'Jul 2024 – Out 2026'),
+        current: false,
         summary: t(
-          'Backend engineering on a multi-tenant platform in PHP and Laravel: architecture, APIs, Redis caching and performance.',
-          'Engenharia backend em uma plataforma multi-tenant em PHP e Laravel: arquitetura, APIs, cache com Redis e performance.',
+          'Backend engineering on a multi-tenant platform in PHP and Laravel: architecture, payments, APIs, PostgreSQL performance and Docker environments.',
+          'Engenharia backend em uma plataforma multi-tenant em PHP e Laravel: arquitetura, pagamentos, APIs, performance em PostgreSQL e ambientes Docker.',
         ),
         tech: [
           { icon: 'si:php', name: 'PHP' },
           { icon: 'si:laravel', name: 'Laravel' },
+          { icon: 'si:vuedotjs', name: 'Vue.js' },
+          { icon: 'si:postgresql', name: 'PostgreSQL' },
           { icon: 'si:redis', name: 'Redis' },
+          { icon: 'si:docker', name: 'Docker' },
           { icon: 'tb:api', name: 'REST APIs' },
           { icon: 'tb:building-skyscraper', name: 'Multi-tenancy' },
         ],
@@ -175,71 +225,86 @@ const source = {
           label: t('less time to onboard a new client', 'menos tempo para integrar um novo cliente'),
           details: [
             t(
-              'Designed multi-tenant architecture so each new client runs on the same codebase with its own isolated data.',
-              'Desenhei a arquitetura multi-tenant para que cada novo cliente rode na mesma base de código, com dados isolados.',
+              'Cut new-client onboarding from 10 days to 3, enabling 2x more activations per month without growing the team, by designing a multi-tenant architecture in Laravel.',
+              'Reduzi o onboarding de novos clientes de 10 para 3 dias, permitindo 2x mais ativações por mês sem aumentar o time, ao desenhar uma arquitetura multi-tenant em Laravel.',
             ),
             t(
-              'Built and evolved the APIs that connect the platform, with Redis caching to keep responses fast as tenants grow.',
-              'Construí e evoluí as APIs que conectam a plataforma, com cache em Redis para manter as respostas rápidas conforme os tenants crescem.',
+              'Increased monthly revenue by ~12% and cut checkout completion from ~2 days to under 30 seconds by integrating Pix with automatic webhook confirmation (~3,000 transactions/month).',
+              'Aumentei a receita mensal em ~12% e reduzi a conclusão do checkout de ~2 dias para menos de 30 segundos ao integrar o Pix com confirmação automática por webhook (~3.000 transações/mês).',
             ),
             t(
-              'Result: bringing a new client onto the platform now takes 70% less time.',
-              'Resultado: colocar um novo cliente na plataforma hoje leva 70% menos tempo.',
+              'Cut search and filter response time from 2.4 s to 1.1 s for ~15,000 users by optimizing PostgreSQL queries, indexes and data structures.',
+              'Reduzi o tempo de resposta de buscas e filtros de 2,4 s para 1,1 s para ~15.000 usuários otimizando consultas, índices e estruturas no PostgreSQL.',
+            ),
+            t(
+              'Freed ~20 hours/month for the finance team by automating payment reconciliation, and cut the operations team’s manual work by ~40% (~60 tasks/week) with internal systems.',
+              'Liberei ~20 horas/mês do time financeiro automatizando a conciliação de pagamentos e reduzi em ~40% o trabalho manual da operação (~60 tarefas/semana) com sistemas internos.',
+            ),
+            t(
+              'Cut environment setup from ~1 day to 15 minutes by containerizing the applications with Docker, Nginx and Linux.',
+              'Reduzi a configuração de ambiente de ~1 dia para 15 minutos containerizando as aplicações com Docker, Nginx e Linux.',
             ),
           ],
         },
       },
       {
-        role: t('Web Developer', 'Desenvolvedor Web'),
+        role: t('Full Stack Developer', 'Desenvolvedor Full Stack'),
         org: 'Formula X — B2B Growth',
         logo: '/logos/companies/formula-x.webp',
         date: t('Aug 2023 – Present', 'Ago 2023 – atual'),
         current: true,
         summary: t(
-          'International client projects for a B2B growth agency: websites on WordPress, Webflow and Shopify, HubSpot automations and integrations.',
-          'Projetos internacionais para uma agência de crescimento B2B: sites em WordPress, Webflow e Shopify, automações com HubSpot e integrações.',
+          'Client projects for a Copenhagen-based B2B growth agency: Shopify stores for European companies, WordPress and Webflow sites, custom plugins and API integrations.',
+          'Projetos para clientes de uma agência de crescimento B2B de Copenhague: lojas Shopify para empresas europeias, sites em WordPress e Webflow, plugins sob medida e integrações via API.',
         ),
         tech: [
-          { icon: 'si:wordpress', name: 'WordPress' },
-          { icon: 'si:hubspot', name: 'HubSpot' },
-          { icon: 'si:elementor', name: 'Elementor' },
           { icon: 'si:shopify', name: 'Shopify' },
+          { icon: 'si:wordpress', name: 'WordPress' },
+          { icon: 'si:woocommerce', name: 'WooCommerce' },
+          { icon: 'si:elementor', name: 'Elementor' },
           { icon: 'si:webflow', name: 'Webflow' },
           { icon: 'si:php', name: 'PHP' },
+          { icon: 'si:javascript', name: 'JavaScript' },
         ],
         impact: {
-          metric: '~20h',
-          label: t('saved per month through automation', 'economizadas por mês com automação'),
+          metric: '38 → 87',
+          label: t('mobile PageSpeed across ~30 client websites', 'de PageSpeed mobile em ~30 sites de clientes'),
           details: [
             t(
-              'Delivered projects for international clients, from the build to the integrations with their tools.',
-              'Entreguei projetos para clientes internacionais, da construção às integrações com as ferramentas deles.',
+              'Built e-commerce stores for European companies with Shopify, including an airline ticket store and a tire store.',
+              'Construí lojas virtuais para empresas europeias com Shopify, incluindo uma loja de passagens aéreas e uma de pneus.',
             ),
             t(
-              'Automated repetitive work, saving about 20 hours per month on average.',
-              'Automatizei trabalho repetitivo, economizando em média cerca de 20 horas por mês.',
+              'Raised mobile PageSpeed from 38 to 87 across ~30 sites by optimizing assets, scripts and loading in WordPress, PHP and JavaScript.',
+              'Elevei o PageSpeed mobile de 38 para 87 em ~30 sites otimizando assets, scripts e carregamento em WordPress, PHP e JavaScript.',
             ),
             t(
-              'Performance work improved PageSpeed scores by roughly 60%.',
-              'O trabalho de performance melhorou as notas de PageSpeed em cerca de 60%.',
+              'Increased landing page conversion from 2.1% to 3.4% by redesigning and optimizing pages with WordPress, Elementor and Webflow.',
+              'Aumentei a conversão de landing pages de 2,1% para 3,4% redesenhando e otimizando páginas com WordPress, Elementor e Webflow.',
+            ),
+            t(
+              'Saved ~15 hours/month of manual work per client with custom plugins, automations and API integrations, including AI tools, and kept ~95% retention across ~20 B2B clients over 3 years.',
+              'Economizei ~15 horas/mês de trabalho manual por cliente com plugins sob medida, automações e integrações via API, incluindo ferramentas de IA, e mantive ~95% de retenção em ~20 clientes B2B ao longo de 3 anos.',
             ),
           ],
         },
       },
       {
-        role: t('Full Stack Software Engineer', 'Engenheiro de Software Full Stack'),
+        role: t('Full Stack Developer', 'Desenvolvedor Full Stack'),
         org: 'SENAI Soluções Digitais',
         logo: '/logos/companies/senai.webp',
         date: t('Dec 2022 – May 2024', 'Dez 2022 – Mai 2024'),
         current: false,
         summary: t(
-          'Full stack development of systems used by thousands of people, with Laravel APIs on PostgreSQL.',
-          'Desenvolvimento full stack de sistemas usados por milhares de pessoas, com APIs Laravel sobre PostgreSQL.',
+          'Full stack development of a job platform with ~50,000 users: Laravel APIs on PostgreSQL, with React and React Native clients.',
+          'Desenvolvimento full stack de uma plataforma de vagas com ~50.000 usuários: APIs Laravel sobre PostgreSQL, com clientes em React e React Native.',
         ),
         tech: [
           { icon: 'si:php', name: 'PHP' },
           { icon: 'si:laravel', name: 'Laravel' },
           { icon: 'si:postgresql', name: 'PostgreSQL' },
+          { icon: 'si:react', name: 'React · React Native' },
+          { icon: 'si:docker', name: 'Docker' },
           { icon: 'tb:api', name: 'REST APIs' },
         ],
         impact: {
@@ -247,53 +312,62 @@ const source = {
           label: t('faster searches and filters', 'buscas e filtros mais rápidos'),
           details: [
             t(
-              'Built and maintained Laravel APIs for systems with thousands of users.',
-              'Construí e mantive APIs Laravel para sistemas com milhares de usuários.',
+              'Cut search and filter response time from 3.2 s to 1.5 s on a platform with ~50,000 users by optimizing PostgreSQL queries and indexes.',
+              'Reduzi o tempo de resposta de buscas e filtros de 3,2 s para 1,5 s em uma plataforma com ~50.000 usuários otimizando consultas e índices no PostgreSQL.',
             ),
             t(
-              'Optimized the PostgreSQL queries behind searches and filters, cutting their response time in half.',
-              'Otimizei as consultas PostgreSQL por trás das buscas e filtros, reduzindo o tempo de resposta pela metade.',
+              'Shipped ~40 backend features in 18 months by building REST APIs and business rules in PHP/Laravel.',
+              'Entreguei ~40 funcionalidades de backend em 18 meses construindo APIs REST e regras de negócio em PHP/Laravel.',
+            ),
+            t(
+              'Cut new-feature development time by ~30% by refactoring critical modules with SOLID, MVC and design patterns.',
+              'Reduzi em ~30% o tempo de desenvolvimento de novas funcionalidades refatorando módulos críticos com SOLID, MVC e design patterns.',
+            ),
+            t(
+              'Cut environment setup for ~6 developers from 4 hours to 20 minutes by standardizing it with Docker and Linux.',
+              'Reduzi a configuração de ambiente de ~6 desenvolvedores de 4 horas para 20 minutos padronizando-a com Docker e Linux.',
             ),
           ],
         },
       },
       {
-        role: t('Full Stack Software Engineer', 'Engenheiro de Software Full Stack'),
+        role: t('Full Stack Developer', 'Desenvolvedor Full Stack'),
         org: 'Sertras',
         logo: '/logos/companies/sertras.webp',
         date: t('Mar 2022 – Dec 2022', 'Mar 2022 – Dez 2022'),
         current: false,
         summary: t(
-          'Full stack work on a supplier evaluation platform with government integrations.',
-          'Trabalho full stack em uma plataforma de avaliação de fornecedores com integrações governamentais.',
+          'Full stack work on a supplier evaluation platform with real-time government integrations.',
+          'Trabalho full stack em uma plataforma de avaliação de fornecedores com integrações governamentais em tempo real.',
         ),
         tech: [
           { icon: 'si:php', name: 'PHP' },
           { icon: 'si:laravel', name: 'Laravel' },
+          { icon: 'si:mysql', name: 'MySQL' },
+          { icon: 'si:javascript', name: 'JavaScript' },
           { icon: 'si:wordpress', name: 'WordPress' },
-          { icon: 'si:react', name: 'React' },
         ],
         impact: {
           metric: '~40%',
-          label: t('less manual analysis', 'menos análise manual'),
+          label: t('less time per supplier compliance analysis', 'menos tempo por análise de compliance de fornecedor'),
           details: [
             t(
-              'Developed the supplier evaluation platform, from interface to backend.',
-              'Desenvolvi a plataforma de avaliação de fornecedores, da interface ao backend.',
+              'Cut compliance analysis for ~300 suppliers/month from 45 to 27 minutes per supplier by automating the evaluation with PHP, Laravel, JavaScript and MySQL.',
+              'Reduzi a análise de compliance de ~300 fornecedores/mês de 45 para 27 minutos por fornecedor automatizando a avaliação com PHP, Laravel, JavaScript e MySQL.',
             ),
             t(
-              'Integrated it with government systems so part of the checks happen automatically.',
-              'Integrei a plataforma a sistemas governamentais para que parte das checagens aconteça automaticamente.',
+              'Eliminated ~1,200 manual tax and regulatory checks per month by integrating the system with government APIs in real time.',
+              'Eliminei ~1.200 checagens fiscais e regulatórias manuais por mês integrando o sistema a APIs governamentais em tempo real.',
             ),
             t(
-              'Result: about 40% less manual analysis per evaluation.',
-              'Resultado: cerca de 40% menos análise manual por avaliação.',
+              'Kept 99.5% uptime for business-critical operations and cut the corporate website load time from 6 s to 2.5 s.',
+              'Mantive 99,5% de uptime nas operações críticas e reduzi o carregamento do site institucional de 6 s para 2,5 s.',
             ),
           ],
         },
       },
       {
-        role: t('Developer Trainee', 'Desenvolvedor Trainee'),
+        role: t('Trainee Developer', 'Desenvolvedor Trainee'),
         org: 'Dev4B',
         logo: '/logos/companies/dev4b.webp',
         date: t('Mar 2021 – Mar 2022', 'Mar 2021 – Mar 2022'),
@@ -306,23 +380,24 @@ const source = {
           { icon: 'si:php', name: 'PHP' },
           { icon: 'si:laravel', name: 'Laravel' },
           { icon: 'si:mysql', name: 'MySQL' },
+          { icon: 'si:bootstrap', name: 'Bootstrap' },
           { icon: 'si:ubuntu', name: 'Ubuntu' },
         ],
         impact: {
-          metric: t('1 year', '1 ano'),
-          label: t('from trainee to shipping production systems', 'de trainee a entregar sistemas em produção'),
+          metric: '~50',
+          label: t('production deploys with no critical incidents', 'deploys em produção sem incidentes críticos'),
           details: [
             t(
-              'Built management systems with PHP, Laravel and MySQL.',
-              'Construí sistemas de gestão com PHP, Laravel e MySQL.',
+              'Cut inventory management time from ~10 to 6 hours per week by building a stock entry and exit system with PHP, Laravel and MySQL, replacing ~5 spreadsheets.',
+              'Reduzi a gestão de estoque de ~10 para 6 horas por semana construindo um sistema de entrada e saída com PHP, Laravel e MySQL, substituindo ~5 planilhas.',
             ),
             t(
-              'Automated internal processes and maintained systems already in use.',
-              'Automatizei processos internos e mantive sistemas que já estavam em uso.',
+              'Increased landing page engagement by ~25% with responsive interfaces in HTML5, CSS3, Bootstrap and JavaScript.',
+              'Aumentei em ~25% o engajamento de landing pages com interfaces responsivas em HTML5, CSS3, Bootstrap e JavaScript.',
             ),
             t(
-              'Published and ran the applications myself on Ubuntu servers.',
-              'Publiquei e operei as aplicações eu mesmo em servidores Ubuntu.',
+              'Published and ran the applications myself on Ubuntu servers with Git.',
+              'Publiquei e operei as aplicações eu mesmo em servidores Ubuntu com Git.',
             ),
           ],
         },
@@ -334,10 +409,10 @@ const source = {
     title: t('Where I studied.', 'Onde estudei.'),
     items: [
       {
-        degree: t('Postgraduate, Software Engineering for Applied AI', 'Pós-graduação, Engenharia de Software em IA Aplicada'),
+        degree: t('MBA, Software Engineering for Applied AI', 'MBA, Engenharia de Software em IA Aplicada'),
         school: 'UNIPDS',
-        level: t('Postgraduate', 'Pós-graduação'),
-        date: t('2026 – In progress', '2026 – em andamento'),
+        level: t('Postgraduate (lato sensu)', 'Pós-graduação lato sensu'),
+        date: t('Sep 2026 – Sep 2027', 'Set 2026 – Set 2027'),
         text: t(
           'Connects my backend experience to building AI applications: LLMs, RAG, embeddings, agents, MCP, evaluation and observability, with a focus on integrating models into systems with quality, security and context.',
           'Conecta minha experiência em backend à construção de aplicações com IA: LLMs, RAG, embeddings, agentes, MCP, avaliação e observabilidade, com foco em integrar modelos a sistemas com qualidade, segurança e contexto.',
@@ -384,18 +459,27 @@ const source = {
         id: 'efficiency',
         name: t('Efficiency', 'Eficiência'),
         items: [
-          { value: '70%', label: t('less time to onboard a new client', 'menos tempo para integrar um novo cliente'), source: 'Before' },
-          { value: '~20h', label: t('saved per month through automations', 'economizadas por mês com automações'), source: 'Formula X' },
-          { value: '~40%', label: t('less manual supplier analysis', 'menos análise manual de fornecedores'), source: 'Sertras' },
+          { value: t('10 → 3 days', '10 → 3 dias'), label: t('to onboard a new client (-70%)', 'para integrar um novo cliente (-70%)'), source: 'Before' },
+          { value: '~15h', label: t('of manual work saved per client each month', 'de trabalho manual economizadas por cliente a cada mês'), source: 'Formula X' },
+          { value: t('~1,200', '~1.200'), label: t('manual regulatory checks eliminated per month', 'checagens regulatórias manuais eliminadas por mês'), source: 'Sertras' },
+        ],
+      },
+      {
+        id: 'business',
+        name: t('Business', 'Negócio'),
+        items: [
+          { value: '~12%', label: t('more monthly revenue after the Pix integration', 'a mais de receita mensal após a integração com Pix'), source: 'Before' },
+          { value: t('2.1% → 3.4%', '2,1% → 3,4%'), label: t('landing page conversion', 'de conversão em landing pages'), source: 'Formula X' },
+          { value: '~95%', label: t('retention across ~20 B2B clients over 3 years', 'de retenção em ~20 clientes B2B ao longo de 3 anos'), source: 'Formula X' },
         ],
       },
       {
         id: 'performance',
         name: t('Performance', 'Performance'),
         items: [
-          { value: '50%', label: t('faster searches and filters on PostgreSQL', 'buscas e filtros mais rápidos no PostgreSQL'), source: 'SENAI' },
-          { value: '~60%', label: t('better PageSpeed scores', 'melhora no PageSpeed'), source: 'Formula X' },
-          { value: '~4 s', label: t('p50 latency per agent reply', 'latência p50 por resposta do agente'), source: 'Empório da Música' },
+          { value: t('2.4 → 1.1 s', '2,4 → 1,1 s'), label: t('search response time for ~15,000 users', 'de tempo de busca para ~15.000 usuários'), source: 'Before' },
+          { value: '38 → 87', label: t('mobile PageSpeed across ~30 websites', 'de PageSpeed mobile em ~30 sites'), source: 'Formula X' },
+          { value: t('3.2 → 1.5 s', '3,2 → 1,5 s'), label: t('search response time for ~50,000 users', 'de tempo de busca para ~50.000 usuários'), source: 'SENAI' },
         ],
       },
       {
@@ -547,6 +631,7 @@ const source = {
         name: t('Data & Messaging', 'Dados e Mensageria'),
         items: [
           { name: 'PostgreSQL', note: 'pgvector', icons: ['si:postgresql'] },
+          { name: 'Supabase', icons: ['si:supabase'] },
           { name: 'MySQL', icons: ['si:mysql'] },
           { name: 'Redis', icons: ['si:redis'] },
           { name: 'Kafka', note: 'Redpanda', icons: ['si:apachekafka'] },
@@ -557,7 +642,7 @@ const source = {
       {
         name: t('Applied AI', 'IA aplicada'),
         items: [
-          { name: 'LLM APIs', note: 'Claude, Gemini, Groq', icons: ['si:claude', 'si:googlegemini', 'tb:bolt'] },
+          { name: 'LLM APIs', note: 'OpenAI, Claude, Gemini, Groq, OpenRouter', icons: ['si:claude', 'si:googlegemini', 'si:openrouter'] },
           { name: t('Agents', 'Agentes'), note: 'LangChain, LangGraph', icons: ['si:langchain', 'si:langgraph'] },
           { name: 'MCP', icons: ['si:modelcontextprotocol'] },
           { name: 'RAG', note: 'embeddings', icons: ['tb:database-search'] },
